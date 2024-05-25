@@ -1,1 +1,1 @@
-# GRT Transit
+# GRT Schedule Application
