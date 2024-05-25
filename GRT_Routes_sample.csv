@@ -1,0 +1,105 @@
+﻿OBJECTID,Route,FullName,Direction,Length,City,Type,RouteID
+348,61,Fountain,Eastbound,12.93706656,Kitchener/Cambridge,30,283
+350,36,Thomas Slee,Westbound,6.06650635,Kitchener,30,280
+351,61,Fountain,Westbound,11.31371134,Kitchener/Cambridge,30,282
+353,36,Thomas Slee,Eastbound,6.20622383,Kitchener,30,281
+354,206,iXpress Coronation,Southbound,19.51385198,Kitchener/Cambridge,15,286
+355,206,iXpress Coronation,Northbound,19.40760224,Kitchener/Cambridge,15,287
+356,72,Boxwood Flex (Heroux Devtek),Eastbound,2.17198793,Kitchener/Cambridge,,294
+357,57,Blair,Southbound,12.21255803,Kitchener/Cambridge,30,291
+358,67,Eagle-Pinebush,Westbound,16.38675965,Kitchener/Cambridge,30,297
+359,57,Blair,Northbound,11.54883649,Kitchener/Cambridge,30,290
+360,72,Boxwood Flex,Eastbound,6.74438958,Kitchener/Cambridge,30,292
+361,67,Eagle-Pinebush,Eastbound,16.85625249,Kitchener/Cambridge,30,296
+362,55,Grand Ridge,Clockwise,9.82658549,Cambridge,30,289
+363,55,Grand Ridge,Counterclockwise,10.34451578,Cambridge,30,288
+364,72,Boxwood Flex (Toyota),Eastbound,2.41773772,Kitchener/Cambridge,,295
+365,72,Boxwood Flex,Westbound,2.8927095,Kitchener/Cambridge,30,293
+367,20,Victoria-Frederick,Westbound,32.83997559,Kitchener,15,907
+368,33,Huron,Westbound,31.06468495,Kitchener,30,922
+369,26,Trillium,Loop,12.12797657,Kitchener,30,913
+370,28,Franklin North,Southbound,5.64918312,Kitchener,40,916
+371,23,Idlewood,Southbound,19.3835279,Kitchener,30,955
+372,201,Fischer-Hallman,Southbound,54.41317759,Kitchener/Waterloo,10,969
+373,16,Strasburg-Belmont,Peak Trippers,11.28756469,Kitchener/Waterloo,30,904
+374,12,Westmount,Northbound,16.47411014,Kitchener/Waterloo,15,898
+375,12,Westmount,Southbound,16.47411014,Kitchener/Waterloo,15,899
+376,31,Columbia,Eastbound,16.64647215,Waterloo,30,921
+377,76,Doon Mills (to CCOL),Southbound,6.51096113,Kitchener,30,937
+379,10,Pioneer (via Old Carriage),Southbound,8.07717939,Kitchener,15,894
+380,301,ION LRT,Northbound,32.49587665,Kitchener/Waterloo,10,947
+381,29,Keats-University,Northbound,17.18082121,Waterloo,30,917
+383,21,Elmira,Southbound,14.86364841,Waterloo/Woolwich,30,909
+384,56,Dunbar,CounterClockwise,10.66313111,Cambridge,30,961
+385,6,Bridge-Courtland,Northbound,18.72663319,Kitchener/Waterloo,30,887
+386,34,Bingemans,Westbound,15.22550764,Kitchener,30,923
+387,22,Laurentian West,Eastbound,8.94619504,Kitchener,30,910
+388,302,ION BUS,Northbound,41.60888937,Kitchener/Cambridge,10,948
+389,204,Highland-Victoria,Westbound,16.50307139,Kitchener,15,945
+390,77,Wilmot,Westbound,40.47720612,Kitchener/Wilmot,30,939
+391,8,Weber,Southbound,12.42765259,Kitchener/Waterloo,15,891
+392,201,Fischer-Hallman,Northbound,54.41317759,Kitchener/Waterloo,10,941
+394,23,Idlewood,Northbound,19.3835279,Kitchener,30,912
+396,204,Highland-Victoria,Eastbound,16.57059141,Kitchener,15,944
+398,16,Strasburg-Belmont,Southbound,40.84035518,Kitchener/Waterloo,30,953
+399,10,Pioneer (via Mill Park),Northbound,8.64453054,Kitchener,15,896
+400,301,ION LRT,Southbound,32.49587665,Kitchener/Waterloo,10,972
+402,8,Weber,Northbound,12.21048642,Kitchener/Waterloo,15,890
+403,19,Hazel (to Northfield Stn.),Loop,12.79266048,Waterloo,30,905
+405,4,Glasgow-Margaret,Eastbound,21.82859232,Kitchener/Waterloo,30,951
+406,19,Hazel (to St Jacobs Market),Loop,14.21189441,Waterloo,30,906
+407,51,Hespeler (via Fisher Mills),,27.82126797,Cambridge,30,924
+408,31,Columbia,Westbound,16.71434542,Waterloo,30,920
+409,7,King,Southbound,27.87437028,Kitchener/Waterloo,15,952
+410,16,Strasburg-Belmont,Northbound,40.84035518,Kitchener/Waterloo,30,903
+412,30,Ring Road,Loop,2.73778133,Waterloo,15,919
+413,7,King,Peak Trippers,9.28933978,Kitchener/Waterloo,15,889
+414,13,Laurelwood,Northbound,11.27441085,Waterloo,15,900
+415,1,Queen-River,Eastbound,39.99227658,Kitchener,15,949
+417,10,Pioneer (via Old Carriage),Northbound,8.02211723,Kitchener,15,895
+418,4,Glasgow-Margaret,Westbound,21.82859232,Kitchener/Waterloo,30,883
+420,9,Lakeshore,Northbound,9.8192922,Waterloo,15,892
+422,51,Hespeler (via Melran),,30.29770984,Cambridge,30,925
+423,29,Keats-University,Southbound,17.18082121,Waterloo,30,918
+424,22,Laurentian West,Westbound,11.03298713,Kitchener,30,911
+425,1,Queen-River,Westbound,39.99227658,Kitchener,15,880
+426,3,Ottawa South,Eastbound,18.24739561,Kitchener,30,950
+427,10,Pioneer (via Mill Park),Southbound,8.45203488,Kitchener,15,897
+428,6,Bridge-Courtland,Southbound,18.93261406,Kitchener/Waterloo,30,886
+429,21,Elmira,Northbound,14.65983348,Waterloo/Woolwich,30,908
+430,9,Lakeshore,Southbound,9.66713856,Waterloo,15,893
+431,3,Ottawa South,Westbound,18.24739561,Kitchener,30,882
+432,13,Laurelwood,Southbound,11.0116293,Waterloo,15,901
+433,202,University,Westbound,18.44821496,Waterloo,10,943
+434,76,Doon Mills (to OLCR),Northbound,5.32508647,Kitchener,30,938
+435,5,Erb (via Erb St E),Eastbound,13.52451619,Kitchener/Waterloo,30,885
+436,7,King,Northbound,27.87437028,Kitchener/Waterloo,15,888
+437,33,Huron,Eastbound,31.06468495,Kitchener,30,957
+438,27,Chicopee,Eastbound,9.62671414,Kitchener,30,914
+439,20,Victoria-Frederick,Eastbound,32.83997559,Kitchener,15,954
+440,34,Bingemans,Eastbound,15.22550764,Kitchener,30,958
+441,205,Ottawa,Eastbound,19.7292899,Kitchener,15,971
+444,203,Maple Grove,East-West,45737.21686,Kitchener/Cambridge,30,970
+445,302,ION BUS,Southbound,41.60888937,Kitchener/Cambridge,10,973
+447,5,Erb (via Bridgeport Rd),Westbound,13.83456108,Kitchener/Waterloo,30,884
+449,110,College Express (to Faiway Stn.),Northbound,15.65206204,Kitchener,15,940
+450,14,Bathurst,Loop,4.60064352,Waterloo,15,902
+451,77,Wilmot,Eastbound,40.47720612,Kitchener/Wilmot,30,967
+453,27,Chicopee,Westbound,9.62671414,Kitchener,30,956
+454,205,Ottawa,Westbound,19.7292899,Kitchener,15,946
+456,28,Franklin North,Northbound,5.56433448,Kitchener,40,915
+459,202,University,Eastbound,18.3079962,Waterloo,10,942
+460,110,College Express (from Fairway Stn.),Southbound,8.25684935,Kitchener,,975
+461,35,Greenbrook,Eastbound,7.99034408,Kitchener,30,993
+462,53,Franklin,Southbound,11.35825617,Cambridge,30,978
+463,65,Saginaw,Eastbound-Westbound,15.78992111,Cambridge,30,983
+464,53,Franklin,Southbound,13.00868292,Cambridge,30,981
+465,50,Dundas-Myers,Northbound,17.89641955,Cambridge,30,976
+466,50,Dundas-Myers,Southbound,17.70097953,Cambridge,30,977
+467,53,Franklin,Northbound,11.51026173,Cambridge,30,979
+468,35,Greenbrook,Westbound,7.99034408,Kitchener,30,992
+469,63,Champlain,Loop,9.58329361,Cambridge,30,987
+470,53,Franklin,Northbound,13.03615504,Cambridge,30,980
+471,58,Elgin North,Northbound,8.11663313,Cambridge,30,982
+472,60,Burnett,Eastbound-Westbound,9.81802552,Cambridge,30,984
+473,58,Elgin North,Southbound,8.1097533,Cambridge,30,986
