@@ -15,10 +15,10 @@ namespace test
 
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = conn;
-        cmd.CommandText="select * from tesTable;";
-        cmd.CommandText="select * from tesTable;";
-        cmd.CommandText="select * from tesTable;";
-        cmd.CommandText="select * from tesTable;"; //commands
+        cmd.CommandText="select OBJECTID from bus_routes;";
+        cmd.CommandText="select Direction from bus_routes;";
+        cmd.CommandText="select * from bus_routes where Length>10;";
+        cmd.CommandText="select City from bus_routes;"; //test commands
 
         SqlDataAdapter adapter = new SqlDataAdapter();
         adapter.SelectCommand = cmd;
