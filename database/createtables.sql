@@ -27,6 +27,7 @@ CREATE TABLE
     service_id INT NOT NULL,
     trip_id INT NOT NULL,
     trip_headsign VARCHAR(50),
+    direction_id INT,
     PRIMARY KEY (route_id, service_id, trip_id),
     FOREIGN KEY (route_id) REFERENCES Routes (route_id),
     FOREIGN KEY (service_id) REFERENCES CalendarDates (service_id)
