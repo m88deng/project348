@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\CS348\\CS348.csproj": {}
+    "/Users/m88/Desktop/M88/Projects/CS348/project348/CS348.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\CS348\\CS348.csproj": {
+    "/Users/m88/Desktop/M88/Projects/CS348/project348/CS348.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\CS348\\CS348.csproj",
+        "projectUniqueName": "/Users/m88/Desktop/M88/Projects/CS348/project348/CS348.csproj",
         "projectName": "CS348",
-        "projectPath": "D:\\Codes\\CS348\\CS348.csproj",
-        "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\CS348\\obj\\",
+        "projectPath": "/Users/m88/Desktop/M88/Projects/CS348/project348/CS348.csproj",
+        "packagesPath": "/Users/m88/.nuget/packages/",
+        "outputPath": "/Users/m88/Desktop/M88/Projects/CS348/project348/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/m88/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "D:\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
