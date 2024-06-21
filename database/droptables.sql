@@ -1,5 +1,3 @@
-DROP TABLE Agency;
-
 DROP TABLE CalendarDates;
 
 DROP TABLE Routes;

@@ -1,10 +1,4 @@
 CREATE TABLE
-  Agency (
-    agency_id VARCHAR(10) NOT NULL PRIMARY KEY,
-    agency_name VARCHAR(50)
-  );
-
-CREATE TABLE
   CalendarDates (
     service_id VARCHAR(30) NOT NULL,
     service_date TIMESTAMP NOT NULL,
