@@ -1,0 +1,56 @@
+route_id,route_long_name,route_type
+1,Queen-River,3
+10,Pioneer,3
+110,College Express,3
+12,Westmount,3
+13,Laurelwood,3
+14,Bathurst,3
+16,Strasburg-Belmont,3
+19,Hazel,3
+20,Victoria-Frederick,3
+201,iXpress Fischer-Hallman,3
+202,iXpress University,3
+203,iXpress Maple Grove,3
+204,iXpress Highland-Victoria,3
+205,iXpress Ottawa,3
+206,iXpress Coronation,3
+21,Elmira,3
+22,Laurentian West,3
+23,Idlewood,3
+26,Trillium,3
+27,Morrison,3
+28,Franklin North,3
+29,Keats-University,3
+3,Ottawa South,3
+30,Ring Road,3
+301,ION light rail,2
+302,ION bus,3
+31,Columbia,3
+33,Huron,3
+34,Bingemans,3
+35,Greenbrook,3
+36,Thomas Slee,3
+4,Glasgow-Margaret,3
+5,Erb,3
+50,Dundas-Myers,3
+51,Hespeler,3
+53,Franklin,3
+55,Grand Ridge,3
+56,Langs,3
+57,Blair,3
+58,Elgin North,3
+6,Bridge-Courtland,3
+60,Burnett,3
+61,Fountain,3
+63,Champlain,3
+65,Saginaw,3
+67,Eagle-Pinebush,3
+7,King,3
+72,Boxwood Flex,3
+76,Doon Mills,3
+77,Wilmot,3
+8,Weber,3
+9,Lakeshore,3
+9801,GCI Special,3
+9851,GCI Special,3
+9952,GCI - AST Special,3

@@ -1,4 +1,10 @@
 CREATE TABLE
+  Agency (
+    agency_id VARCHAR(10) NOT NULL PRIMARY KEY,
+    agency_name VARCHAR(50)
+  );
+
+CREATE TABLE
   CalendarDates (
     service_id VARCHAR(30) NOT NULL,
     service_date TIMESTAMP NOT NULL,
@@ -10,7 +16,7 @@ CREATE TABLE
   Routes (
     route_id INT NOT NULL PRIMARY KEY,
     route_long_name VARCHAR(50),
-    route_type INT,
+    route_type INT
   );
 
 CREATE TABLE
@@ -24,11 +30,10 @@ CREATE TABLE
 CREATE TABLE
   Trips (
     route_id INT NOT NULL,
-    service_id INT NOT NULL,
-    trip_id INT NOT NULL,
+    service_id VARCHAR(30) NOT NULL,
+    trip_id INT NOT NULL PRIMARY KEY,
     trip_headsign VARCHAR(50),
     direction_id INT,
-    PRIMARY KEY (route_id, service_id, trip_id),
     FOREIGN KEY (route_id) REFERENCES Routes (route_id),
     FOREIGN KEY (service_id) REFERENCES CalendarDates (service_id)
   );
@@ -36,9 +41,9 @@ CREATE TABLE
 CREATE TABLE
   StopTimes (
     trip_id INT NOT NULL,
-    arrival_time TIMESTAMP NOT NULL,
-    departure_time TIMESTAMP NOT NULL,
-    stop_id INT NOT NULL,
+    arrival_time TIMESTAMP,
+    departure_time TIMESTAMP,
+    stop_id INT,
     stop_sequence INT NOT NULL,
     PRIMARY KEY (trip_id, stop_sequence),
     FOREIGN KEY (trip_id) REFERENCES Trips (trip_id),
