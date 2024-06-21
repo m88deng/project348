@@ -8,7 +8,7 @@ CREATE TABLE
 
 CREATE TABLE
   Routes (
-    route_id VARCHAR(50) NOT NULL PRIMARY KEY,
+    route_id VARCHAR(10) NOT NULL PRIMARY KEY,
     route_long_name VARCHAR(50),
     route_type INT
   );
@@ -23,7 +23,7 @@ CREATE TABLE
 
 CREATE TABLE
   Trips (
-    route_id VARCHAR(50) NOT NULL,
+    route_id VARCHAR(10) NOT NULL,
     service_id VARCHAR(30) NOT NULL,
     trip_id INT NOT NULL PRIMARY KEY,
     trip_headsign VARCHAR(50),
