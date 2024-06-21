@@ -1,9 +1,9 @@
-DROP TABLE CalendarDates;
-
-DROP TABLE Routes;
+DROP TABLE StopTimes;
 
 DROP TABLE Stops;
 
 DROP TABLE Trips;
 
-DROP TABLE StopTimes;
+DROP TABLE CalendarDates;
+
+DROP TABLE Routes;
