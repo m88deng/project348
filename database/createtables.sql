@@ -8,14 +8,14 @@ CREATE TABLE
 
 CREATE TABLE
   Routes (
-    route_id VARCHAR(10) NOT NULL PRIMARY KEY,
+    route_id INT NOT NULL PRIMARY KEY,
     route_long_name VARCHAR(50),
     route_type INT
   );
 
 CREATE TABLE
   Stops (
-    stop_id INT NOT NULL PRIMARY KEY,
+    stop_id VARCHAR(10) NOT NULL PRIMARY KEY,
     stop_name VARCHAR(50),
     location_type INT,
     wheelchair_boarding INT
@@ -23,7 +23,7 @@ CREATE TABLE
 
 CREATE TABLE
   Trips (
-    route_id VARCHAR(10) NOT NULL,
+    route_id INT NOT NULL,
     service_id VARCHAR(30) NOT NULL,
     trip_id INT NOT NULL PRIMARY KEY,
     trip_headsign VARCHAR(50),
@@ -36,7 +36,7 @@ CREATE TABLE
     trip_id INT NOT NULL,
     arrival_time VARCHAR(50),
     departure_time VARCHAR(50),
-    stop_id INT,
+    stop_id VARCHAR(10),
     stop_sequence INT NOT NULL,
     PRIMARY KEY (trip_id, stop_sequence),
     FOREIGN KEY (trip_id) REFERENCES Trips (trip_id),
