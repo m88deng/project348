@@ -1,7 +1,7 @@
 CREATE TABLE
   CalendarDates (
     service_id VARCHAR(30) NOT NULL,
-    service_date TIMESTAMP NOT NULL,
+    service_date VARCHAR(30) NOT NULL,
     exception_type INT,
     PRIMARY KEY (service_id, service_date)
   );
