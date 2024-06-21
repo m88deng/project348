@@ -12,7 +12,7 @@ namespace test
     {
         static void Main(string[] args)
         {
-            string ConnectionString = "Server=localhost;Database=testDB;Trusted_Connection=true;";
+            string ConnectionString = "Server=localhost;Database=sample;Trusted_Connection=true;";
             System.Console.WriteLine("ConnectionString is presetted for local tesst");
             while (true)
             {
