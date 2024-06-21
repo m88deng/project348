@@ -1,0 +1,47 @@
+stop_id,stop_name,location_type,wheelchair_boarding
+1047,Fairway / Highway 8,0,1
+1563,3227 King St. E.,0,1
+1565,King / River,0,1
+1642,King / Grand River Hospital - Freeport Campus,0,2
+1647,Morrison / Grand River Hospital - Freeport Campus,0,1
+1648,Morrison / Grand River Blvd.,0,2
+1649,Morrison / Path To Morrison Park,0,1
+1650,Morrison / Grand River Blvd.,0,1
+1651,Quinte / Morrison,0,2
+1655,Grand River Hospital - Freeport Campus,0,1
+1697,Wilson / Fairway,0,1
+1698,Wilson / Webster,0,1
+1699,805 Wilson Ave.,0,1
+1700,915 Wilson Ave.,0,1
+1700,915 Wilson Ave.,0,1
+1701,Wabanaki / Kevco,0,2
+1703,Manitou / Wabanaki,0,1
+1704,421 Manitou Dr.,0,1
+1705,Manitou / Cayuga,0,1
+1706,Doon Village / Millwood,0,1
+1714,Pioneer / Doon Village,0,1
+1715,365 Pioneer Dr.,0,1
+1716,Highland / Fischer-Hallman,0,1
+1717,Pioneer / Pioneer Park Plaza,0,1
+1718,Pioneer / Homer Watson,0,1
+1719,Green Valley / Pioneer,0,1
+1720,Green Valley / Arrowhead,0,1
+1721,Green Valley / Mill Park,0,1
+1722,Old Mill / Mill Park,0,1
+1723,Old Mill / Pinnacle,0,2
+1724,Pinnacle / Amherst,0,2
+1725,Pinnacle / Doon Valley,0,2
+1726,Doon Valley / Pinnacle,0,2
+1727,Doon Valley / Conestoga College Blvd.,0,1
+1728,Conestoga College Blvd. / Homer Watson,0,2
+1731,Conestoga College Doon Campus - Recreation Centre,0,1
+1732,Conestoga College Doon Campus - Door 3,0,1
+1745,Pioneer / Bechtel,0,1
+1824,Pioneer / Pioneer Park Plaza,0,1
+1826,100 Old Carriage Dr.,0,1
+1827,Old Carriage / Homer Watson,0,1
+1867,Homer Watson / Doon South,0,1
+3489,Fairway Station,0,1
+3491,Fairway Station,0,1
+3641,Conestoga College Blvd. / Homer Watson,0,1
+4107,King / Fairway,0,2

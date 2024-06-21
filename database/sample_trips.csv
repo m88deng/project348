@@ -1,0 +1,45 @@
+route_id,service_id,trip_id,trip_headsign,direction_id
+10,10-Holiday1-1-2024_3-0000001,3550051,Conestoga College via Mill,1
+10,10-Holiday1-1-2024_3-0000001,3550052,Conestoga College via Mill,1
+10,10-Saturday-1-2024_2-0000010,3490559,Conestoga College via Mill,1
+10,10-Saturday-1-2024_2-0000010,3490560,Conestoga College via Mill,1
+10,10-Saturday-1-2024_2-0000010,3490599,Fairway Station via Mill,0
+10,10-Saturday-1-2024_2-0000010,3490600,Fairway Station via Mill,0
+10,10-Saturday-1-2024_2-0000010,3490627,Conestoga College via Mill,1
+10,10-Saturday-1-2024_3-0000010,3544005,Conestoga College via Mill,1
+10,10-Saturday-1-2024_3-0000010,3544006,Conestoga College via Mill,1
+10,10-Saturday-1-2024_3-0000010,3544007,Conestoga College via Mill,1
+10,10-Saturday-1-2024_3-0000010,3544047,Fairway Station via Mill,0
+10,10-Saturday-1-2024_3-0000010,3544048,Fairway Station via Mill,0
+10,10-Saturday-1-2024_3-0000010,3544073,Conestoga College via Mill,1
+10,10-Sunday-1-2024_2-0000001,3494352,Conestoga College via Mill,1
+10,10-Sunday-1-2024_2-0000001,3494353,Conestoga College via Mill,1
+10,10-Sunday-1-2024_2-0000001,3494354,Conestoga College via Mill,1
+10,10-Sunday-1-2024_2-0000001,3494409,Fairway Station via Mill,0
+10,10-Sunday-1-2024_2-0000001,3494410,Fairway Station via Mill,0
+10,10-Sunday-1-2024_3-0000001,3547935,Conestoga College via Mill,1
+10,10-Sunday-1-2024_3-0000001,3547936,Conestoga College via Mill,1
+10,10-Sunday-1-2024_3-0000001,3547937,Conestoga College via Mill,1
+10,10-Sunday-1-2024_3-0000001,3547988,Fairway Station via Mill,0
+10,10-Sunday-1-2024_3-0000001,3547989,Fairway Station via Mill,0
+10,10-Weekday-1-2024_2-1111100,3485004,A-Conestoga College via Old Carriage,1
+10,10-Weekday-1-2024_2-1111100,3485005,Conestoga College via Mill,1
+10,10-Weekday-1-2024_2-1111100,3485006,Conestoga College via Mill,1
+10,10-Weekday-1-2024_2-1111100,3485074,A-Fairway Station via Old Carriage,0
+10,10-Weekday-1-2024_2-1111100,3485075,A-Fairway Station via Old Carriage,0
+10,10-Weekday-1-2024_2-1111100,3485086,A-Conestoga College via Old Carriage,1
+10,10-Weekday-1-2024_2-1111100,3485096,A-Fairway Station via Old Carriage,0
+10,10-Weekday-1-2024_2-1111100,3485097,A-Fairway Station via Old Carriage,0
+10,10-Weekday-1-2024_3-1111100,3539931,A-Conestoga College via Old Carriage,1
+10,10-Weekday-1-2024_3-1111100,3539932,Conestoga College via Mill,1
+10,10-Weekday-1-2024_3-1111100,3539962,A-Conestoga College via Old Carriage,1
+10,10-Weekday-1-2024_3-1111100,3539963,Conestoga College via Mill,1
+10,10-Weekday-1-2024_3-1111100,3539964,A-Conestoga College via Old Carriage,1
+10,10-Weekday-1-2024_3-1111100,3539965,Conestoga College via Mill,1
+10,10-Weekday-1-2024_3-1111100,3539966,A-Conestoga College via Old Carriage,1
+10,10-Weekday-1-2024_3-1111100,3539969,Fairway Station via Mill,0
+10,10-Weekday-1-2024_3-1111100,3540004,A-Fairway Station via Old Carriage,0
+10,10-Weekday-1-2024_3-1111100,3540046,Conestoga College via Mill,1
+10,10-Weekday-1-2024_3-1111100,3540049,A-Conestoga College via Old Carriage,1
+27,27-Weekday-2-2024_3-1111100,3535928,Quinte/Morrison,0
+27,27-Weekday-2-2024_3-1111100,3535929,Fairway Station,1
