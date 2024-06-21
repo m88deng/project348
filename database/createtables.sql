@@ -35,7 +35,6 @@ CREATE TABLE
     trip_headsign VARCHAR(50),
     direction_id INT,
     FOREIGN KEY (route_id) REFERENCES Routes (route_id),
-    FOREIGN KEY (service_id) REFERENCES CalendarDates (service_id)
   );
 
 CREATE TABLE
