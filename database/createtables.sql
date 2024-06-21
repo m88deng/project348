@@ -1,7 +1,7 @@
 CREATE TABLE
   CalendarDates (
     service_id VARCHAR(30) NOT NULL,
-    service_date TIMESTAMP NOT NULL,
+    service_date VARCHAR(30) NOT NULL,
     exception_type INT,
     PRIMARY KEY (service_id, service_date)
   );
@@ -15,7 +15,7 @@ CREATE TABLE
 
 CREATE TABLE
   Stops (
-    stop_id INT NOT NULL PRIMARY KEY,
+    stop_id VARCHAR(10) NOT NULL PRIMARY KEY,
     stop_name VARCHAR(50),
     location_type INT,
     wheelchair_boarding INT
@@ -36,7 +36,7 @@ CREATE TABLE
     trip_id INT NOT NULL,
     arrival_time VARCHAR(50),
     departure_time VARCHAR(50),
-    stop_id INT,
+    stop_id VARCHAR(10),
     stop_sequence INT NOT NULL,
     PRIMARY KEY (trip_id, stop_sequence),
     FOREIGN KEY (trip_id) REFERENCES Trips (trip_id),
