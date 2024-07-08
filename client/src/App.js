@@ -1,13 +1,16 @@
 import './styles/App.css';
 import PlanTrip from './pages/PlanTrip';
+import PlanTripResult from './pages/PlanTripResult';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <PlanTrip />
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PlanTrip />} />
+        <Route path="/plan-trip-results" element={<PlanTripResult />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

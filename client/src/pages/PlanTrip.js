@@ -13,9 +13,9 @@ export default function PlanTrip() {
         <form>
             <div><label>Leaving Day</label></div>
             <div><input type="date" value={leavingDay} onChange={(e) => setLeavingDay(e.target.value)} /></div>
-            <div><label>From</label></div>
+            <div className="py-2"><label>From</label></div>
             <div><input type="text" value={fromPoint} placeholder="station/stop" onChange={(e) => setFromPoint(e.target.value)} /></div>
-            <div><label>To</label></div>
+            <div className="py-2"><label>To</label></div>
             <div><input type="text" value={toPoint} placeholder="station/stop" onChange={(e) => setToPoint(e.target.value)} /></div>
             <div><button type="submit" onClick={handleRouteSearch}>Search</button></div>
         </form>
