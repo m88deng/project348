@@ -14,9 +14,9 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("testAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("testAPI")]
-[assembly: System.Reflection.AssemblyTitleAttribute("testAPI")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4760af996b7e54278a35e74ae21d61bb1489398c")]
+[assembly: System.Reflection.AssemblyProductAttribute("CS348")]
+[assembly: System.Reflection.AssemblyTitleAttribute("CS348")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
