@@ -1,5 +1,8 @@
 stop_id,stop_name,location_type,wheelchair_boarding
 1047,Fairway / Highway 8,0,1
+1090,University Ave. / University Of Waterloo,0,1
+1166,University Ave. / King,0,1
+1428,Westmount / Ottawa (North Side),0,1
 1563,3227 King St. E.,0,1
 1565,King / River,0,1
 1642,King / Grand River Hospital - Freeport Campus,0,2
@@ -9,6 +12,8 @@ stop_id,stop_name,location_type,wheelchair_boarding
 1650,Morrison / Grand River Blvd.,0,1
 1651,Quinte / Morrison,0,2
 1655,Grand River Hospital - Freeport Campus,0,1
+1695,Westmount / Path To Williamsburg,0,2
+1696,Westmount / Path To Williamsburg,0,2
 1697,Wilson / Fairway,0,1
 1698,Wilson / Webster,0,1
 1699,805 Wilson Ave.,0,1
@@ -39,8 +44,122 @@ stop_id,stop_name,location_type,wheelchair_boarding
 1824,Pioneer / Pioneer Park Plaza,0,1
 1826,100 Old Carriage Dr.,0,1
 1827,Old Carriage / Homer Watson,0,1
+1846,Bleams / Century Hill,0,1
+1847,Bleams / Homer Watson,0,2
+1848,Bleams / Otonabee,0,2
+1849,Bleams / Manitou,0,1
+1850,Manitou / Webster,0,1
+1851,Fairway / Manitou,0,1
+1852,589 Fairway Rd. S.,0,2
+1853,Fairway / Wilson,0,2
+1854,Fairway / Wilson,0,2
+1855,500 Fairway Rd. S.,0,1
+1856,Fairway / Manitou,0,1
+1857,Manitou / Courtland,0,1
+1858,Manitou / Cress,0,1
+1860,Manitou / Bleams,0,1
+1861,Bleams / Otonabee,0,1
+1862,Bleams / Homer Watson,0,2
+1863,Bleams / Century Hill,0,1
 1867,Homer Watson / Doon South,0,1
+1931,University Ave. / Lexington,0,1
+1966,Erb / Westmount,0,1
+1969,Erb / Amos,0,1
+2057,Westmount / Block Line,0,1
+2058,Bleams / Washburn,0,2
+2059,Bleams / Trillium,0,2
+2060,Bleams / Colony,0,2
+2061,Bleams / Strasburg,0,1
+2062,Bleams / Colony,0,2
+2063,Bleams / Thistledown,0,2
+2064,Bleams / Path To Marlis,0,2
+2065,Westmount / Fischer-Hallman,0,1
+2066,Westmount / Block Line,0,1
+2105,Bleams / Strasburg,0,1
+2670,University Ave. / Weber,0,1
+2673,University Ave. / Hemlock,0,1
+2674,University Ave. / Sunview,0,1
+2675,University Ave. / Phillip,0,1
+2676,University Ave. / University Of Waterloo,0,1
+2677,University Ave. / Ring Rd.,0,1
+2678,Westmount / University Ave.,0,1
+2679,Westmount / Westcourt,0,1
+2680,Westmount / Erb,0,1
+2681,Westmount / Lourdes,0,1
+2682,Westmount / Dietz,0,2
+2683,Westmount / William,0,2
+2685,Westmount / John,0,1
+2772,Westmount / John,0,1
+2773,Westmount / William,0,2
+2774,Westmount / Alexandra,0,2
+2775,Westmount / Lourdes,0,1
+2777,50 Westmount Rd. N.,0,1
+2778,Westmount / Father David Bauer,0,1
+2779,Westmount / University Ave.,0,1
+2780,University Ave. / Ring Rd.,0,1
+2783,University Ave. / Hemlock,0,1
+2785,University Ave. / King,0,1
+2832,University Ave. / Conestoga College - Waterloo,0,1
+3086,Westmount / Village,0,1
+3178,Westmount / Overlea,0,1
+3179,Westmount / Queens,0,1
+3180,Westmount / Forest Hill,0,1
+3181,Westmount / Stonybrook,0,1
+3182,Westmount / Ottawa (North Side),0,1
+3183,Westmount / Ottawa (South Side),0,1
+3184,Westmount / Laurentian,0,1
+3185,Westmount / Williamsburg,0,1
+3190,Westmount / Williamsburg,0,1
+3191,Westmount / Laurentian,0,1
+3192,Westmount / Ottawa (South Side),0,1
+3193,Westmount / Stonybrook,0,1
+3194,Westmount / Village,0,1
+3195,Westmount / Forest Hill,0,1
+3196,Westmount / Queens,0,1
+3197,Westmount / Overlea,0,1
 3489,Fairway Station,0,1
 3491,Fairway Station,0,1
+3493,Fairway Station,0,1
+3503,Fischer-Hallman / Max Becker,0,2
+3504,Fischer-Hallman / Rockwood,0,2
+3505,Fischer-Hallman / Bleams,0,2
+3607,Bleams / Fallowfield,0,1
+3608,Bleams / Fallowfield,0,1
+3619,University Ave. / Wilfrid Laurier University,0,1
+3620,University Ave. / Wilfrid Laurier University,0,1
+3621,University Ave. / King,0,1
 3641,Conestoga College Blvd. / Homer Watson,0,1
+3667,Fischer-Hallman / Bleams,0,2
+3668,Fischer-Hallman / Rockwood,0,1
+3671,University Ave. / Pastern,0,1
+3687,Erb / Erbsville Ct.,0,1
+3761,Northfield / Bridge,0,1
+3762,Northfield / Northfield Transit Garage,0,1
+3763,University Ave. / Northfield Technology Park,0,1
+3765,University Ave. / R.I.M. Park,0,1
+3766,University Ave. / New Bedford,0,1
+3799,Conestoga Station,0,1
+3904,Ira Needles / Thorndale,0,1
+3906,Ira Needles / Erb,0,1
+3909,Westmount / Highland,0,1
+3910,Westmount / Victoria,0,1
+3911,Westmount / Brybeck,0,1
+3912,Westmount / Westwood,0,1
+3913,Westmount / Glasgow,0,1
+3914,Westmount / Union,0,1
+3915,Westmount / Highland,0,1
+3916,Westmount / Victoria,0,1
+3917,Westmount / Chopin,0,1
+3918,Westmount / Westwood,0,1
+3919,Westmount / Glasgow,0,1
+3920,Westmount / Union,0,1
+3943,University Ave. / Phillip,0,1
+3945,University Ave. / Sunview,0,1
+4001,The Boardwalk Station,0,1
+4042,Northfield / Davenport,0,1
+4046,University Ave. / Auburn,0,1
+4049,University Ave. / Dale,0,1
+4053,Westmount / Erb,0,1
+4054,University Ave. / Bridge,0,1
+4056,Erb / Fischer-Hallman,0,1
 4107,King / Fairway,0,2
