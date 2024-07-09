@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\testAPI\\testAPI.csproj": {}
+    "D:\\Codes\\repos\\project348\\testAPI.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\testAPI\\testAPI.csproj": {
+    "D:\\Codes\\repos\\project348\\testAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\testAPI\\testAPI.csproj",
+        "projectUniqueName": "D:\\Codes\\repos\\project348\\testAPI.csproj",
         "projectName": "testAPI",
-        "projectPath": "D:\\Codes\\testAPI\\testAPI.csproj",
+        "projectPath": "D:\\Codes\\repos\\project348\\testAPI.csproj",
         "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\testAPI\\obj\\",
+        "outputPath": "D:\\Codes\\repos\\project348\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -64,6 +69,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -72,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
