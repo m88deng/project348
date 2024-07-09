@@ -4,6 +4,7 @@ The GRT Schedule Application interfaces with a Windows native database server, w
 
 ## Database Setup
 
+Scripts located in `./database`.
 1. **Table Creation**: Execute `createtables.sql` to set up the database schema.
 2. **Sample Data Population**: Execute `populatesampletables.sql` to populate the tables with sample data from CSV files. The data from the CSV files will be automatically parsed and imported into the corresponding tables.
 3. **Production Data Population**: Execute `populatetables.sql` to populate the tables with production data from CSV files. The data from the CSV files will be automatically parsed and imported into the corresponding tables.
