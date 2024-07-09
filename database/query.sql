@@ -11,9 +11,9 @@ WHERE cd.service_date = 20240701
 AND cd.exception_type = 1 
 ) 
 
-SELECT DISTINCT tr.route_id, tr.route_long_name, tt.trip_headsign, st.arrival_time
+SELECT DISTINCT TOP 1 tr.route_id, tr.route_long_name, tt.trip_headsign, st.arrival_time
 FROM StopTimes st 
 JOIN TempTrips tt ON tt.trip_id = st.trip_id 
 JOIN TempRoutes tr ON tr.route_id = tt.route_id
-WHERE st.stop_id = 2675 AND st.arrival_time > CONVERT(TIME, GETDATE())
+WHERE st.stop_id = 2675 AND st.arrival_time > CONVERT(TIME, '10:02:32')
 ORDER BY st.arrival_time ASC;
