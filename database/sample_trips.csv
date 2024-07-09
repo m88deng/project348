@@ -44,6 +44,7 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 12,12-Holiday1-1-2024_3-0000001,3549988,University/King,0
 12,12-Holiday1-1-2024_3-0000001,3549989,University/King,0
 12,12-Holiday1-1-2024_3-0000001,3549990,University/King,0
+12,12-Holiday1-1-2024_3-0000001,3550019,Fairway Station,1
 12,12-Holiday1-1-2024_3-0000001,3550046,Fairway Station,1
 12,12-Holiday1-1-2024_3-0000001,3550047,Fairway Station,1
 27,27-Weekday-2-2024_3-1111100,3535928,Quinte/Morrison,0
