@@ -41,5 +41,14 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 10,10-Weekday-1-2024_3-1111100,3540004,A-Fairway Station via Old Carriage,0
 10,10-Weekday-1-2024_3-1111100,3540046,Conestoga College via Mill,1
 10,10-Weekday-1-2024_3-1111100,3540049,A-Conestoga College via Old Carriage,1
+12,12-Holiday1-1-2024_3-0000001,3549988,University/King,0
+12,12-Holiday1-1-2024_3-0000001,3549989,University/King,0
+12,12-Holiday1-1-2024_3-0000001,3549990,University/King,0
+12,12-Holiday1-1-2024_3-0000001,3550046,Fairway Station,1
+12,12-Holiday1-1-2024_3-0000001,3550047,Fairway Station,1
 27,27-Weekday-2-2024_3-1111100,3535928,Quinte/Morrison,0
 27,27-Weekday-2-2024_3-1111100,3535929,Fairway Station,1
+202,202-Holiday1-1-2024_3-0000001,3549689,The Boardwalk Station,1
+202,202-Holiday1-1-2024_3-0000001,3549690,The Boardwalk Station,1
+202,202-Holiday1-1-2024_3-0000001,3549691,The Boardwalk Station,1
+202,202-Holiday1-1-2024_3-0000001,3549719,Conestoga Station,0
