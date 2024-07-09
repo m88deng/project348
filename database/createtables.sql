@@ -34,8 +34,8 @@ CREATE TABLE
 CREATE TABLE
   StopTimes (
     trip_id INT NOT NULL,
-    arrival_time VARCHAR(50),
-    departure_time VARCHAR(50),
+    arrival_time TIME,
+    departure_time TIME,
     stop_id VARCHAR(10),
     stop_sequence INT NOT NULL,
     PRIMARY KEY (trip_id, stop_sequence),
