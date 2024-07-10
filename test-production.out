@@ -1,0 +1,820 @@
+route_id
+12
+19
+29
+202
+
+route_id,route_long_name
+201,iXpress Fischer-Hallman
+9,Lakeshore
+301,ION light rail
+12,Westmount
+63,Champlain
+6,Bridge-Courtland
+55,Grand Ridge
+58,Elgin North
+7,King
+50,Dundas-Myers
+1,Queen-River
+30,Ring Road
+204,iXpress Highland-Victoria
+10,Pioneer
+61,Fountain
+65,Saginaw
+19,Hazel
+205,iXpress Ottawa
+13,Laurelwood
+56,Langs
+202,iXpress University
+16,Strasburg-Belmont
+53,Franklin
+302,ION bus
+203,iXpress Maple Grove
+20,Victoria-Frederick
+28,Franklin North
+206,iXpress Coronation
+8,Weber
+51,Hespeler
+
+stop_id,stop_name,location_type
+1005,Union / Devitt,0
+1019,River / Bradley,0
+1026,Oldfield / Batterswood,0
+1027,Oldfield / Casey,0
+1044,Fairway / Wabanaki,0
+1049,Fairway / Morgan,0
+1060,Oldfield / Drumoak,0
+1061,Oldfield / Springmount,0
+1062,Oldfield / Lackner,0
+1104,Columbia / Cavendish,0
+1111,Laurelwood / Beaver Creek Rd.,0
+1119,Columbia / U.W. - Ron Eydt Village,0
+1121,Chesapeake / Chesapeake Cres.,0
+1133,Chesapeake / Seawind,0
+1139,Northlake / Black Oak,0
+1141,Northlake / Pine Island,0
+1142,Highpoint / Cornerbrook,0
+1143,Highpoint / Wintergreen,0
+1144,Highpoint / Rolling Hills,0
+1146,Highpoint / Toll Gate,0
+1148,Glen Forrest / Teakwood,0
+1169,90 Vondrau Dr.,0
+1185,Glen Forrest / Brookhaven,0
+1190,Highpoint / Rolling Hills,0
+1191,Highpoint / Northfield,0
+1192,Strasburg / Ottawa,0
+1194,Northlake / Green Meadow,0
+1195,Northlake / Skylark,0
+1199,Northfield / Weber (East Side),0
+1200,Northfield / Parkside,0
+1208,Frobisher / Davenport,0
+1209,151 Frobisher Dr.,0
+1210,Frobisher / Mcmurray,0
+1215,Mcmurray / Northland,0
+1216,Mcmurray / Bathurst,0
+1217,Bathurst / Rankin,0
+1218,Rupert / Bathurst,0
+1220,Northland / Bathurst,0
+1232,Bismark / Westmount Mews,0
+1233,Blair / Bismark,0
+1234,Blair / Clearview,0
+1235,Queen / Rooshill,0
+1238,Queen / Panabaker,0
+1239,Melran / River,0
+1240,Melran / Mccormick,0
+1242,Mcmeeken / Werstine,0
+1243,Mcmeeken / Mccormick,0
+1244,Kerwood / Gees,0
+1253,Queen / Shepherd,0
+1265,Winston / Cooper,0
+1266,Winston / Darren,0
+1268,Winston / Gunn,0
+1269,Winston / Westbury,0
+1274,Queen / Rooshill,0
+1290,Eagle / Arlington,0
+1301,Fisher Mills / Fearnwood,0
+1303,Scott / Nickolas,0
+1304,Scott / Milton,0
+1318,Conestoga / Lena,0
+1319,Conestoga / Conestoga Transit Garage,0
+1328,Bishop / Cowansview,0
+1329,Pinebush / Balmoral,0
+1330,355 Pinebush Rd.,0
+1332,Fleming / Thompson,0
+1333,Fleming / Sheldon,0
+1339,Conestoga / Sheldon,0
+1340,500 Conestoga Blvd.,0
+1343,Can-Amera / Franklin,0
+1345,Saginaw / Cowan,0
+1346,Saginaw / Stonecairn,0
+1347,Saginaw / Chamberlin,0
+1348,Saginaw / Burnett,0
+1361,Elgin / Path To Ferguson,0
+1367,Cowan / Robson,0
+1369,Burnett / Buchanan,0
+1372,Saginaw / Fairgreen,0
+1374,Saginaw / Cowan,0
+1380,Elgin / Steeles,0
+1381,Elgin / Glenbrook,0
+1394,Dunbar / Daleview,0
+1396,Dunbar / Eastdowns,0
+1398,Dunbar / St George,0
+1399,Dunbar / Grand Valley,0
+1400,Concession / Grand Valley,0
+1403,Hamilton / Montrose,0
+1404,Hamilton / Union,0
+1405,Beck / Homuth,0
+1408,Rose / Lowther,0
+1411,Argyle / Vine,0
+1412,Argyle / Hamilton,0
+1413,Hamilton / Westminster,0
+1416,Westminster / Lawrence,0
+1418,Concession / Garden,0
+1443,King / Montrose,0
+1446,Fairview / Bishop,0
+1447,Fairview / Grand Valley,0
+1449,Dunbar / St George,0
+1451,Dunbar / Eastdowns,0
+1469,Ainslie / Colborne,0
+1502,100 Savage Dr.,0
+1507,Main / Elgin,0
+1532,111 Savage Dr.,0
+1533,Dobbie / Savage,0
+1534,Dobbie / Orion,0
+1535,Dobbie / Clyde,0
+1536,Clyde / Grand River Conservation Authority,0
+1537,Clyde / Bluerock,0
+1538,Franklin / Clyde,0
+1539,Franklin / Hilborn,0
+1541,Franklin / Robson,0
+1545,Ottawa / Williamsburg,0
+1592,King / Brower,0
+1593,King / Blue Heron,0
+1596,720 Coronation Blvd.,0
+1606,Beverly / Kerr,0
+1613,Coronation / Goldie,0
+1621,King / Brower,0
+1623,King / Montrose,0
+1632,Preston Pkwy. / Hillview,0
+1642,King / Grand River Hospital - Freeport Campus,0
+1648,Morrison / Grand River Blvd.,0
+1651,Quinte / Morrison,0
+1658,Morgan / Greendale,0
+1660,Morgan / Fairway,0
+1665,River / Rennie,0
+1669,Lennox Lewis / Activa Sportsplex,0
+1670,Lennox Lewis / The Family Centre,0
+1680,Natchez / Rothsay,0
+1681,Natchez / Matthew,0
+1685,Blair / Old Mill,0
+1686,Blair / Old Mill,0
+1687,Blair / Langdon,0
+1688,Blair / Langdon,0
+1689,Ottawa / Heritage,0
+1691,Trillium / Strasburg,0
+1693,River / Rennie,0
+1695,Westmount / Path To Williamsburg,0
+1696,Westmount / Path To Williamsburg,0
+1701,Wabanaki / Kevco,0
+1723,Old Mill / Pinnacle,0
+1724,Pinnacle / Amherst,0
+1725,Pinnacle / Doon Valley,0
+1726,Doon Valley / Pinnacle,0
+1728,Conestoga College Blvd. / Homer Watson,0
+1735,Doon Valley / Pinnacle,0
+1736,Pinnacle / Doon Valley,0
+1737,Pinnacle / Amherst,0
+1739,Old Mill / Roos,0
+1759,650 Wabanaki Dr.,0
+1760,Wabanaki / Wilson,0
+1761,915 Wilson Ave.,0
+1778,Mcintyre / Mcbrine,0
+1779,222 Mcintyre Dr.,0
+1780,Mcintyre / Trillium,0
+1781,Trillium / Washburn,0
+1783,680 Trillium Dr.,0
+1784,Trillium / Mcbrine,0
+1785,Trillium / Strasburg,0
+1792,Trillium / Steckle,0
+1793,Trillium / Adam Ferrie,0
+1794,Trillium / Shoemaker,0
+1810,Old Huron / Maxwell,0
+1811,Biehn / Carlyle,0
+1812,Biehn / Maxwell,0
+1838,Old Huron / Battler,0
+1841,Strasburg / Battler,0
+1847,Bleams / Homer Watson,0
+1848,Bleams / Otonabee,0
+1852,589 Fairway Rd. S.,0
+1853,Fairway / Wilson,0
+1854,Fairway / Wilson,0
+1862,Bleams / Homer Watson,0
+1905,Vanier / Shelley,0
+1906,Shelley / Courtland,0
+1926,Eastbridge / Cabot,0
+1927,Eastbridge / Bonavista,0
+1928,Eastbridge / Bluenose Park,0
+1929,Eastbridge / New Bedford,0
+1941,Bridge / Bridle,0
+1942,Bridge / Woolwich,0
+1945,Lancaster / Lang,0
+1951,Bridgeport Rd. / Margaret,0
+1952,Bridgeport Rd. / Ellis,0
+1956,Bridgeport Rd. / Peppler,0
+1975,Keats Way / Brynhurst,0
+1976,Keats Way / Leighland,0
+1979,Erbsville / Path To Erbsville Ct.,0
+1981,Erbsville / Chablis,0
+1984,Erb / Gateview,0
+1985,Gateview / Westvale,0
+1986,Westvale / Heather Hill,0
+1988,Westvale / Edenvalley,0
+2000,Erb / Dietz,0
+2009,Erb / Devitt,0
+2011,Erb / Ellis,0
+2014,Bridgeport Rd. / Leander,0
+2015,Bridgeport Rd. / Mackie,0
+2016,Strasburg / Huron,0
+2017,Oldfield / Edenbridge,0
+2018,Zeller / Susan,0
+2019,Zeller / Wild Meadow,0
+2021,Lancaster / General,0
+2022,Bridge / Woolwich,0
+2027,Hayward / Courtland,0
+2033,Zeller / Watervale,0
+2034,Old Zeller / Eden Oak,0
+2038,Eastbridge / Bluenose Park,0
+2039,Eastbridge / Windjammer,0
+2040,Eastbridge / Mayflower,0
+2041,Eastbridge / Bridge,0
+2042,Zeller / Janet,0
+2043,Zeller / Lackner,0
+2045,Robert Ferrie / Tilts Trail,0
+2046,Doon South / Robert Ferrie,0
+2047,Doon South / Thomas Slee,0
+2048,Thomas Slee / Path To Watermill,0
+2051,Robert Ferrie / Blair Creek,0
+2056,Oldfield / Edenbridge,0
+2058,Bleams / Washburn,0
+2059,Bleams / Trillium,0
+2060,Bleams / Colony,0
+2062,Bleams / Colony,0
+2063,Bleams / Thistledown,0
+2064,Bleams / Path To Marlis,0
+2067,Frobisher / Davenport,0
+2076,Activa / Grey Fox,0
+2085,Lennox Lewis / The Family Centre,0
+2092,King / Henry,0
+2094,King / Front,0
+2095,King / Wyman,0
+2109,Elgin / Winter,0
+2113,Franklin / Clyde,0
+2129,First / Caen,0
+2136,Woodside / Cedar,0
+2140,Hillcrest / Highland,0
+2141,Salisbury / Southgate,0
+2142,Salisbury / Murray,0
+2145,Kent / Sim,0
+2146,Kent / Cedar,0
+2155,First / Caen,0
+2156,Middleton / Francis,0
+2166,Elgin / Linnwood,0
+2167,Elgin / Manchester,0
+2168,Elgin / Marion,0
+2169,Alison / Elgin,0
+2171,Alison / Lauris,0
+2172,Alison / Hilltop,0
+2183,Christopher / Foster,0
+2184,Christopher / Ballantyne,0
+2185,Christopher / Elliott,0
+2191,Sunset / Saxony,0
+2192,Sunset / Bismark,0
+2198,Blair / Sherwood,0
+2199,Blair / Grant,0
+2200,Blair / James,0
+2206,Hillcrest / Churchill,0
+2218,Franklin / Path To Elliott,0
+2219,Franklin / Morning Calm,0
+2222,Lisbon Pines / Champlain,0
+2223,Lisbon Pines / Santa Maria,0
+2224,Lisbon Pines / Myers,0
+2229,Myers / Clover,0
+2254,Grand Ridge / Mark,0
+2255,Grand Ridge / St Andrews,0
+2256,Grand Ridge / Stirling Macgregor,0
+2257,Grand Ridge / Oak Hill,0
+2269,Christopher / Elliott,0
+2270,Christopher / South,0
+2280,Myers / Woodland,0
+2298,Elgin / Main,0
+2302,Main / Cathay,0
+2303,Main / Arthur White,0
+2304,Main / Spruce,0
+2310,Cherry Blossom / Barnes,0
+2312,Cherry Blossom / Fountain,0
+2316,Loblaws Distribution Centre,0
+2325,Grand Ridge / Inverness,0
+2326,Grand Ridge / Stirling Macgregor,0
+2330,Rittenhouse / Erinbrook,0
+2332,Rittenhouse / Brookfield,0
+2338,Highland / Path To Charles Best,0
+2340,Blair / Bismark,0
+2346,Natchez / Rothsay,0
+2353,Weber / Swallow,0
+2354,40 Benjamin Rd.,0
+2355,Weber / Swallow,0
+2356,Weber / Randall,0
+2357,Weber / Golden Eagle,0
+2361,Krug / Samuel,0
+2374,Grand Ridge / St Andrews,0
+2375,Grand Ridge / Byton,0
+2376,Grand Ridge / Wedgewood,0
+2377,Grand Ridge / White Oak,0
+2378,Grand Ridge / Cedar,0
+2385,Trillium / Beasley,0
+2387,Homer Watson / Bleams,0
+2390,Grand Ridge / Cedar,0
+2391,Grand Ridge / Harwood,0
+2392,Grand Ridge / Wedgewood,0
+2398,Homer Watson / Bleams,0
+2399,Beasley / Homer Watson,0
+2425,Bridge / Tyson,0
+2431,Stanley / Schweitzer,0
+2432,Schweitzer / Nelson,0
+2433,Schweitzer / Daniel,0
+2438,Bloomingdale / Horning,0
+2441,Lancaster / Union,0
+2450,Wellington / Ahrens,0
+2460,Weber / Parkside,0
+2468,Union / Ellis,0
+2469,Union / Margaret,0
+2485,Dundas / Main,0
+2486,Dundas / Franklin,0
+2492,Union / Margaret,0
+2493,Union / Ellis,0
+2497,Wilson / Balfour,0
+2506,Wilson / Traynor,0
+2545,Hollinger / Howard,0
+2546,Hollinger / Path To Daniel,0
+2547,Hollinger / Bridge,0
+2605,First / Eckert,0
+2606,Eckert / Dixon,0
+2607,Blair / Park Hill,0
+2615,Weber / Jackson,0
+2616,Weber / Sheldon,0
+2617,Weber / Sheldon,0
+2618,Weber / Jackson,0
+2628,Franklin / Dalewood,0
+2641,Grand Ridge / West River,0
+2642,West River / Culham,0
+2643,Glenmorris / Third,0
+2647,55 Pinebush Rd.,0
+2650,Eagle / Concession,0
+2664,Weber / Royal,0
+2672,Highland / Path To Burnaby,0
+2682,Westmount / Dietz,0
+2683,Westmount / William,0
+2773,Westmount / William,0
+2774,Westmount / Alexandra,0
+2809,Kraus / Conestogo,0
+2825,Greenbrook / Stonybrook,0
+2827,Lincoln / Mayfield,0
+2828,Greenbrook / Graystone,0
+2860,Franklin / Prospect,0
+2899,Coronation / Oliver,0
+2900,Coronation / Goldie,0
+2912,Mill / Borden,0
+2913,Mill / Heiman,0
+2926,Ottawa / Midland,0
+2930,Mill / Heiman,0
+2942,Rittenhouse / Brookfield,0
+2954,Max Becker / Commonwealth,0
+2956,Activa / Donnenwerth,0
+2957,Activa / Periwinkle,0
+2958,Activa / Henhoeffer,0
+2961,David Bergey / Peach Blossom,0
+2962,David Bergey / Ottawa,0
+2965,Wilderness / Pine Martin,0
+2977,Dundas / Main,0
+2978,Dundas / Monroe,0
+2988,Wilderness / Mountain Mint,0
+2989,Wilderness / Grey Fox,0
+2992,David Bergey / Ottawa,0
+2993,David Bergey / Peach Blossom,0
+2995,Activa / Isaiah,0
+2998,Activa / Periwinkle,0
+3016,Rittenhouse / Block Line,0
+3021,Kingswood / Lucerne,0
+3036,Old Country / Strasburg,0
+3051,Kingswood / Strasburg,0
+3077,Kent / Sim,0
+3080,Salisbury / Murray,0
+3081,Salisbury / Southgate,0
+3082,Salisbury / Hillcrest,0
+3085,Greenbrook / Forest Hill,0
+3094,Greenbrook / Ruskview,0
+3097,Greenbrook / Westmount,0
+3128,Victoria / Fenwick,0
+3145,Bingemans Centre Dr. / Shirley,0
+3147,Shirley / Hesh,0
+3148,Shirley / Cedarview,0
+3163,Shirley / Crestview,0
+3164,Shirley / Riverview,0
+3212,Victoria / Monte Carlo,0
+3244,Glasgow / York,0
+3262,Churchill / Barrie,0
+3263,Churchill / Berkley,0
+3264,University Ave. / Path To Countrystone Pl.,0
+3285,Union / Lucan,0
+3322,585 Kumpf Dr.,0
+3393,Davenport / Old Abbey,0
+3397,Coulthard / Baintree,0
+3402,Wellington / Spring Valley,0
+3403,809 Wellington St. N.,0
+3411,Jamieson / Cooper,0
+3420,Bingemans Centre Dr. / Bingemans,0
+3438,Wellington / Lancaster,0
+3439,Wellington / Patrick,0
+3440,809 Wellington St. N.,0
+3443,Chesapeake / Pleasant Bay,0
+3452,Erbsville / Leighland,0
+3454,Erbsville / Columbia Forest,0
+3456,Erbsville / Leighland,0
+3458,Bingemans Centre Dr. / Bingemans,0
+3460,Shirley / Bingemans Centre Dr.,0
+3461,Mcgarry / Forestwood,0
+3463,Keats Way / Sandford Fleming,0
+3466,Highview / Golden Meadow,0
+3467,Highview / Havenwood,0
+3468,Highview / Highview Pl.,0
+3469,Driftwood / Westheights,0
+3472,Mcgarry / Meadowbrook,0
+3502,Fischer-Hallman / Path To Bush Clover,0
+3503,Fischer-Hallman / Max Becker,0
+3504,Fischer-Hallman / Rockwood,0
+3505,Fischer-Hallman / Bleams,0
+3506,1541 Fischer-Hallman Rd.,0
+3507,Oldfield / Brierdale,0
+3509,Eagle / Industrial,0
+3510,Eagle / Providence,0
+3522,Laurel / North,0
+3524,Fountain / Morningside,0
+3525,Fountain / Blair,0
+3526,Laurel / Westminster,0
+3531,Maple Grove / Saltsman,0
+3546,Sheldon / Thompson,0
+3547,180 Sheldon Dr.,0
+3552,Victoria / Highgate,0
+3553,Victoria / Bramblewood,0
+3555,Victoria / Westforest,0
+3556,Victoria / Westforest,0
+3560,Frederick / Victoria,0
+3561,Halifax / Confederation,0
+3571,Centennial / Victoria,0
+3572,75 Centennial Rd.,0
+3573,Forwell / Victoria,0
+3576,Weber / Eastwood Collegiate Institute,0
+3593,Bridge / Frobisher,0
+3595,New Bedford / Eastbridge,0
+3599,New Bedford / Chesapeake,0
+3622,Lexington / Dearborn Pl.,0
+3646,Boxwood / Maple Grove,0
+3647,Boxwood / Vondrau,0
+3648,Vondrau / Boxwood,0
+3667,Fischer-Hallman / Bleams,0
+3669,Fischer-Hallman / Cotton Grass,0
+3670,Fischer-Hallman / Path To Bush Clover,0
+3673,Bridge / Crimson,0
+3674,Dansbury / Eiwo,0
+3675,Dansbury / Lee,0
+3676,Dunvegan / Bairstow,0
+3691,Erbsville / Path To Erbsville Ct.,0
+3694,Keats Way / Leighland,0
+3695,Keats Way / Beckwith,0
+3700,Seabrook / Fischer-Hallman,0
+3704,Huron / Fischer-Hallman,0
+3705,Huron / Woodbine,0
+3715,Weber / Eastwood Collegiate Institute,0
+3724,820 Trillium Dr.,0
+3726,Fairway / Lackner,0
+3727,King / Martin Grove,0
+3728,King / Bridge,0
+3744,Wellington / Weber,0
+3746,Pioneer / Bechtel,0
+3747,Columbia / Marsland,0
+3757,Frobisher / Bridge,0
+3758,Frobisher / Superior,0
+3770,Lexington / Dearborn Pl.,0
+3771,Columbia / Marsland,0
+3772,Columbia / Weber,0
+3780,Chesapeake / Pleasant Bay,0
+3781,Chesapeake / Brigantine,0
+3782,Chesapeake / Sandy Cove,0
+3801,Conestoga College Blvd. / Pinnacle,0
+3802,Conestoga College Blvd. / Pinnacle,0
+3803,Conestoga College Blvd. / Conestoga Residence,0
+3804,Conestoga College Blvd. / Conestoga Residence,0
+3811,Arthur / Earl Martin,0
+3812,Arthur / South Field,0
+3813,Arthur / Oriole,0
+3815,Arthur / Park,0
+3823,First / Snyder,0
+3824,Arthur / Howard,0
+3826,Arthur / South Parkwood,0
+3828,Sawmill / Parkside,0
+3836,King / Lobsinger,0
+3841,King / Lobsinger,0
+3843,Huron / Templewood,0
+3847,610 King St. N.,0
+3848,600 King St. N.,0
+3858,Dunbar / Industrial,0
+3863,Cedar / Grand,0
+3865,Hagey / Frank Tompa,0
+3870,Hagey / Frank Tompa,0
+3922,Winston / Gunn,0
+3923,Winston / Path To Erindale,0
+3924,Winston / Handorf,0
+3926,Cooper / Hespeler Optimist Park,0
+3930,Jamieson / Townline,0
+3931,Jamieson / Lardner,0
+3932,Jamieson / Patton,0
+3937,Cherry Blossom / Barnes,0
+3940,Cherry Blossom / Saltsman,0
+3941,Fountain / Comdev Soccer Dome,0
+3942,Fountain / Marmel,0
+3953,Doon Mills / Woodsmere,0
+3954,Doon Village / Anvil,0
+3955,Doon Mills / Apple Ridge,0
+3956,Doon Mills / Pine Valley,0
+3957,Doon South / Forest Edge,0
+3958,Doon South / Winding Wood,0
+3959,Doon South / Windrush,0
+3960,330 Pinebush Rd.,0
+3961,Doon Village / Anvil,0
+3962,Doon Mills / Apple Ridge,0
+3963,Doon Mills / Pine Valley,0
+3964,Doon South / Forest Edge,0
+3965,Doon South / Winding Wood,0
+3966,Doon South / Windrush,0
+3967,Pinebush / Conestoga,0
+3970,Pinebush / Wayne,0
+3971,Pinebush / Balmoral,0
+3972,Pinebush / Fleming,0
+3973,Pinebush / Tyler,0
+3974,520 Thompson Dr.,0
+3975,Thompson / Lingard,0
+3976,Fleming / Thompson,0
+3977,Fleming / Sheldon,0
+3978,Sheldon / Thompson,0
+3979,Sheldon / Balmoral,0
+3981,180 Sheldon Dr.,0
+3983,Sheldon / Corydon,0
+3985,505 Conestoga Blvd.,0
+3986,Conestoga / Bishop,0
+3987,Thompson / Lingard,0
+3988,505 Thompson Dr.,0
+3990,Robert Ferrie / Blair Creek,0
+3993,Thomas Slee / Path To Cranbrook,0
+3994,Doon South / Thomas Slee,0
+3995,Robert Ferrie / Doon South,0
+3996,Robert Ferrie / Tilts Trail,0
+3999,Doon Mills / Woodsmere,0
+4011,Centennial / Forwell,0
+4012,Columbia / Erbsville,0
+4016,Bridge / Chesapeake (North),0
+4021,Columbia / Lucerne,0
+4022,Columbia / Zurich,0
+4028,Bridge / Path To Brigantine,0
+4029,Bridge / Path To Wissler,0
+4031,Bridge / Path To Auburn,0
+4035,Bridge / Eastbridge,0
+4036,Bridge / Chesapeake (South),0
+4037,Bridge / Chesapeake (South),0
+4038,Bridge / Chesapeake (North),0
+4039,King / Weber (St Jacobs),0
+4040,King / Weber (St Jacobs),0
+4064,Portsmouth / Westvale,0
+4065,Westvale / Cardiff,0
+4066,Westvale / Bridgewater,0
+4067,Westvale / Thorndale,0
+4068,Westvale / Thorndale,0
+4069,Westvale / Edenvalley,0
+4070,Westvale / Heather Hill,0
+4071,Erb / Beechwood,0
+4077,Fischer-Hallman / Path To Laurel Gate,0
+4080,Laurelwood / Brookmill,0
+4081,Laurelwood / Holly View,0
+4082,Laurelwood / Birchmount,0
+4084,Erbsville / Path To Wild Ginger,0
+4107,King / Fairway,0
+4111,Myers / Clover,0
+4112,Lisbon Pines / Myers (Temporary Stop),0
+4117,Maple Bush / Ferncliffe,0
+4118,Maple Bush / Chester,0
+4119,Elgin / Champlain,0
+4120,Elgin / South,0
+4121,Laurel / North,0
+4122,Christopher / Ballantyne,0
+4123,Christopher / Foster,0
+4125,Champlain  / Chalmers,0
+4126,Champlain / Elgin,0
+4127,Champlain / Franklin,0
+4128,Franklin / Morning Calm,0
+4129,Franklin / Dundas,0
+4130,Franklin / Main,0
+4132,Franklin / Main,0
+4133,Christopher / South,0
+4136,Elgin / Galt Ave.,0
+4137,Elgin / Winter,0
+4138,Elgin / Avenue,0
+4141,Elgin / Woodborough,0
+4142,Elgin / Acorn,0
+4143,Elgin / Bushnell,0
+4147,Bishop / Hespeler Rd.,0
+4153,Laurel / Westminster,0
+4154,Westminster / Margaret,0
+4157,Bishop / King,0
+4158,Hespeler Rd. / Dunbar,0
+4159,Myers / Monsignor Doyle Catholic Secondary School,0
+4160,Myers / Christopher,0
+4161,Langs / Hespeler Rd.,0
+4163,Mckay / South,0
+4168,Lisbon Pines / Madeira,0
+4169,Champlain / Dundas,0
+4170,Saginaw / St Benedict Catholic Secondary School,0
+4171,Saginaw / Cowan,0
+4172,Burnett / Saginaw,0
+4173,Burnett / Glenvalley,0
+4174,Burnett / Essex Point,0
+4175,Burnett / Country Club,0
+4182,Dunbar / International Village,0
+4187,Townline / Concession 1 Puslinch,0
+4189,Saginaw / Glenvalley,0
+4190,Saginaw / Granite Hill,0
+4191,680 Saginaw Pkwy.,0
+4192,Saginaw / Light,0
+4193,Ainslie / Elliott,0
+4194,Hespeler Rd. / Dunbar,0
+4196,Myers / Birkinshaw,0
+4197,Myers / Edgemere,0
+4198,Myers / Enfield,0
+4199,Myers / Christopher,0
+4200,Maple Bush / Dundas,0
+4201,Maple Bush / Critcher,0
+4202,Maple Bush / Nottinghill,0
+4203,Wesley / Faith,0
+4206,Myers / Ridgehill,0
+4207,Myers / Water,0
+4208,Dunbar / International Village,0
+4209,Mckay / Ballantyne,0
+4212,Can-Amera / Franklin,0
+4213,Water / Cambridge To Paris Trail,0
+4214,Water / Churchill Park,0
+4215,Water / Churchill Park,0
+4216,Water / Cambridge To Paris Trail,0
+4217,Ainslie / Birch,0
+4218,Ainslie / Elliott,0
+4220,Elgin / Monroe,0
+4221,Elgin / Hilltop,0
+4235,Country Club / Morel,0
+4300,Avenue / Gail (School Special Stop),0
+5002,Maple Grove / Fountain (East Side Temporary Stop),0
+5005,Samuelson / Moscrip (Temporary Stop),0
+5006,Westwood / Knell (Temporary Stop),0
+5009,Samuelson / Moscrip (Temporary Stop),0
+5012,Greenfield / Woodhaven (Temporary Stop),0
+5013,Greenfield / Franklin (Temporary Stop),0
+5014,Greenfield / Fifth (Temporary Stop),0
+5015,Melrose / Krug (Temporary Stop),0
+5016,Melrose / Krug (Temporary Stop),0
+5019,Fifth / Greenfield (Temporary Stop),0
+5020,Greenfield / Franklin (Temporary Stop),0
+5021,Greenfield / Woodhaven (Temporary Stop),0
+5022,Guelph / Woodward (Temporary Stop),0
+5032,Ottawa / Fischer-Hallman (Temporary Stop),0
+5042,Ottawa / Crosby (Temporary Stop),0
+5045,Ottawa / Strasburg (Temporary Stop),0
+5047,Spadina / Highland (Temporary Stop),0
+5048,Spadina / Highland (Temporary Stop),0
+5078,Weber / Frederick (Temporary Stop),0
+7002,Snyders / Forler,0
+7003,Snyders / Forler,0
+7004,Snyders / Brubacher,0
+7005,Snyders / Coachmans,0
+7007,Snyders / Foundry,0
+7008,Waterloo-Oxford District Secondary School,0
+7009,Waterloo St. / Christner,0
+7010,Waterloo St. / Christner,0
+7016,Waterloo St. / Wilmot Family Resource Centre,0
+7018,Waterloo St. / Huron,0
+7019,Waterloo St. / Huron,0
+7022,Peel / Boullee,0
+7023,Peel / Boullee,0
+7024,Peel / Bleams,0
+7025,Peel / Bleams,0
+7035,Waterloo St. / Victoria,0
+7037,Highland / Trussler,0
+7038,560 Snyders Rd. E.,0
+7039,560 Snyders Rd. E.,0
+7040,Highland / Trussler,0
+7041,Kitchener Gurdwara,0
+8012,Park Hill / Grand,0
+
+route_id,route_long_name,trip_headsign,arrival_time
+12,Westmount,Fairway Station,10:10:00
+19,Hazel,University of Waterloo Station,11:08:00
+202,iXpress University,The Boardwalk Station,10:25:00
+
+route_id,route_long_name,route_type
+1,Queen-River,3
+3,Ottawa South,3
+4,Glasgow-Margaret,3
+5,Erb,3
+6,Bridge-Courtland,3
+7,King,3
+8,Weber,3
+9,Lakeshore,3
+10,Pioneer,3
+12,Westmount,3
+13,Laurelwood,3
+14,Bathurst,3
+16,Strasburg-Belmont,3
+19,Hazel,3
+20,Victoria-Frederick,3
+21,Elmira,3
+22,Laurentian West,3
+23,Idlewood,3
+26,Trillium,3
+27,Morrison,3
+28,Franklin North,3
+29,Keats-University,3
+30,Ring Road,3
+31,Columbia,3
+33,Huron,3
+34,Bingemans,3
+35,Greenbrook,3
+36,Thomas Slee,3
+50,Dundas-Myers,3
+51,Hespeler,3
+53,Franklin,3
+55,Grand Ridge,3
+56,Langs,3
+57,Blair,3
+58,Elgin North,3
+60,Burnett,3
+61,Fountain,3
+63,Champlain,3
+65,Saginaw,3
+67,Eagle-Pinebush,3
+72,Boxwood Flex,3
+76,Doon Mills,3
+77,Wilmot,3
+110,College Express,3
+201,iXpress Fischer-Hallman,3
+202,iXpress University,3
+203,iXpress Maple Grove,3
+204,iXpress Highland-Victoria,3
+205,iXpress Ottawa,3
+206,iXpress Coronation,3
+302,ION bus,3
+9801,GCI Special,3
+9851,GCI Special,3
+9952,GCI - AST Special,3
+
+route_id,stop_id,stop_name,arrival_time,stop_sequence
+12,3909,Westmount / Highland,11:56:00,30
+12,3910,Westmount / Victoria,11:58:00,31
+12,3911,Westmount / Brybeck,11:59:00,32
+12,3912,Westmount / Westwood,12:00:00,33
+12,3913,Westmount / Glasgow,12:01:00,34
+12,3914,Westmount / Union,12:02:00,35
+12,2772,Westmount / John,12:03:00,36
+12,2773,Westmount / William,12:03:00,37
+
+stop_id,stop_name,stop_sequence
+3799,Conestoga Station,1
+4042,Northfield / Davenport,2
+3761,Northfield / Bridge,3
+3762,Northfield / Northfield Transit Garage,4
+3763,University Ave. / Northfield Technology Park,5
+3765,University Ave. / R.I.M. Park,6
+3766,University Ave. / New Bedford,7
+1931,University Ave. / Lexington,8
+4046,University Ave. / Auburn,9
+3671,University Ave. / Pastern,10
+4054,University Ave. / Bridge,11
+4049,University Ave. / Dale,12
+2832,University Ave. / Conestoga College - Waterloo,13
+2670,University Ave. / Weber,14
+1166,University Ave. / King,15
+3619,University Ave. / Wilfrid Laurier University,16
+2675,University Ave. / Phillip,17
+2676,University Ave. / University Of Waterloo,18
+2679,Westmount / Westcourt,19
+1966,Erb / Westmount,20
+1969,Erb / Amos,21
+4056,Erb / Fischer-Hallman,22
+3687,Erb / Erbsville Ct.,23
+3906,Ira Needles / Erb,24
+3904,Ira Needles / Thorndale,25
+4001,The Boardwalk Station,26
