@@ -8,7 +8,8 @@ export default function LookupSchedule() {
 
     const handleScheduleSearch = async (e) => {
         e.preventDefault();
-        console.log("searching schedules...");
+        const res = await fetch("http://localhost:5290/3",{method:"GET"})
+        console.log(res.json());
     }
     return (
         <StyledLookupSchedule className="container">
@@ -23,3 +24,4 @@ export default function LookupSchedule() {
         </StyledLookupSchedule>
     );
 }
+

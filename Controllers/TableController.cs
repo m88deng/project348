@@ -42,14 +42,14 @@ namespace testAPI.Controllers
         {
             using var conn = GetConnectionString();
 
-//            SELECT DISTINCT r.route_id, r.route_long_name
-//            FROM Routes r
-//JOIN Trips t ON r.route_id = t.route_id
-//JOIN CalendarDates cd ON t.service_id = cd.service_id
-//WHERE cd.service_date = '20240701'
-//AND cd.exception_type = 1;
+            //SELECT DISTINCT r.route_id, r.route_long_name
+            //FROM Routes r
+            //JOIN Trips t ON r.route_id = t.route_id
+            //JOIN CalendarDates cd ON t.service_id = cd.service_id
+            //WHERE cd.service_date = '20240701'
+            //AND cd.exception_type = 1;
 
-            var command = "SELECT DISTINCT r.route_id, r.route_long_name FROM Routes r JOIN Trips t ON r.route_id = t.route_id JOIN CalendarDates cd ON t.service_id = cd.service_id WHERE cd.service_date = '" + date +"' AND cd.exception_type = 1;";
+            var command = "SELECT DISTINCT r.route_id, r.route_long_name FROM Routes r JOIN Trips t ON r.route_id = t.route_id JOIN CalendarDates cd ON t.service_id = cd.service_id WHERE cd.service_date = '" + date + "' AND cd.exception_type = 1;";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -60,7 +60,7 @@ namespace testAPI.Controllers
         }
 
         //Functionality 3
-        [HttpGet]
+        [HttpGet("/3/")]
         public IActionResult Get3()
         {
             using var conn = GetConnectionString();
@@ -68,7 +68,6 @@ namespace testAPI.Controllers
             //SELECT stop_id, stop_name, location_type
             //FROM Stops
             //WHERE wheelchair_boarding = 2
-
 
             var command = "SELECT stop_id, stop_name, location_type FROM Stops WHERE wheelchair_boarding = 2;";
 
