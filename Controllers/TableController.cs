@@ -193,16 +193,23 @@ namespace testAPI.Controllers
         {
             using var conn = GetConnectionString();
 
-//            SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence
-//            FROM Routes r
-//JOIN Trips t ON r.route_id = t.route_id
-//JOIN StopTimes st ON t.trip_id = st.trip_id
-//JOIN Stops s ON st.stop_id = s.stop_id
-//WHERE r.route_id = '202'
-//AND t.trip_headsign = 'The Boardwalk Station'
-//ORDER BY st.stop_sequence;
+// WITH oneTrip AS (
+// SELECT TOP 1 t.trip_id
+// 	FROM Routes r
+// JOIN Trips t ON r.route_id = t.route_id
+// WHERE r.route_id = ‘202’
+// 	AND t.trip_headsign = ‘The Boardwalk Station’
+// )
+// SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence
+// FROM StopTimes st
+// JOIN oneTrip ot ON ot.trip_id = st.trip_id
+// JOIN Stops s ON st.stop_id = s.stop_id
+// ORDER BY st.stop_sequence;
 
-            var command = "SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence FROM Routes r JOIN Trips t ON r.route_id = t.route_id JOIN StopTimes st ON t.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id WHERE r.route_id = '"+id+"' AND t.trip_headsign = '"+head+"' ORDER BY st.stop_sequence;";
+
+
+            var command = "WITH oneTrip AS (SELECT TOP 1 t.trip_id FROM Routes r JOIN Trips t ON r.route_id = t.route_id WHERE r.route_id = '"+id+"' AND t.trip_headsign = '"+head+"') SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence FROM StopTimes st JOIN oneTrip ot ON ot.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id ORDER BY st.stop_sequence;";
+            // var command = "SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence FROM Routes r JOIN Trips t ON r.route_id = t.route_id JOIN StopTimes st ON t.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id WHERE r.route_id = '"+id+"' AND t.trip_headsign = '"+head+"' ORDER BY st.stop_sequence;";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -241,6 +248,8 @@ namespace testAPI.Controllers
         protected SqlConnection GetConnectionString()
         {
             //setup connection to the database
+
+            //Percy connection string
             var conn = new SqlConnection(
             new SqlConnectionStringBuilder()
             {
@@ -252,7 +261,22 @@ namespace testAPI.Controllers
                 TrustServerCertificate = true
             }.ConnectionString
             );
-            return conn;
+            return conn;   
+            
+            //Melissa connection string
+            // var conn = new SqlConnection(
+            // new SqlConnectionStringBuilder()
+            // {
+            //     DataSource = "localhost",
+            //     InitialCatalog = "master",
+            //     UserID = "sa",
+            //     Password = "dockerStrongPwd123",
+            //     Encrypt = true,
+            //     TrustServerCertificate = true
+            // }.ConnectionString
+            // );
+            // return conn;
+
         }
     }
 }

@@ -6,15 +6,26 @@ export default function LookupSchedule() {
     const [direction, setDirection] = useState('');
     const [wheelchair, setWheelchair] = useState(false);
 
-    const url = `http://localhost:5290/3`;
+    const url = `http://localhost:5290/7/${route}/${direction}`;
 
     const handleScheduleSearch = async (e) => {
         e.preventDefault();
         console.log("Route " + route);
         console.log("direction " + direction);
         console.log("wheelchair " + wheelchair);
-        const res = await fetch(url, { method: "GET" })
-        console.log(res.json());
+
+        try {
+            const res = await fetch(url, { method: "GET" });
+
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log("Fetched data:", data);
+        } catch (error) {
+            console.error("Error fetching data: ", error);
+        }
     }
     return (
         <StyledLookupSchedule className="container">
