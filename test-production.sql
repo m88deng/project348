@@ -153,24 +153,17 @@ WHERE
 ORDER BY
     stop_sequence;
 
-WITH
-    oneTrip AS (
-        SELECT
-            TOP 1 t.trip_id
-        FROM
-            Routes r
-            JOIN Trips t ON r.route_id = t.route_id
-        WHERE
-            r.route_id = '202'
-            AND t.trip_headsign = 'The Boardwalk Station'
-    )
 SELECT DISTINCT
     s.stop_id,
     s.stop_name,
     st.stop_sequence
 FROM
-    StopTimes st
-    JOIN oneTrip ot ON ot.trip_id = st.trip_id
+    Routes r
+    JOIN Trips t ON r.route_id = t.route_id
+    JOIN StopTimes st ON t.trip_id = st.trip_id
     JOIN Stops s ON st.stop_id = s.stop_id
+WHERE
+    r.route_id = '202'
+    AND t.trip_headsign = 'The Boardwalk Station'
 ORDER BY
     st.stop_sequence;

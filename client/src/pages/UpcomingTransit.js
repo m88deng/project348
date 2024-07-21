@@ -10,7 +10,7 @@ export default function UpcomingTransit() {
 
     return (
         <StyledUpcomingTransit className="container">
-            <form id="upcomingForm">
+            <form>
                 <div><label>Current Stop</label></div>
                 <div><input type="text" value={stop} onChange={(e) => setStop(e.target.value)} required /></div>
                 <div><button type="submit" onClick={handleUpcomingTransitSearch}>Search</button></div>
