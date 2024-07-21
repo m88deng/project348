@@ -8,7 +8,11 @@ export default function LookupSchedule() {
 
     const handleScheduleSearch = async (e) => {
         e.preventDefault();
-        const res = await fetch("http://localhost:5290/3",{method:"GET"})
+        console.log("Route " + route);
+        console.log("direction " + Direction);
+        console.log("wheelchair " + wheelchair);
+        const res = await fetch("http://localhost:5290/3", { method: "GET" })
+        console.log("fetched data");
         console.log(res.json());
     }
     return (
