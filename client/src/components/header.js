@@ -42,6 +42,15 @@ export default function Header() {
                             Upcoming Transit
                         </Link>
                     </div>
+                    <div className="col">
+                        <Link
+                            to="/my-account"
+                            className={location.pathname === '/my-account' ? 'active' : ''}
+                            onClick={() => handleLinkClick('/my-account')}
+                        >
+                            My Account
+                        </Link>
+                    </div>
                 </div>
             </nav>
         </div>
