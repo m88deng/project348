@@ -238,6 +238,23 @@ namespace testAPI.Controllers
             return Ok(ConvertDataTableToJson(dataTable));
         }
 
+         //Functionality 9
+        [HttpGet("/9/{name}")]
+        public IActionResult Get9(string name)
+        {
+            using var conn = GetConnectionString();
+
+            // SELECT stop_id FROM Stops WHERE stop_name = 'Westmount / Erb';
+            var command = "SELECT stop_id FROM Stops WHERE stop_name = '"+name.Replace("%2F", "/")+"';";
+
+            conn.Open();
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command, conn);
+            dataAdapter.Fill(dataTable);
+
+            return Ok(ConvertDataTableToJson(dataTable));
+        }
+
         //      For early testing
         //[HttpGet("{query}")]
         //public IActionResult GetByQuery(string query)
@@ -269,32 +286,32 @@ namespace testAPI.Controllers
             //setup connection to the database
 
             //Percy connection string
-            // var conn = new SqlConnection(
-            // new SqlConnectionStringBuilder()
-            // {
-            //     DataSource = "MIKU39",
-            //     InitialCatalog = "cs348",
-            //     UserID = "root",
-            //     Password = "123456",
-            //     Encrypt = true,
-            //     TrustServerCertificate = true
-            // }.ConnectionString
-            // );
-            // return conn;   
-            
-            // Melissa connection string
             var conn = new SqlConnection(
             new SqlConnectionStringBuilder()
             {
-                DataSource = "localhost",
-                InitialCatalog = "master",
-                UserID = "sa",
-                Password = "dockerStrongPwd123",
+                DataSource = "MIKU39",
+                InitialCatalog = "cs348",
+                UserID = "root",
+                Password = "123456",
                 Encrypt = true,
                 TrustServerCertificate = true
             }.ConnectionString
             );
-            return conn;
+            return conn;   
+            
+            // Melissa connection string
+            // var conn = new SqlConnection(
+            // new SqlConnectionStringBuilder()
+            // {
+            //     DataSource = "localhost",
+            //     InitialCatalog = "master",
+            //     UserID = "sa",
+            //     Password = "dockerStrongPwd123",
+            //     Encrypt = true,
+            //     TrustServerCertificate = true
+            // }.ConnectionString
+            // );
+            // return conn;
 
         }
     }
