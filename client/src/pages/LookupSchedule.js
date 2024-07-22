@@ -27,6 +27,22 @@ export default function LookupSchedule() {
             console.error("Error fetching data: ", error);
         }
     }
+
+    const handleWheelchairStopSearch = async (e) => {
+        url = 'http://localhost:5290/3';
+        try {
+            const res = await fetch(url, { method: "GET" });
+
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log("Fetched data:", data);
+        } catch (error) {
+            console.error("Error fetching data: ", error);
+        }
+    }
     return (
         <StyledLookupSchedule className="container">
             <form>
@@ -45,6 +61,8 @@ export default function LookupSchedule() {
 
                 <div><button type="submit" onClick={handleScheduleSearch}>Search</button></div>
             </form>
+            <div>More information</div>
+            <button type="button" onClick={handleWheelchairStopSearch}>Find all stops with wheelchair boarding available</button>
         </StyledLookupSchedule>
     );
 }
