@@ -1,23 +1,90 @@
 import { useState } from "react";
+import {
+    Container, 
+    FormControl, 
+    FormGroup, 
+    Label, 
+    ModeLabel, 
+    ModeOptions, 
+    PlanTripForm, 
+    RadioButton, 
+    SearchButton
+} from "../styles/PlanTrip.styled";
 
 export default function PlanTrip() {
     const [leavingDay, setLeavingDay] = useState('');
     const [fromPoint, setFromPoint] = useState('');
     const [toPoint, setToPoint] = useState('');
+    const [mode, setMode] = useState('bus');
 
     const handleRouteSearch = async (e) => {
         e.preventDefault();
-        console.log("searching routes...");
-    }
+        //console.log("searching routes...");
+    };
+
     return (
-        <form className="container py-3">
-            <div className="py-2"><label>Leaving Day</label></div>
-            <div className="pb-3"><input type="date" value={leavingDay} onChange={(e) => setLeavingDay(e.target.value)} /></div>
-            <div className="py-2"><label>From</label></div>
-            <div><input type="text" value={fromPoint} placeholder="station/stop" onChange={(e) => setFromPoint(e.target.value)} required /></div>
-            <div className="py-2"><label>To</label></div>
-            <div className="pb-3"><input type="text" value={toPoint} placeholder="station/stop" onChange={(e) => setToPoint(e.target.value)} required /></div>
-            <div><button type="submit" onClick={handleRouteSearch}>Search</button></div>
-        </form>
+        <Container>
+            <PlanTripForm onSubmit={handleRouteSearch}>
+                <FormGroup>
+                    <Label htmlFor="leave-time">LEAVE TIME</Label>
+                    <FormControl
+                        type="date"
+                        id="leave-time"
+                        value={leavingDay}
+                        onChange={(e) => setLeavingDay(e.target.value)}
+                        placeholder="YY / MM / DD"
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="from-point">FROM</Label>
+                    <FormControl
+                        type="text"
+                        id="from-point"
+                        value={fromPoint}
+                        onChange={(e) => setFromPoint(e.target.value)}
+                        placeholder="Stop / Station"
+                        required
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="to-point">TO</Label>
+                    <FormControl
+                        type="text"
+                        id="to-point"
+                        value={toPoint}
+                        onChange={(e) => setToPoint(e.target.value)}
+                        placeholder="Stop / Station"
+                        required
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <ModeOptions>
+                        <ModeLabel>
+                            <RadioButton
+                                type="radio"
+                                name="mode"
+                                value="bus"
+                                checked={mode === 'bus'}
+                                onChange={(e) => setMode(e.target.value)}
+                            />
+                            Bus
+                        </ModeLabel>
+                        <ModeLabel>
+                            <RadioButton
+                                type="radio"
+                                name="mode"
+                                value="train"
+                                checked={mode === 'train'}
+                                onChange={(e) => setMode(e.target.value)}
+                            />
+                            ION train
+                        </ModeLabel>
+                    </ModeOptions>
+                </FormGroup>
+                <FormGroup>
+                    <SearchButton type="submit">Search</SearchButton>
+                </FormGroup>
+            </PlanTripForm>
+        </Container>
     );
 }
