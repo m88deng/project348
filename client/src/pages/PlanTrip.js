@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     Container,
     FormControl,
@@ -10,6 +10,7 @@ import {
     RadioButton,
     SearchButton
 } from "../styles/PlanTrip.styled";
+import Select from 'react-select';
 
 export default function PlanTrip() {
     const [leavingDay, setLeavingDay] = useState('');
@@ -64,7 +65,6 @@ export default function PlanTrip() {
 
     const handleIdSearch = async () => {
 
-
         const startURL = `http://localhost:5290/9/${encodeSlash(fromPoint)}`;
         const endURL = `http://localhost:5290/9/${encodeSlash(toPoint)}`;
 
@@ -94,7 +94,6 @@ export default function PlanTrip() {
         }
         return { startData, endData };
     };
-    const [mode, setMode] = useState('bus');
 
     const handleRouteSearch = async (e) => {
         e.preventDefault();
@@ -158,59 +157,37 @@ export default function PlanTrip() {
                     <FormControl
                         type="date"
                         id="leave-time"
-                        value={leavingDay}
-                        onChange={(e) => setLeavingDay(e.target.value)}
+                        value={leavingDay.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
+                        onChange={handleDateChange}
                         placeholder="YY / MM / DD"
                     />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="from-point">FROM</Label>
-                    <FormControl
+                    {/* <FormControl
                         type="text"
                         id="from-point"
                         value={fromPoint}
                         onChange={(e) => setFromPoint(e.target.value)}
                         placeholder="Stop / Station"
                         required
-                    />
+                    /> */}
+                    <Select options={stopNames} placeholder={"From Station/Stop"} onChange={handleFromPointChange} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="to-point">TO</Label>
-                    <FormControl
+                    {/* <FormControl
                         type="text"
                         id="to-point"
                         value={toPoint}
                         onChange={(e) => setToPoint(e.target.value)}
                         placeholder="Stop / Station"
                         required
-                    />
+                    /> */}
+                    <Select options={stopNames} placeholder={"To Station/Stop"} onChange={handleToPointChange} />
                 </FormGroup>
                 <FormGroup>
-                    <ModeOptions>
-                        <ModeLabel>
-                            <RadioButton
-                                type="radio"
-                                name="mode"
-                                value="bus"
-                                checked={mode === 'bus'}
-                                onChange={(e) => setMode(e.target.value)}
-                            />
-                            Bus
-                        </ModeLabel>
-                        <ModeLabel>
-                            <RadioButton
-                                type="radio"
-                                name="mode"
-                                value="train"
-                                checked={mode === 'train'}
-                                onChange={(e) => setMode(e.target.value)}
-                            />
-                            ION train
-                        </ModeLabel>
-                    </ModeOptions>
-                </FormGroup>
-                <FormGroup>
-                    <SearchButton type="submit">Search</SearchButton>
+                    <SearchButton type="submit" onClick={handleRouteSearch}>Search</SearchButton>
                 </FormGroup>
             </PlanTripForm>
         </Container>

@@ -22,6 +22,7 @@ export default function LookupSchedule() {
     const [headsignNames, setHeadsignNames] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchRoutes = async () => {
@@ -71,7 +72,7 @@ export default function LookupSchedule() {
 
         };
 
-        if (route != '') { fetchHeadsign(); }
+        if (route !== '') { fetchHeadsign(); }
         else {
             console.log("no route");
         }
@@ -93,17 +94,17 @@ export default function LookupSchedule() {
     const handleScheduleSearch = async (e) => {
         e.preventDefault();
         // For the sake of example, we'll use a static list of stops
-        const stops = ["Stop 1", "Stop 2", "Stop 3", "Stop 4"];
+        // const stops = ["Stop 1", "Stop 2", "Stop 3", "Stop 4"];
 
-        const today = new Date().toISOString().slice(0, 10);
-        navigate("/route-stops", {
-            state: {
-                date: today,
-                route,
-                direction,
-                stops
-            }
-        });
+        // const today = new Date().toISOString().slice(0, 10);
+        // navigate("/route-stops", {
+        //     state: {
+        //         date: today,
+        //         route,
+        //         direction,
+        //         stops
+        //     }
+        // });
         if (wheelchair) {
             url = `http://localhost:5290/8/${route}/${direction}`;
         }
@@ -122,21 +123,21 @@ export default function LookupSchedule() {
         }
     }
 
-    const handleWheelchairStopSearch = async (e) => {
-        url = 'http://localhost:5290/3';
-        try {
-            const res = await fetch(url, { method: "GET" });
+    // const handleWheelchairStopSearch = async (e) => {
+    //     url = 'http://localhost:5290/3';
+    //     try {
+    //         const res = await fetch(url, { method: "GET" });
 
-            if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
-            }
+    //         if (!res.ok) {
+    //             throw new Error(`HTTP error! status: ${res.status}`);
+    //         }
 
-            const data = await res.json();
-            console.log("Fetched data:", data);
-        } catch (error) {
-            console.error("Error fetching data: ", error);
-        }
-    }
+    //         const data = await res.json();
+    //         console.log("Fetched data:", data);
+    //     } catch (error) {
+    //         console.error("Error fetching data: ", error);
+    //     }
+    // }
 
     return (
         <div>
@@ -144,22 +145,24 @@ export default function LookupSchedule() {
                 <LookupScheduleForm onSubmit={handleScheduleSearch}>
                     <FormGroup>
                         <Label htmlFor="route">Route</Label>
-                        <FormControl
+                        {/* <FormControl
                             type="text"
                             id="route"
                             value={route}
                             onChange={(e) => setRoute(e.target.value)}
                             required
-                        />
+                        /> */}
+                        <Select options={routeNames} placeholder={"Select"} onChange={handleRouteChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="direction">Direction</Label>
-                        <FormControl
+                        {/* <FormControl
                             type="text"
                             id="direction"
                             value={direction}
                             onChange={(e) => setDirection(e.target.value)}
-                        />
+                        /> */}
+                        <Select options={headsignNames} placeholder={"Select"} onChange={handleHeadsignChange} />
                     </FormGroup>
                     <FormGroup>
                         <CheckboxLabel>
@@ -172,7 +175,7 @@ export default function LookupSchedule() {
                         </CheckboxLabel>
                     </FormGroup>
                     <FormGroup>
-                        <SearchButton type="submit">Lookup</SearchButton>
+                        <SearchButton type="submit" onClick={handleScheduleSearch} >Lookup</SearchButton>
                     </FormGroup>
                 </LookupScheduleForm>
             </Container>
