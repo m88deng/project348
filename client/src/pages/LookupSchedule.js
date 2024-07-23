@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
     Container,
@@ -10,12 +10,83 @@ import {
     Checkbox,
     SearchButton
 } from "../styles/LookupSchedule.styled";
+import Select from 'react-select';
+
 
 export default function LookupSchedule() {
     const [route, setRoute] = useState('');
     const [direction, setDirection] = useState('');
-    const [wheelchair, setWheelchair] = useState(false);
-    const navigate = useNavigate();
+    const [wheelchair, setWheelchair] = useState(0);
+
+    const [routeNames, setRouteNames] = useState([]);
+    const [headsignNames, setHeadsignNames] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchRoutes = async () => {
+            try {
+                const response = await fetch('http://localhost:5290/10');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+
+                const formattedData = data.map(route => ({
+                    label: `${route.route_id} ${route.route_long_name}`,
+                    value: route.route_id
+                }));
+
+                setRouteNames(formattedData);
+                setLoading(false);
+            } catch (error) {
+                setError(error);
+                setLoading(false);
+            }
+        };
+
+        fetchRoutes();
+    }, []);
+
+    useEffect(() => {
+        const fetchHeadsign = async () => {
+            try {
+                const response = await fetch(`http://localhost:5290/2/${route}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+
+                const formattedData = data.map(route => ({
+                    label: route.trip_headsign,
+                    value: route.trip_headsign
+                }));
+
+                setHeadsignNames(formattedData);
+                setLoading(false);
+            } catch (error) {
+                setError(error);
+                setLoading(false);
+            }
+
+        };
+
+        if (route != '') { fetchHeadsign(); }
+        else {
+            console.log("no route");
+        }
+    }, [route]);
+    if (loading) return "Loading";
+    if (error) return <pre>{error.message}</pre>;
+
+
+    const handleRouteChange = selectedOption => {
+        setRoute(selectedOption ? selectedOption.value : '');
+    };
+
+    const handleHeadsignChange = selectedOption => {
+        setDirection(selectedOption ? selectedOption.value : '');
+    };
 
 
     var url = `http://localhost:5290/7/${route}/${direction}`;
