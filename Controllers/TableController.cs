@@ -151,8 +151,8 @@ namespace testAPI.Controllers
         }
 
         //Functionality 5
-        [HttpGet("/5/{start:int}/{end:int}/{date}/{time}")]
-        public IActionResult Get5(int start, int end, string date, string time)
+        [HttpGet("/5/{start}/{end}/{date}/{time}")]
+        public IActionResult Get5(string start, string end, string date, string time)
         {
             using var conn = GetConnection();
 
@@ -268,8 +268,8 @@ namespace testAPI.Controllers
         }
 
         //Functionality 6
-        [HttpGet("/6/{start:int}/{end:int}/{date}/{time}")]
-        public IActionResult Get6(int start, int end, string date, string time)
+        [HttpGet("/6/{start}/{end}/{date}/{time}")]
+        public IActionResult Get6(string start, string end, string date, string time)
         {
             using var conn = GetConnection();
 
@@ -322,10 +322,11 @@ namespace testAPI.Controllers
             //  SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence, s.location_type, s.wheelchair_boarding
             //  FROM StopTimes st
             //  JOIN oneTrip ot ON ot.trip_id = st.trip_id
-            //  JOIN Stops s ON st.stop_id = s.stop_id;
+            //  JOIN Stops s ON st.stop_id = s.stop_id
+            //  ORDER BY stop_sequence;
 
 
-            var command = "WITH oneTrip AS ( SELECT TOP 1 t.trip_id FROM Routes r  JOIN Trips t ON r.route_id = t.route_id  WHERE r.route_id = '" + id + "' AND t.trip_headsign = '" + head + "' )  SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence, s.location_type, s.wheelchair_boarding  FROM StopTimes st  JOIN oneTrip ot ON ot.trip_id = st.trip_id  JOIN Stops s ON st.stop_id = s.stop_id;";
+            var command = "WITH oneTrip AS ( SELECT TOP 1 t.trip_id FROM Routes r  JOIN Trips t ON r.route_id = t.route_id  WHERE r.route_id = '"+id+"' AND t.trip_headsign = '"+head.Replace("%2F", "/")+"' )  SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence, s.location_type, s.wheelchair_boarding  FROM StopTimes st  JOIN oneTrip ot ON ot.trip_id = st.trip_id  JOIN Stops s ON st.stop_id = s.stop_id ORDER BY stop_sequence;";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -358,7 +359,7 @@ namespace testAPI.Controllers
             // WHERE wheelchair_boarding = 2
             // ORDER BY stop_sequence;
 
-            var command = "WITH oneTrip AS ( SELECT TOP 1 t.trip_id FROM Routes r  JOIN Trips t ON r.route_id = t.route_id  WHERE r.route_id = '" + id + "' AND t.trip_headsign = '" + head + "' ), routeStops AS (  SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence, s.location_type, s.wheelchair_boarding  FROM StopTimes st  JOIN oneTrip ot ON ot.trip_id = st.trip_id  JOIN Stops s ON st.stop_id = s.stop_id ) SELECT stop_id, stop_name, stop_sequence, location_type, wheelchair_boarding FROM routeStops  WHERE wheelchair_boarding = 2 ORDER BY stop_sequence;";
+            var command = "WITH oneTrip AS ( SELECT TOP 1 t.trip_id FROM Routes r  JOIN Trips t ON r.route_id = t.route_id  WHERE r.route_id = '"+id+"' AND t.trip_headsign = '"+head.Replace("%2F", "/")+"' ), routeStops AS (  SELECT DISTINCT s.stop_id, s.stop_name, st.stop_sequence, s.location_type, s.wheelchair_boarding  FROM StopTimes st  JOIN oneTrip ot ON ot.trip_id = st.trip_id  JOIN Stops s ON st.stop_id = s.stop_id ) SELECT stop_id, stop_name, stop_sequence, location_type, wheelchair_boarding FROM routeStops  WHERE wheelchair_boarding = 2 ORDER BY stop_sequence;";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -395,6 +396,38 @@ namespace testAPI.Controllers
             //FROM Routes r;
 
             var command = "SELECT r.route_id, r.route_long_name FROM Routes r;";
+
+            conn.Open();
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command, conn);
+            dataAdapter.Fill(dataTable);
+
+            return Ok(ConvertDataTableToJson(dataTable));
+        }
+
+    //Functionality 11
+        [HttpGet("/11/{stop_id}/{route_id:int}/{head}/{date}")]
+        public IActionResult GetSchedule(string stop_id, int route_id, string head, string date)
+        {
+            using var conn = GetConnection();
+
+            // WITH TempTrips AS(
+            // SELECT DISTINCT route_id, t.service_id, trip_id, trip_headsign
+            // FROM Trips t
+            // JOIN CalendarDates cd ON cd.service_id = t.service_id
+            // WHERE cd.service_date = 20240722 AND cd.exception_type = 1 AND t.route_id = 12 AND t.trip_headsign = 'Fairway Station'
+            // ), RouteTrips AS(
+            // SELECT DISTINCT tt.route_id, tt.trip_headsign, st.arrival_time
+            // FROM StopTimes st
+            // JOIN TempTrips tt ON tt.trip_id = st.trip_id
+            // WHERE st.stop_id = '2675'
+            // )
+            // SELECT arrival_time
+            // FROM RouteTrips
+            // WHERE arrival_time > CONVERT(TIME, '03:00:00')
+            // ORDER BY arrival_time;
+
+            var command = "WITH TempTrips AS( SELECT DISTINCT route_id, t.service_id, trip_id, trip_headsign FROM Trips t JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = "+date+" AND cd.exception_type = 1 AND t.route_id = "+route_id+" AND t.trip_headsign = '"+head.Replace("%2F", "/")+"' ), RouteTrips AS( SELECT DISTINCT tt.route_id, tt.trip_headsign, st.arrival_time FROM StopTimes st JOIN TempTrips tt ON tt.trip_id = st.trip_id WHERE st.stop_id = '"+stop_id+"' ) SELECT arrival_time FROM RouteTrips WHERE arrival_time > CONVERT(TIME, '03:00:00') ORDER BY arrival_time;";
 
             conn.Open();
             DataTable dataTable = new DataTable();

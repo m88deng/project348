@@ -9,6 +9,7 @@ export default function UpcomingTransit() {
     const [stopNames, setStopNames] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [transitResults, setTransitResults] = useState([]);
 
     useEffect(() => {
         const fetchNames = async () => {
@@ -66,8 +67,14 @@ export default function UpcomingTransit() {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
 
-            const data = await res.json();
-            console.log("Fetched data:", data);
+            const resText = await res.text();
+            if (resText) {
+                const data = JSON.parse(resText);
+                console.log("Fetched data:", data);
+                setTransitResults(data);
+            } else {
+                console.log("No data found. The response is empty.");
+            }
         } catch (error) {
             console.error("Error fetching data: ", error);
         }
@@ -75,12 +82,18 @@ export default function UpcomingTransit() {
 
     return (
         <StyledUpcomingTransit className="container">
-
             <form>
                 <div><label>Current Stop</label></div>
                 <Select options={stopNames} placeholder={"Select a Stop"} onChange={handleChange} />
                 <div><button type="submit" onClick={handleUpcomingTransitSearch}>Search</button></div>
             </form>
+            <section className="container">
+                {transitResults.map((t) => (
+                    <div key={t.route_id} className="row">
+                        <div className="py-2" >{`${t.route_id} ${t.route_long_name} - ${t.trip_headsign} ${t.arrival_time}`}</div>
+                    </div>
+                ))}
+            </section>
         </StyledUpcomingTransit>
     );
 }
