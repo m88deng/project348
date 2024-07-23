@@ -155,15 +155,15 @@ namespace testAPI.Controllers
         public IActionResult Get5(string start, string end, string date, string time)
         {
             using var conn = GetConnection();
-
+ 
             // WITH FirstTrip AS (
             //     SELECT TOP 1 t.trip_id
             //     FROM Trips t
             //     JOIN StopTimes st ON st.trip_id = t.trip_id
             //     JOIN CalendarDates cd ON cd.service_id = t.service_id
-            //     WHERE cd.service_date = '20240701'
-            //       AND st.stop_id = 3899
-            //       AND st.arrival_time > '11:42:00'
+            //     WHERE cd.service_date = '20240711'
+            //         AND st.stop_id = 3910
+            //         AND st.arrival_time > '09:01:00'
             //     ORDER BY st.arrival_time
             // ), TmpSecondTrip AS (
             //     SELECT TOP 1 t.trip_id
@@ -171,19 +171,21 @@ namespace testAPI.Controllers
             //     JOIN StopTimes st ON st.trip_id = t.trip_id
             //     JOIN CalendarDates cd ON cd.service_id = t.service_id
             //     WHERE cd.service_date = '20240701'
-            //       AND st.stop_id = 2670
-            //       AND st.arrival_time > '11:42:00'
+            //         AND st.stop_id = 2675
+            //         AND st.arrival_time > '11:42:00'
             //     ORDER BY st.arrival_time
             // ), FirstStopInfo AS (
-            //     SELECT st.stop_sequence, st.arrival_time
+            //     SELECT TOP 1 st.stop_sequence, st.arrival_time
             //     FROM StopTimes st
             //     JOIN Trips t ON t.trip_id = st.trip_id
-            //     WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND st.stop_id = 3899
+            //     WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND st.stop_id = 3910
+            //     ORDER BY arrival_time
             // ), SecondStopSequence AS (
-            //     SELECT st.stop_sequence
+            //     SELECT TOP 1 st.stop_sequence
             //     FROM StopTimes st
             //     JOIN Trips t ON t.trip_id = st.trip_id
-            //     WHERE t.trip_id IN(SELECT trip_id FROM TmpSecondTrip) AND st.stop_id = 2670
+            //     WHERE t.trip_id IN(SELECT trip_id FROM TmpSecondTrip) AND st.stop_id = 2675
+            //     ORDER by arrival_time
             // ), Intersection AS (
             //     SELECT DISTINCT s.stop_name
             //     FROM StopTimes st
@@ -206,7 +208,8 @@ namespace testAPI.Controllers
             //     FROM StopTimes st 
             //     JOIN Stops s ON s.stop_id = st.stop_id
             //     WHERE st.trip_id IN (SELECT trip_id FROM TmpSecondTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection)
-            // ), SpecialView AS (
+            // )
+            // , SpecialView AS (
             //     SELECT t.trip_id, st.stop_id, st.stop_sequence, st.arrival_time
             //     FROM Trips t
             //     JOIN StopTimes st ON st.trip_id = t.trip_id
@@ -217,47 +220,47 @@ namespace testAPI.Controllers
             //     FROM SpecialView sv1
             //     JOIN SpecialView sv2 ON sv2.trip_id = sv1.trip_id
             //     WHERE sv1.stop_id IN (SELECT stop_id FROM Mid2StopInfo)
-            //     AND sv2.stop_id = 2670
-            //     AND sv1.arrival_time > (SELECT arrival_time FROM Mid1StopInfo)
+            //     AND sv2.stop_id = 2675
+            //     AND sv1.arrival_time > (SELECT MAX(arrival_time) FROM Mid1StopInfo)
             // ), SecondTrip AS(
             //     SELECT TOP 1 sto.trip_id
             //     FROM SecondTripOptions sto
             //     JOIN StopTimes st ON st.trip_id = sto.trip_id
-            //     WHERE st.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND st.arrival_time > (SELECT arrival_time FROM Mid1StopInfo)
+            //     WHERE st.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND st.arrival_time > (SELECT MAX(arrival_time) FROM Mid1StopInfo)
             //     ORDER BY arrival_time
-            // ), 
-            // RankedStops1 AS (
-            //     SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence,
-            //            ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn
+            // ),     RankedStops1 AS (
+            //     SELECT t.route_id, t.trip_headsign, st.stop_id, st.arrival_time, st.stop_sequence,
+            //                            ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn
             //     FROM Trips t
             //     JOIN StopTimes t1 ON t1.trip_id = t.trip_id
             //     JOIN StopTimes t2 ON t2.trip_id = t.trip_id
             //     JOIN StopTimes st ON st.trip_id = t.trip_id
             //     WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip)
-            //       AND t1.stop_id = 3899 
-            //       AND t2.stop_id IN (SELECT stop_id FROM Mid1StopInfo)
-            //       AND t1.stop_sequence < t2.stop_sequence
-            //       AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence
+            //     AND t1.stop_id = 3910 
+            //     AND t2.stop_id IN (SELECT stop_id FROM Mid1StopInfo)
+            //     AND t1.stop_sequence < t2.stop_sequence
+            //     AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence
             // ), RankedStops2 AS (
-            //     SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence,
-            //            ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn
+            //     SELECT t.route_id, t.trip_headsign, st.stop_id, st.arrival_time, st.stop_sequence,
+            //                            ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn
             //     FROM Trips t
             //     JOIN StopTimes t1 ON t1.trip_id = t.trip_id
             //     JOIN StopTimes t2 ON t2.trip_id = t.trip_id
             //     JOIN StopTimes st ON st.trip_id = t.trip_id
             //     WHERE t.trip_id IN (SELECT trip_id FROM SecondTrip)
-            //       AND t1.stop_id IN (SELECT stop_id FROM Mid2StopInfo) 
-            //       AND t2.stop_id = 2670
-            //       AND t1.stop_sequence < t2.stop_sequence
-            //       AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence
+            //         AND t1.stop_id IN (SELECT stop_id FROM Mid2StopInfo) 
+            //         AND t2.stop_id = 2675
+            //         AND t1.stop_sequence < t2.stop_sequence
+            //         AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence
             // ), AllStops AS ( 
             //     SELECT * FROM RankedStops1 WHERE rn = 1 UNION SELECT * FROM RankedStops2 WHERE rn = 1
             // )
-            // SELECT route_id, stop_id, arrival_time 
-            // FROM AllStops
+            // SELECT al.route_id, al.trip_headsign, al.stop_id, s.stop_name, al.arrival_time, al.stop_sequence 
+            // FROM AllStops al
+            // JOIN Stops s ON s.stop_id = al.stop_id
             // ORDER BY arrival_time, stop_sequence;
 
-            var command = " WITH FirstTrip AS ( SELECT TOP 1 t.trip_id FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '" + date + "' AND st.stop_id = " + start + " AND st.arrival_time > '" + time + "' ORDER BY st.arrival_time ), TmpSecondTrip AS ( SELECT TOP 1 t.trip_id FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '" + date + "' AND st.stop_id = " + end + " AND st.arrival_time > '" + time + "' ORDER BY st.arrival_time ), FirstStopInfo AS ( SELECT st.stop_sequence, st.arrival_time FROM StopTimes st JOIN Trips t ON t.trip_id = st.trip_id WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND st.stop_id = " + start + " ), SecondStopSequence AS ( SELECT st.stop_sequence FROM StopTimes st JOIN Trips t ON t.trip_id = st.trip_id WHERE t.trip_id IN(SELECT trip_id FROM TmpSecondTrip) AND st.stop_id = " + end + " ), Intersection AS ( SELECT DISTINCT s.stop_name FROM StopTimes st JOIN FirstTrip ft ON ft.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id WHERE st.stop_sequence >= (SELECT stop_sequence FROM FirstStopInfo) INTERSECT  SELECT DISTINCT s.stop_name FROM StopTimes st JOIN TmpSecondTrip sct ON sct.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id WHERE st.stop_sequence <=(SELECT stop_sequence FROM SecondStopSequence) ), Mid1StopInfo AS( SELECT st.stop_id, st.arrival_time FROM StopTimes st  JOIN Stops s ON s.stop_id = st.stop_id WHERE st.trip_id IN (SELECT trip_id FROM FirstTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection) ), Mid2StopInfo AS( SELECT st.stop_id FROM StopTimes st  JOIN Stops s ON s.stop_id = st.stop_id WHERE st.trip_id IN (SELECT trip_id FROM TmpSecondTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection) ), SpecialView AS ( SELECT t.trip_id, st.stop_id, st.stop_sequence, st.arrival_time FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '" + date + "' ), SecondTripOptions AS( SELECT sv1.trip_id FROM SpecialView sv1 JOIN SpecialView sv2 ON sv2.trip_id = sv1.trip_id WHERE sv1.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND sv2.stop_id = " + end + " AND sv1.arrival_time > (SELECT arrival_time FROM Mid1StopInfo) ), SecondTrip AS( SELECT TOP 1 sto.trip_id FROM SecondTripOptions sto JOIN StopTimes st ON st.trip_id = sto.trip_id WHERE st.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND st.arrival_time > (SELECT arrival_time FROM Mid1StopInfo) ORDER BY arrival_time ),  RankedStops1 AS ( SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence, ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn FROM Trips t JOIN StopTimes t1 ON t1.trip_id = t.trip_id JOIN StopTimes t2 ON t2.trip_id = t.trip_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND t1.stop_id = " + start + "  AND t2.stop_id IN (SELECT stop_id FROM Mid1StopInfo) AND t1.stop_sequence < t2.stop_sequence AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence ), RankedStops2 AS ( SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence, ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn FROM Trips t JOIN StopTimes t1 ON t1.trip_id = t.trip_id JOIN StopTimes t2 ON t2.trip_id = t.trip_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE t.trip_id IN (SELECT trip_id FROM SecondTrip) AND t1.stop_id IN (SELECT stop_id FROM Mid2StopInfo)  AND t2.stop_id = " + end + " AND t1.stop_sequence < t2.stop_sequence AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence ), AllStops AS (  SELECT * FROM RankedStops1 WHERE rn = 1 UNION SELECT * FROM RankedStops2 WHERE rn = 1 ) SELECT route_id, stop_id, arrival_time  FROM AllStops ORDER BY arrival_time, stop_sequence;";
+            var command = "WITH FirstTrip AS ( SELECT TOP 1 t.trip_id FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '"+date+"' AND st.stop_id = "+start+" AND st.arrival_time > '"+time+"' ORDER BY st.arrival_time ), TmpSecondTrip AS ( SELECT TOP 1 t.trip_id FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '"+date+"' AND st.stop_id = "+end+" AND st.arrival_time > '"+time+"' ORDER BY st.arrival_time ), FirstStopInfo AS ( SELECT TOP 1 st.stop_sequence, st.arrival_time FROM StopTimes st JOIN Trips t ON t.trip_id = st.trip_id WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND st.stop_id = "+start+" ORDER BY arrival_time ), SecondStopSequence AS ( SELECT TOP 1 st.stop_sequence FROM StopTimes st JOIN Trips t ON t.trip_id = st.trip_id WHERE t.trip_id IN(SELECT trip_id FROM TmpSecondTrip) AND st.stop_id = "+end+" ORDER by arrival_time ), Intersection AS ( SELECT DISTINCT s.stop_name FROM StopTimes st JOIN FirstTrip ft ON ft.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id WHERE st.stop_sequence >= (SELECT stop_sequence FROM FirstStopInfo) INTERSECT  SELECT DISTINCT s.stop_name FROM StopTimes st JOIN TmpSecondTrip sct ON sct.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id WHERE st.stop_sequence <=(SELECT stop_sequence FROM SecondStopSequence) ), Mid1StopInfo AS( SELECT st.stop_id, st.arrival_time FROM StopTimes st  JOIN Stops s ON s.stop_id = st.stop_id WHERE st.trip_id IN (SELECT trip_id FROM FirstTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection) ), Mid2StopInfo AS( SELECT st.stop_id FROM StopTimes st  JOIN Stops s ON s.stop_id = st.stop_id WHERE st.trip_id IN (SELECT trip_id FROM TmpSecondTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection) ), SpecialView AS ( SELECT t.trip_id, st.stop_id, st.stop_sequence, st.arrival_time FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '"+date+"' ), SecondTripOptions AS( SELECT sv1.trip_id FROM SpecialView sv1 JOIN SpecialView sv2 ON sv2.trip_id = sv1.trip_id WHERE sv1.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND sv2.stop_id = "+end+" AND sv1.arrival_time > (SELECT MAX(arrival_time) FROM Mid1StopInfo) ), SecondTrip AS( SELECT TOP 1 sto.trip_id FROM SecondTripOptions sto JOIN StopTimes st ON st.trip_id = sto.trip_id WHERE st.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND st.arrival_time > (SELECT MAX(arrival_time) FROM Mid1StopInfo) ORDER BY arrival_time ), RankedStops1 AS ( SELECT t.route_id, t.trip_headsign, st.stop_id, st.arrival_time, st.stop_sequence, ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn FROM Trips t JOIN StopTimes t1 ON t1.trip_id = t.trip_id JOIN StopTimes t2 ON t2.trip_id = t.trip_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND t1.stop_id = "+start+"  AND t2.stop_id IN (SELECT stop_id FROM Mid1StopInfo) AND t1.stop_sequence < t2.stop_sequence AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence ), RankedStops2 AS ( SELECT t.route_id, t.trip_headsign, st.stop_id, st.arrival_time, st.stop_sequence, ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn FROM Trips t JOIN StopTimes t1 ON t1.trip_id = t.trip_id JOIN StopTimes t2 ON t2.trip_id = t.trip_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE t.trip_id IN (SELECT trip_id FROM SecondTrip) AND t1.stop_id IN (SELECT stop_id FROM Mid2StopInfo)  AND t2.stop_id = "+end+" AND t1.stop_sequence < t2.stop_sequence AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence ), AllStops AS ( SELECT * FROM RankedStops1 WHERE rn = 1 UNION SELECT * FROM RankedStops2 WHERE rn = 1 ) SELECT al.route_id, al.trip_headsign, al.stop_id, s.stop_name, al.arrival_time, al.stop_sequence FROM AllStops al JOIN Stops s ON s.stop_id = al.stop_id ORDER BY arrival_time, stop_sequence;";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -282,7 +285,7 @@ namespace testAPI.Controllers
             //  AND st.stop_id = 3909 AND st.arrival_time > CONVERT(TIME, '11:42:00')            
             //  ORDER BY st.arrival_time
             // ), RankedStops AS(
-            //  SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence,
+            //  SELECT t.route_id, t.trip_headsign, st.stop_id, st.arrival_time, st.stop_sequence,
             //                       ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn
             //  FROM Trips t
             //  JOIN StopTimes t1 ON t1.trip_id = t.trip_id
@@ -292,13 +295,13 @@ namespace testAPI.Controllers
             //      AND t1.stop_id = 3909 AND t2.stop_id = 2773 AND t1.stop_sequence < t2.stop_sequence
             //      AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence
             // )
-            // SELECT rs.route_id, rs.stop_id, s.stop_name, rs.arrival_time, rs.stop_sequence
+            // SELECT rs.route_id, rs.trip_headsign, rs.stop_id, s.stop_name, rs.arrival_time, rs.stop_sequence
             // FROM RankedStops rs
             // JOIN Stops s ON s.stop_id = rs.stop_id
             // WHERE rn = 1
             // ORDER BY stop_sequence;
 
-            var command = "WITH FirstTrip AS (SELECT TOP 1 t.trip_id FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '" + date + "' AND st.stop_id = " + start + " AND st.arrival_time > CONVERT(TIME, '" + time + "') ORDER BY st.arrival_time), RankedStops AS (SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence, ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn FROM Trips t JOIN StopTimes t1 ON t1.trip_id = t.trip_id JOIN StopTimes t2 ON t2.trip_id = t.trip_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND t1.stop_id = " + start + " AND t2.stop_id = " + end + " AND t1.stop_sequence < t2.stop_sequence AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence) SELECT rs.route_id, rs.stop_id, s.stop_name, rs.arrival_time, rs.stop_sequence FROM RankedStops rs JOIN Stops s ON s.stop_id = rs.stop_id WHERE rn = 1 ORDER BY stop_sequence;";
+            var command = "WITH FirstTrip AS (SELECT TOP 1 t.trip_id FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '" + date + "' AND st.stop_id = " + start + " AND st.arrival_time > CONVERT(TIME, '" + time + "') ORDER BY st.arrival_time), RankedStops AS (SELECT t.route_id, t.trip_headsign, st.stop_id, st.arrival_time, st.stop_sequence, ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn FROM Trips t JOIN StopTimes t1 ON t1.trip_id = t.trip_id JOIN StopTimes t2 ON t2.trip_id = t.trip_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND t1.stop_id = " + start + " AND t2.stop_id = " + end + " AND t1.stop_sequence < t2.stop_sequence AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence) SELECT rs.route_id, rs.trip_headsign, rs.stop_id, s.stop_name, rs.arrival_time, rs.stop_sequence FROM RankedStops rs JOIN Stops s ON s.stop_id = rs.stop_id WHERE rn = 1 ORDER BY stop_sequence;";
             conn.Open();
             DataTable dataTable = new DataTable();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command, conn);
@@ -504,32 +507,32 @@ namespace testAPI.Controllers
             //setup connection to the database
 
             //Percy connection string
-            var conn = new SqlConnection(
-            new SqlConnectionStringBuilder()
-            {
-                DataSource = "MIKU39",
-                InitialCatalog = "cs348",
-                UserID = "root",
-                Password = "123456",
-                Encrypt = true,
-                TrustServerCertificate = true
-            }.ConnectionString
-            );
-            return conn;   
-
-            // Melissa connection string
             // var conn = new SqlConnection(
             // new SqlConnectionStringBuilder()
             // {
-            //     DataSource = "localhost",
-            //     InitialCatalog = "master",
-            //     UserID = "sa",
-            //     Password = "dockerStrongPwd123",
+            //     DataSource = "MIKU39",
+            //     InitialCatalog = "cs348",
+            //     UserID = "root",
+            //     Password = "123456",
             //     Encrypt = true,
             //     TrustServerCertificate = true
             // }.ConnectionString
             // );
-            // return conn;
+            // return conn;   
+
+            // Melissa connection string
+            var conn = new SqlConnection(
+            new SqlConnectionStringBuilder()
+            {
+                DataSource = "localhost",
+                InitialCatalog = "master",
+                UserID = "sa",
+                Password = "dockerStrongPwd123",
+                Encrypt = true,
+                TrustServerCertificate = true
+            }.ConnectionString
+            );
+            return conn;
 
         }
     }

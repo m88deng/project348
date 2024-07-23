@@ -16,7 +16,10 @@ export default function PlanTrip() {
     const [stopNames, setStopNames] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [planTripResults, setPlanTripResults] = useState([]);
+    const [loadingText, setLoadingText] = useState('');
 
+    //names
     useEffect(() => {
         const fetchNames = async () => {
             try {
@@ -42,7 +45,31 @@ export default function PlanTrip() {
         fetchNames();
     }, []);
 
-    if (loading) return "Loading";
+    //loading
+    useEffect(() => {
+        let interval;
+        if (loading) {
+            interval = setInterval(() => {
+                setLoadingText((prev) => {
+                    if (prev.length < 3) {
+                        return prev + '.';
+                    }
+                    return '';
+                });
+            }, 500);
+        } else {
+            setLoadingText('');
+            if (interval) {
+                clearInterval(interval);
+            }
+        }
+        return () => {
+            if (interval) {
+                clearInterval(interval);
+            }
+        };
+    }, [loading]);
+
     if (error) return <pre>{error.message}</pre>;
 
     const handleFromPointChange = selectedOption => {
@@ -53,7 +80,6 @@ export default function PlanTrip() {
         setToPoint(selectedOption ? selectedOption.value : '');
     };
 
-
     const getCurrentTime = () => new Date().toLocaleTimeString('en-GB', { hour12: false });
 
     const encodeSlash = (input) => {
@@ -61,12 +87,9 @@ export default function PlanTrip() {
     };
 
     const handleIdSearch = async () => {
-
         const startURL = `http://localhost:5290/9/${encodeSlash(fromPoint)}`;
         const endURL = `http://localhost:5290/9/${encodeSlash(toPoint)}`;
-
         let startData = [], endData = [];
-
         try {
             const res = await fetch(startURL, { method: "GET" });
             if (!res.ok) {
@@ -79,11 +102,9 @@ export default function PlanTrip() {
         }
         try {
             const res = await fetch(endURL, { method: "GET" });
-
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
-
             endData = await res.json();
             console.log("Fetched Ending ID data:", endData);
         } catch (error) {
@@ -94,49 +115,82 @@ export default function PlanTrip() {
 
     const handleRouteSearch = async (e) => {
         e.preventDefault();
-
+        setLoading(true);
         try {
             const { startData, endData } = await handleIdSearch();
-
-            let dataFound = false;
-
-            for (let i = 0; i < startData.length && !dataFound; i++) {
+            let datafound = false;
+            for (let i = 0; i < startData.length && !datafound; i++) {
                 for (let j = 0; j < endData.length; j++) {
-
-                    const url = `http://localhost:5290/6/${startData[i].stop_id}/${endData[j].stop_id}/${leavingDay}/${getCurrentTime()}`;
-
                     try {
+                        const url = `http://localhost:5290/6/${startData[i].stop_id}/${endData[j].stop_id}/${leavingDay}/${getCurrentTime()}`;
                         const res = await fetch(url, { method: "GET" });
-
                         if (!res.ok) {
                             console.warn(`HTTP error! status: ${res.status} for URL: ${url}`);
                             continue;
                         }
-
                         const resText = await res.text();
                         if (resText) {
                             const data = JSON.parse(resText);
                             console.log(`Fetched data for ${startData[i]} to ${endData[j]}:`, data);
-                            dataFound = true;
+                            datafound = true;
+                            setPlanTripResults(data);
                             break;
                         } else {
-                            console.log("No data found. The response is empty.");
+                            console.log("No direct trip found. The response is empty.");
                         }
                     } catch (error) {
-                        console.error(`Error fetching data for ${startData[i]} to ${endData[j]}: `, error);
+                        console.error(`Error fetching direct trip data for ${startData[i]} to ${endData[j]}: `, error);
                     }
                 }
 
-                if (dataFound) {
+                if (datafound) {
                     break;
                 }
             }
 
-            if (!dataFound) {
+            let tripOptions = [];
+            if (!datafound) {
+                for (let i = 0; i < startData.length && !datafound; i++) {
+                    for (let j = 0; j < endData.length; j++) {
+                        try {
+                            const url = `http://localhost:5290/5/${startData[i].stop_id}/${endData[j].stop_id}/${leavingDay}/${getCurrentTime()}`;
+                            const res = await fetch(url, { method: "GET" });
+                            if (!res.ok) {
+                                console.warn(`HTTP error! status: ${res.status} for URL: ${url}`);
+                                continue;
+                            }
+                            const resText = await res.text();
+                            if (resText) {
+                                const data = JSON.parse(resText);
+                                console.log(`Fetched data for ${startData[i]} to ${endData[j]}:`, data);
+                                datafound = true;
+                                tripOptions.push(data);
+                            } else {
+                                console.log("No direct trip found. The response is empty.");
+                            }
+                        } catch (error) {
+                            console.error(`Error fetching direct trip data for ${startData[i]} to ${endData[j]}: `, error);
+                        }
+                    }
+                }
+            }
+            if (tripOptions.length > 0) {
+                // Find the trip option with the smallest size
+                const smallestTrip = tripOptions.reduce((smallest, current) =>
+                    current.length < smallest.length ? current : smallest
+                );
+
+                setPlanTripResults(smallestTrip);
+            } else {
+                console.log("No data found for any combination of start and end points.");
+            }
+            if (!datafound) {
                 console.log("No data found for any combination of start and end points.");
             }
         } catch (error) {
             console.error("Error in handleRouteSearch: ", error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -147,30 +201,43 @@ export default function PlanTrip() {
     };
 
     return (
-        <Container>
-            <PlanTripForm onSubmit={handleRouteSearch}>
-                <FormGroup>
-                    <Label htmlFor="leave-time">LEAVE TIME</Label>
-                    <FormControl
-                        type="date"
-                        id="leave-time"
-                        value={leavingDay.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
-                        onChange={handleDateChange}
-                        placeholder="YY / MM / DD"
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="from-point">FROM</Label>
-                    <Select id="from-point" options={stopNames} placeholder={"From Station/Stop"} onChange={handleFromPointChange} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="to-point">TO</Label>
-                    <Select id="to-point" options={stopNames} placeholder={"To Station/Stop"} onChange={handleToPointChange} />
-                </FormGroup>
-                <FormGroup>
-                    <SearchButton type="submit" onClick={handleRouteSearch}>Search</SearchButton>
-                </FormGroup>
-            </PlanTripForm>
-        </Container>
+        <>
+            <Container>
+                <PlanTripForm onSubmit={handleRouteSearch}>
+                    <FormGroup>
+                        <Label htmlFor="leave-time">LEAVE TIME</Label>
+                        <FormControl
+                            type="date"
+                            id="leave-time"
+                            value={leavingDay.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
+                            onChange={handleDateChange}
+                            placeholder="YY / MM / DD"
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label htmlFor="from-point">FROM</Label>
+                        <Select id="from-point" options={stopNames} placeholder={"From Station/Stop"} onChange={handleFromPointChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label htmlFor="to-point">TO</Label>
+                        <Select id="to-point" options={stopNames} placeholder={"To Station/Stop"} onChange={handleToPointChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <SearchButton type="submit" onClick={handleRouteSearch}>Search</SearchButton>
+                    </FormGroup>
+                </PlanTripForm>
+            </Container>
+            <section>
+                {loading ? (
+                    <div>Loading{loadingText}</div>
+                ) : (
+                    planTripResults.map((t) => (
+                        <div key={`${t.stop_id}-${t.stop_sequence}`} className="row">
+                            <div className="py-2">{`${t.route_id} - ${t.trip_headsign} Stop: ${t.stop_name} Arrival Time: ${t.arrival_time}`}</div>
+                        </div>
+                    ))
+                )}
+            </section>
+        </>
     );
 }

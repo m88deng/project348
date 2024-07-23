@@ -10,6 +10,7 @@ export default function UpcomingTransit() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [transitResults, setTransitResults] = useState([]);
+    const [loadingText, setLoadingText] = useState('');
 
     useEffect(() => {
         const fetchNames = async () => {
@@ -36,7 +37,31 @@ export default function UpcomingTransit() {
         fetchNames();
     }, []);
 
-    if (loading) return "Loading";
+    //loading
+    useEffect(() => {
+        let interval;
+        if (loading) {
+            interval = setInterval(() => {
+                setLoadingText((prev) => {
+                    if (prev.length < 3) {
+                        return prev + '.';
+                    }
+                    return '';
+                });
+            }, 500);
+        } else {
+            setLoadingText('');
+            if (interval) {
+                clearInterval(interval);
+            }
+        }
+        return () => {
+            if (interval) {
+                clearInterval(interval);
+            }
+        };
+    }, [loading]);
+
     if (error) return <pre>{error.message}</pre>;
 
     const handleChange = selectedOption => {
@@ -56,7 +81,7 @@ export default function UpcomingTransit() {
 
     const handleUpcomingTransitSearch = async (e) => {
         e.preventDefault();
-
+        setLoading(true);
         console.log(stop, getCurrentDate(), getCurrentTime());
         const url = `http://localhost:5290/4/${encodeSlash(stop)}/${getCurrentDate()}/${getCurrentTime()}`;
 
@@ -77,6 +102,8 @@ export default function UpcomingTransit() {
             }
         } catch (error) {
             console.error("Error fetching data: ", error);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -88,11 +115,14 @@ export default function UpcomingTransit() {
                 <div><button type="submit" onClick={handleUpcomingTransitSearch}>Search</button></div>
             </form>
             <section className="container">
-                {transitResults.map((t) => (
+                {loading ? (
+                    <div>Loading{loadingText}</div>
+                ) : (transitResults.map((t) => (
                     <div key={t.route_id} className="row">
                         <div className="py-2" >{`${t.route_id} ${t.route_long_name} - ${t.trip_headsign} ${t.arrival_time}`}</div>
                     </div>
-                ))}
+                ))
+                )}
             </section>
         </StyledUpcomingTransit>
     );

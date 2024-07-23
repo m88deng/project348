@@ -21,6 +21,7 @@ export default function LookupSchedule() {
     const [error, setError] = useState(null);
     const [stopsResults, setStopsResults] = useState([]);
     const [scheduleResults, setScheduleResults] = useState([]);
+    const [loadingText, setLoadingText] = useState('');
 
     const getCurrentDate = () => {
         const date = new Date();
@@ -126,7 +127,29 @@ export default function LookupSchedule() {
         }
     }, [stopsResults]);
 
-    if (loading) return "Loading";
+    useEffect(() => {
+        let interval;
+        if (loading) {
+            interval = setInterval(() => {
+                setLoadingText((prev) => {
+                    if (prev.length < 3) {
+                        return prev + '.';
+                    }
+                    return '';
+                });
+            }, 500);
+        } else {
+            setLoadingText('');
+            if (interval) {
+                clearInterval(interval);
+            }
+        }
+        return () => {
+            if (interval) {
+                clearInterval(interval);
+            }
+        };
+    }, [loading]);
     if (error) return <pre>{error.message}</pre>;
 
     const handleRouteChange = selectedOption => {
@@ -221,7 +244,9 @@ export default function LookupSchedule() {
                 </LookupScheduleForm>
             </Container>
             <section>
-                {stopsResults.map((s) => (
+                {loading ? (
+                    <div>Loading{loadingText}</div>
+                ) : (stopsResults.map((s) => (
                     <div key={s.stop_sequence} className="container">
                         <div className="row">
                             <div className="col-3"> {s.stop_name}</div>
@@ -236,7 +261,7 @@ export default function LookupSchedule() {
                             </div>
                         </div>
                     </div>
-                ))}
+                )))}
             </section >
         </>
     );
