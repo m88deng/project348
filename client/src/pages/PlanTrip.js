@@ -1,13 +1,13 @@
 import { useState } from "react";
 import {
-    Container, 
-    FormControl, 
-    FormGroup, 
-    Label, 
-    ModeLabel, 
-    ModeOptions, 
-    PlanTripForm, 
-    RadioButton, 
+    Container,
+    FormControl,
+    FormGroup,
+    Label,
+    ModeLabel,
+    ModeOptions,
+    PlanTripForm,
+    RadioButton,
     SearchButton
 } from "../styles/PlanTrip.styled";
 
@@ -15,6 +15,46 @@ export default function PlanTrip() {
     const [leavingDay, setLeavingDay] = useState('');
     const [fromPoint, setFromPoint] = useState('');
     const [toPoint, setToPoint] = useState('');
+    const [stopNames, setStopNames] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchNames = async () => {
+            try {
+                const response = await fetch('http://localhost:5290/3');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+
+                const formattedData = data.map(item => ({
+                    label: item.stop_name,
+                    value: item.stop_name
+                }));
+
+                setStopNames(formattedData);
+                setLoading(false);
+            } catch (error) {
+                setError(error);
+                setLoading(false);
+            }
+        };
+
+        fetchNames();
+    }, []);
+
+    if (loading) return "Loading";
+    if (error) return <pre>{error.message}</pre>;
+
+    const handleFromPointChange = selectedOption => {
+        setFromPoint(selectedOption ? selectedOption.value : '');
+    };
+
+    const handleToPointChange = selectedOption => {
+        setToPoint(selectedOption ? selectedOption.value : '');
+    };
+
 
     const getCurrentTime = () => new Date().toLocaleTimeString('en-GB', { hour12: false });
 
