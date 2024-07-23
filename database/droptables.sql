@@ -7,3 +7,6 @@ DROP TABLE Trips;
 DROP TABLE CalendarDates;
 
 DROP TABLE Routes;
+
+DROP TABLE Users;
+DROP TABLE SavedRoutes;
