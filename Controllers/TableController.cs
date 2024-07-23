@@ -15,18 +15,22 @@ namespace testAPI.Controllers
     public class CS348Controller : ControllerBase
     {
         //Functionality 1
-        [HttpGet("/1/{ID:int}")]
-        public IActionResult GetRouteByStopID(int ID)
+        [HttpGet("/1/{name}")]
+        public IActionResult GetRoutesOfStop(string name)
         {
             using var conn = GetConnectionString();
 
-            //SELECT r.route_id, r.route_long_name
-            //FROM Routes r
-            //JOIN Trips t ON r.route_id = t.route_id
-            //JOIN stop_times s ON s.trip_id = t.trip_id
-            //WHERE stop_id = ID;
+            // WITH StopIds AS (
+            //  SELECT stop_id 
+            //  FROM Stops 
+            //  WHERE stop_name = '"+name+"' 
+            // ) 
+            // SELECT DISTINCT r.route_id, r.route_long_name 
+            // FROM Routes r JOIN Trips t ON r.route_id = t.route_id 
+            // JOIN StopTimes st ON st.trip_id = t.trip_id 
+            // WHERE st.stop_id IN (SELECT stop_id FROM StopIds);
 
-            var command = "SELECT r.route_id, r.route_long_name FROM Routes r JOIN Trips t ON r.route_id = t.route_id JOIN StopTimes s ON s.trip_id = t.trip_id WHERE stop_id =" + ID + ";";
+            var command = " WITH StopIds AS (SELECT stop_id FROM Stops WHERE stop_name = '"+name+"' ) SELECT DISTINCT r.route_id, r.route_long_name FROM Routes r JOIN Trips t ON r.route_id = t.route_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE st.stop_id IN (SELECT stop_id FROM StopIds);";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -37,19 +41,17 @@ namespace testAPI.Controllers
         }
 
         //Functionality 2
-        [HttpGet("/2/{date}")]
-        public IActionResult GetBusOperatesOnWeekend(string date)
+        [HttpGet("/2/{route_id:int}")]
+        public IActionResult GetRouteHeadsign(int route_id)
         {
             using var conn = GetConnectionString();
 
-            //SELECT DISTINCT r.route_id, r.route_long_name
-            //FROM Routes r
-            //JOIN Trips t ON r.route_id = t.route_id
-            //JOIN CalendarDates cd ON t.service_id = cd.service_id
-            //WHERE cd.service_date = '20240701'
-            //AND cd.exception_type = 1;
+            // SELECT DISTINCT t.trip_headsign
+            // FROM Routes r
+            // JOIN Trips t ON r.route_id = t.route_id
+            // WHERE t.route_id = 12;
 
-            var command = "SELECT DISTINCT r.route_id, r.route_long_name FROM Routes r JOIN Trips t ON r.route_id = t.route_id JOIN CalendarDates cd ON t.service_id = cd.service_id WHERE cd.service_date = '" + date + "' AND cd.exception_type = 1;";
+            var command = "SELECT DISTINCT t.trip_headsign FROM Routes r JOIN Trips t ON r.route_id = t.route_id WHERE t.route_id = "+route_id+";";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -61,15 +63,15 @@ namespace testAPI.Controllers
 
         //Functionality 3
         [HttpGet("/3/")]
-        public IActionResult Get3()
+        public IActionResult GetAllStops()
         {
             using var conn = GetConnectionString();
 
-            //SELECT stop_id, stop_name, location_type
-            //FROM Stops
-            //WHERE wheelchair_boarding = 2
+            // SELECT DISTINCT stop_name
+            // FROM Stops
+            // ORDER BY stop_name;
 
-            var command = "SELECT stop_id, stop_name, location_type FROM Stops WHERE wheelchair_boarding = 2;";
+            var command = "SELECT DISTINCT stop_name FROM Stops ORDER BY stop_name;";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -80,34 +82,38 @@ namespace testAPI.Controllers
         }
 
         //Functionality 4
-        [HttpGet("/4/{stop_id:int}/{time}/{date}")]
-        public IActionResult Get4(int stop_id, string time,string date)
+        [HttpGet("/4/{stop_name}/{date}/{time}")]
+        public IActionResult Get4(string stop_name, string date, string time)
         {
             using var conn = GetConnectionString();
 
-            // WITH TempRoutes AS(
-            //  SELECT r.route_id, r.route_long_name
-            //  FROM Routes r JOIN Trips t ON t.route_id = r.route_id
-            //  JOIN StopTimes st ON st.trip_id = t.trip_id
-            //  WHERE stop_id = 2675
+            // WITH StopIds AS (
+            // SELECT stop_id
+            // FROM Stops
+            // WHERE stop_name = 'University Ave. / Phillip'
+            // ), TempRoutes AS(
+            // SELECT r.route_id, r.route_long_name
+            // FROM Routes r JOIN Trips t ON t.route_id = r.route_id
+            // JOIN StopTimes st ON st.trip_id = t.trip_id
+            // WHERE stop_id IN (SELECT stop_id FROM StopIds)
             // ), TempTrips AS(
-            //  SELECT DISTINCT route_id, t.service_id, trip_id, trip_headsign
-            //  FROM Trips t
-            //  JOIN CalendarDates cd ON cd.service_id = t.service_id
-            //  WHERE cd.service_date = 20240701 AND cd.exception_type = 1
+            // SELECT DISTINCT route_id, t.service_id, trip_id, trip_headsign
+            // FROM Trips t
+            // JOIN CalendarDates cd ON cd.service_id = t.service_id
+            // WHERE cd.service_date = 20240722 AND cd.exception_type = 1
             // ), RouteTrips AS(
-            //  SELECT DISTINCT tr.route_id, tr.route_long_name, tt.trip_headsign, st.arrival_time, ROW_NUMBER() OVER (PARTITION BY tr.route_id ORDER BY st.arrival_time) AS rn
-            //  FROM StopTimes st
-            //  JOIN TempTrips tt ON tt.trip_id = st.trip_id
-            //  JOIN TempRoutes tr ON tr.route_id = tt.route_id
-            //  WHERE st.stop_id = 2675 AND st.arrival_time > CONVERT(TIME, '10:02:32')
+            // SELECT DISTINCT tr.route_id, tr.route_long_name, tt.trip_headsign, st.arrival_time, ROW_NUMBER() OVER (PARTITION BY tr.route_id ORDER BY st.arrival_time) AS rn
+            // FROM StopTimes st
+            // JOIN TempTrips tt ON tt.trip_id = st.trip_id
+            // JOIN TempRoutes tr ON tr.route_id = tt.route_id
+            // WHERE st.stop_id IN (SELECT stop_id FROM StopIds) AND st.arrival_time > CONVERT(TIME, '16:37:32')
             // )
             // SELECT route_id, route_long_name, trip_headsign, arrival_time
             // FROM RouteTrips
             // WHERE rn = 1
             // ORDER BY route_id, arrival_time;
-
-            var command = "WITH TempRoutes AS (SELECT r.route_id, r.route_long_name FROM Routes r JOIN Trips t ON t.route_id = r.route_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE stop_id = " + stop_id + "), TempTrips AS (SELECT DISTINCT route_id, t.service_id, trip_id, trip_headsign FROM Trips t JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = "+date+" AND cd.exception_type = 1), RouteTrips AS (SELECT DISTINCT tr.route_id, tr.route_long_name, tt.trip_headsign, st.arrival_time, ROW_NUMBER() OVER (PARTITION BY tr.route_id ORDER BY st.arrival_time) AS rn FROM StopTimes st JOIN TempTrips tt ON tt.trip_id = st.trip_id JOIN TempRoutes tr ON tr.route_id = tt.route_id WHERE st.stop_id = "+stop_id+" AND st.arrival_time > CONVERT(TIME, '"+time+"')) SELECT route_id, route_long_name, trip_headsign, arrival_time FROM RouteTrips WHERE rn = 1 ORDER BY route_id, arrival_time;";
+            
+            var command = "WITH StopIds AS ( SELECT stop_id FROM Stops WHERE stop_name = '"+stop_name.Replace("%2F", "/")+"' ), TempRoutes AS( SELECT r.route_id, r.route_long_name FROM Routes r JOIN Trips t ON t.route_id = r.route_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE stop_id IN (SELECT stop_id FROM StopIds) ), TempTrips AS( SELECT DISTINCT route_id, t.service_id, trip_id, trip_headsign FROM Trips t JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = "+date+" AND cd.exception_type = 1 ), RouteTrips AS( SELECT DISTINCT tr.route_id, tr.route_long_name, tt.trip_headsign, st.arrival_time, ROW_NUMBER() OVER (PARTITION BY tr.route_id ORDER BY st.arrival_time) AS rn FROM StopTimes st JOIN TempTrips tt ON tt.trip_id = st.trip_id JOIN TempRoutes tr ON tr.route_id = tt.route_id WHERE st.stop_id IN (SELECT stop_id FROM StopIds) AND st.arrival_time > CONVERT(TIME, '"+time+"') ) SELECT route_id, route_long_name, trip_headsign, arrival_time FROM RouteTrips WHERE rn = 1 ORDER BY route_id, arrival_time;";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -118,16 +124,113 @@ namespace testAPI.Controllers
         }
 
         //Functionality 5
-        [HttpGet("/5/{type:int}")]
-        public IActionResult Get5(int type)
+        [HttpGet("/5/{start:int}/{end:int}/{date}/{time}")]
+        public IActionResult Get5(int start, int end, string date, string time)
         {
             using var conn = GetConnectionString();
 
-            // SELECT r.route_id, r.route_long_name, r.route_type
-            // FROM Routes r
-            // WHERE r.route_type = 3
+            // WITH FirstTrip AS (
+            //     SELECT TOP 1 t.trip_id
+            //     FROM Trips t
+            //     JOIN StopTimes st ON st.trip_id = t.trip_id
+            //     JOIN CalendarDates cd ON cd.service_id = t.service_id
+            //     WHERE cd.service_date = '20240701'
+            //       AND st.stop_id = 3899
+            //       AND st.arrival_time > '11:42:00'
+            //     ORDER BY st.arrival_time
+            // ), TmpSecondTrip AS (
+            //     SELECT TOP 1 t.trip_id
+            //     FROM Trips t
+            //     JOIN StopTimes st ON st.trip_id = t.trip_id
+            //     JOIN CalendarDates cd ON cd.service_id = t.service_id
+            //     WHERE cd.service_date = '20240701'
+            //       AND st.stop_id = 2670
+            //       AND st.arrival_time > '11:42:00'
+            //     ORDER BY st.arrival_time
+            // ), FirstStopInfo AS (
+            //     SELECT st.stop_sequence, st.arrival_time
+            //     FROM StopTimes st
+            //     JOIN Trips t ON t.trip_id = st.trip_id
+            //     WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND st.stop_id = 3899
+            // ), SecondStopSequence AS (
+            //     SELECT st.stop_sequence
+            //     FROM StopTimes st
+            //     JOIN Trips t ON t.trip_id = st.trip_id
+            //     WHERE t.trip_id IN(SELECT trip_id FROM TmpSecondTrip) AND st.stop_id = 2670
+            // ), Intersection AS (
+            //     SELECT DISTINCT s.stop_name
+            //     FROM StopTimes st
+            //     JOIN FirstTrip ft ON ft.trip_id = st.trip_id
+            //     JOIN Stops s ON st.stop_id = s.stop_id
+            //     WHERE st.stop_sequence >= (SELECT stop_sequence FROM FirstStopInfo)
+            //     INTERSECT 
+            //     SELECT DISTINCT s.stop_name
+            //     FROM StopTimes st
+            //     JOIN TmpSecondTrip sct ON sct.trip_id = st.trip_id
+            //     JOIN Stops s ON st.stop_id = s.stop_id
+            //     WHERE st.stop_sequence <=(SELECT stop_sequence FROM SecondStopSequence)
+            // ), Mid1StopInfo AS(
+            //     SELECT st.stop_id, st.arrival_time
+            //     FROM StopTimes st 
+            //     JOIN Stops s ON s.stop_id = st.stop_id
+            //     WHERE st.trip_id IN (SELECT trip_id FROM FirstTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection)
+            // ), Mid2StopInfo AS(
+            //     SELECT st.stop_id
+            //     FROM StopTimes st 
+            //     JOIN Stops s ON s.stop_id = st.stop_id
+            //     WHERE st.trip_id IN (SELECT trip_id FROM TmpSecondTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection)
+            // ), SpecialView AS (
+            //     SELECT t.trip_id, st.stop_id, st.stop_sequence, st.arrival_time
+            //     FROM Trips t
+            //     JOIN StopTimes st ON st.trip_id = t.trip_id
+            //     JOIN CalendarDates cd ON cd.service_id = t.service_id
+            //     WHERE cd.service_date = '20240701'
+            // ), SecondTripOptions AS(
+            //     SELECT sv1.trip_id
+            //     FROM SpecialView sv1
+            //     JOIN SpecialView sv2 ON sv2.trip_id = sv1.trip_id
+            //     WHERE sv1.stop_id IN (SELECT stop_id FROM Mid2StopInfo)
+            //     AND sv2.stop_id = 2670
+            //     AND sv1.arrival_time > (SELECT arrival_time FROM Mid1StopInfo)
+            // ), SecondTrip AS(
+            //     SELECT TOP 1 sto.trip_id
+            //     FROM SecondTripOptions sto
+            //     JOIN StopTimes st ON st.trip_id = sto.trip_id
+            //     WHERE st.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND st.arrival_time > (SELECT arrival_time FROM Mid1StopInfo)
+            //     ORDER BY arrival_time
+            // ), 
+            // RankedStops1 AS (
+            //     SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence,
+            //            ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn
+            //     FROM Trips t
+            //     JOIN StopTimes t1 ON t1.trip_id = t.trip_id
+            //     JOIN StopTimes t2 ON t2.trip_id = t.trip_id
+            //     JOIN StopTimes st ON st.trip_id = t.trip_id
+            //     WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip)
+            //       AND t1.stop_id = 3899 
+            //       AND t2.stop_id IN (SELECT stop_id FROM Mid1StopInfo)
+            //       AND t1.stop_sequence < t2.stop_sequence
+            //       AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence
+            // ), RankedStops2 AS (
+            //     SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence,
+            //            ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn
+            //     FROM Trips t
+            //     JOIN StopTimes t1 ON t1.trip_id = t.trip_id
+            //     JOIN StopTimes t2 ON t2.trip_id = t.trip_id
+            //     JOIN StopTimes st ON st.trip_id = t.trip_id
+            //     WHERE t.trip_id IN (SELECT trip_id FROM SecondTrip)
+            //       AND t1.stop_id IN (SELECT stop_id FROM Mid2StopInfo) 
+            //       AND t2.stop_id = 2670
+            //       AND t1.stop_sequence < t2.stop_sequence
+            //       AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence
+            // ), AllStops AS ( 
+            //     SELECT * FROM RankedStops1 WHERE rn = 1 UNION SELECT * FROM RankedStops2 WHERE rn = 1
+            // )
+            // SELECT route_id, stop_id, arrival_time 
+            // FROM AllStops
+            // ORDER BY arrival_time, stop_sequence;
 
-            var command = "SELECT r.route_id, r.route_long_name, r.route_type FROM Routes r WHERE r.route_type = "+type+";";
+            var command = " WITH FirstTrip AS ( SELECT TOP 1 t.trip_id FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '"+date+"' AND st.stop_id = "+start+" AND st.arrival_time > '"+time+"' ORDER BY st.arrival_time ), TmpSecondTrip AS ( SELECT TOP 1 t.trip_id FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '"+date+"' AND st.stop_id = "+end+" AND st.arrival_time > '"+time+"' ORDER BY st.arrival_time ), FirstStopInfo AS ( SELECT st.stop_sequence, st.arrival_time FROM StopTimes st JOIN Trips t ON t.trip_id = st.trip_id WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND st.stop_id = "+start+" ), SecondStopSequence AS ( SELECT st.stop_sequence FROM StopTimes st JOIN Trips t ON t.trip_id = st.trip_id WHERE t.trip_id IN(SELECT trip_id FROM TmpSecondTrip) AND st.stop_id = "+end+" ), Intersection AS ( SELECT DISTINCT s.stop_name FROM StopTimes st JOIN FirstTrip ft ON ft.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id WHERE st.stop_sequence >= (SELECT stop_sequence FROM FirstStopInfo) INTERSECT  SELECT DISTINCT s.stop_name FROM StopTimes st JOIN TmpSecondTrip sct ON sct.trip_id = st.trip_id JOIN Stops s ON st.stop_id = s.stop_id WHERE st.stop_sequence <=(SELECT stop_sequence FROM SecondStopSequence) ), Mid1StopInfo AS( SELECT st.stop_id, st.arrival_time FROM StopTimes st  JOIN Stops s ON s.stop_id = st.stop_id WHERE st.trip_id IN (SELECT trip_id FROM FirstTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection) ), Mid2StopInfo AS( SELECT st.stop_id FROM StopTimes st  JOIN Stops s ON s.stop_id = st.stop_id WHERE st.trip_id IN (SELECT trip_id FROM TmpSecondTrip) AND s.stop_name IN (SELECT stop_name FROM Intersection) ), SpecialView AS ( SELECT t.trip_id, st.stop_id, st.stop_sequence, st.arrival_time FROM Trips t JOIN StopTimes st ON st.trip_id = t.trip_id JOIN CalendarDates cd ON cd.service_id = t.service_id WHERE cd.service_date = '"+date+"' ), SecondTripOptions AS( SELECT sv1.trip_id FROM SpecialView sv1 JOIN SpecialView sv2 ON sv2.trip_id = sv1.trip_id WHERE sv1.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND sv2.stop_id = "+end+" AND sv1.arrival_time > (SELECT arrival_time FROM Mid1StopInfo) ), SecondTrip AS( SELECT TOP 1 sto.trip_id FROM SecondTripOptions sto JOIN StopTimes st ON st.trip_id = sto.trip_id WHERE st.stop_id IN (SELECT stop_id FROM Mid2StopInfo) AND st.arrival_time > (SELECT arrival_time FROM Mid1StopInfo) ORDER BY arrival_time ),  RankedStops1 AS ( SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence, ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn FROM Trips t JOIN StopTimes t1 ON t1.trip_id = t.trip_id JOIN StopTimes t2 ON t2.trip_id = t.trip_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE t.trip_id IN (SELECT trip_id FROM FirstTrip) AND t1.stop_id = "+start+"  AND t2.stop_id IN (SELECT stop_id FROM Mid1StopInfo) AND t1.stop_sequence < t2.stop_sequence AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence ), RankedStops2 AS ( SELECT t.route_id, st.stop_id, st.arrival_time, st.stop_sequence, ROW_NUMBER() OVER (PARTITION BY st.stop_sequence ORDER BY st.arrival_time) AS rn FROM Trips t JOIN StopTimes t1 ON t1.trip_id = t.trip_id JOIN StopTimes t2 ON t2.trip_id = t.trip_id JOIN StopTimes st ON st.trip_id = t.trip_id WHERE t.trip_id IN (SELECT trip_id FROM SecondTrip) AND t1.stop_id IN (SELECT stop_id FROM Mid2StopInfo)  AND t2.stop_id = "+end+" AND t1.stop_sequence < t2.stop_sequence AND st.stop_sequence BETWEEN t1.stop_sequence AND t2.stop_sequence ), AllStops AS (  SELECT * FROM RankedStops1 WHERE rn = 1 UNION SELECT * FROM RankedStops2 WHERE rn = 1 ) SELECT route_id, stop_id, arrival_time  FROM AllStops ORDER BY arrival_time, stop_sequence;";
 
             conn.Open();
             DataTable dataTable = new DataTable();
@@ -254,6 +357,26 @@ namespace testAPI.Controllers
 
             return Ok(ConvertDataTableToJson(dataTable));
         }
+        
+        //Functionality 10
+        [HttpGet("/10/")]
+        public IActionResult GetRoutes()
+        {
+            using var conn = GetConnectionString();
+
+            //SELECT r.route_id, r.route_long_name
+            //FROM Routes r;
+
+            var command = "SELECT r.route_id, r.route_long_name FROM Routes r;";
+
+            conn.Open();
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command, conn);
+            dataAdapter.Fill(dataTable);
+
+            return Ok(ConvertDataTableToJson(dataTable));
+        }
+
 
         //      For early testing
         //[HttpGet("{query}")]

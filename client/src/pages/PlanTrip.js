@@ -1,9 +1,61 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {
+    Container,
+    FormControl,
+    FormGroup,
+    Label,
+    ModeLabel,
+    ModeOptions,
+    PlanTripForm,
+    RadioButton,
+    SearchButton
+} from "../styles/PlanTrip.styled";
+import Select from 'react-select';
 
 export default function PlanTrip() {
     const [leavingDay, setLeavingDay] = useState('');
     const [fromPoint, setFromPoint] = useState('');
     const [toPoint, setToPoint] = useState('');
+    const [stopNames, setStopNames] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchNames = async () => {
+            try {
+                const response = await fetch('http://localhost:5290/3');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+
+                const formattedData = data.map(item => ({
+                    label: item.stop_name,
+                    value: item.stop_name
+                }));
+
+                setStopNames(formattedData);
+                setLoading(false);
+            } catch (error) {
+                setError(error);
+                setLoading(false);
+            }
+        };
+
+        fetchNames();
+    }, []);
+
+    if (loading) return "Loading";
+    if (error) return <pre>{error.message}</pre>;
+
+    const handleFromPointChange = selectedOption => {
+        setFromPoint(selectedOption ? selectedOption.value : '');
+    };
+
+    const handleToPointChange = selectedOption => {
+        setToPoint(selectedOption ? selectedOption.value : '');
+    };
+
 
     const getCurrentTime = () => new Date().toLocaleTimeString('en-GB', { hour12: false });
 
@@ -12,7 +64,6 @@ export default function PlanTrip() {
     };
 
     const handleIdSearch = async () => {
-
 
         const startURL = `http://localhost:5290/9/${encodeSlash(fromPoint)}`;
         const endURL = `http://localhost:5290/9/${encodeSlash(toPoint)}`;
@@ -99,21 +150,46 @@ export default function PlanTrip() {
     };
 
     return (
-        <form className="container py-3">
-            <div className="py-2"><label>Leaving Day</label></div>
-            <div className="pb-3">
-                <input
-                    type="date"
-                    value={leavingDay.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
-                    onChange={handleDateChange}
-                />
-            </div>
-            <div className="py-2"><label>From</label></div>
-            <div><input type="text" value={fromPoint} placeholder="station/stop" onChange={(e) => setFromPoint(e.target.value)} required /></div>
-            <div className="py-2"><label>To</label></div>
-            <div className="pb-3">
-                <input type="text" value={toPoint} placeholder="station/stop" onChange={(e) => setToPoint(e.target.value)} required /></div>
-            <div><button type="submit" onClick={handleRouteSearch}>Search</button></div>
-        </form>
+        <Container>
+            <PlanTripForm onSubmit={handleRouteSearch}>
+                <FormGroup>
+                    <Label htmlFor="leave-time">LEAVE TIME</Label>
+                    <FormControl
+                        type="date"
+                        id="leave-time"
+                        value={leavingDay.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')}
+                        onChange={handleDateChange}
+                        placeholder="YY / MM / DD"
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="from-point">FROM</Label>
+                    {/* <FormControl
+                        type="text"
+                        id="from-point"
+                        value={fromPoint}
+                        onChange={(e) => setFromPoint(e.target.value)}
+                        placeholder="Stop / Station"
+                        required
+                    /> */}
+                    <Select options={stopNames} placeholder={"From Station/Stop"} onChange={handleFromPointChange} />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="to-point">TO</Label>
+                    {/* <FormControl
+                        type="text"
+                        id="to-point"
+                        value={toPoint}
+                        onChange={(e) => setToPoint(e.target.value)}
+                        placeholder="Stop / Station"
+                        required
+                    /> */}
+                    <Select options={stopNames} placeholder={"To Station/Stop"} onChange={handleToPointChange} />
+                </FormGroup>
+                <FormGroup>
+                    <SearchButton type="submit" onClick={handleRouteSearch}>Search</SearchButton>
+                </FormGroup>
+            </PlanTripForm>
+        </Container>
     );
 }
