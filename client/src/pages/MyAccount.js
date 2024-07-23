@@ -7,6 +7,9 @@ export default function MyAccount() {
     return (
         <div className="account-container">
             <div className="account-content">
+                <div className='banner'>
+                    <Link to="/" className="back-button">Back</Link>
+                </div>
                 <img 
                     src={userAvatar} 
                     alt="User Avatar" 
@@ -14,6 +17,7 @@ export default function MyAccount() {
                 />
                 <h1 className="account-username">Username</h1>
                 <p className="account-role">Passenger</p>
+                <button className="logOut">Log Out</button>
                 <button className="account-button">Check Saved Routes</button>
             </div>
         </div>

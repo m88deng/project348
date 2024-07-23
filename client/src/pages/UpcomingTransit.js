@@ -15,7 +15,7 @@ export default function UpcomingTransit() {
                 <div className="center">
                     <div className="align">
                         <div className="Title"><label>Current Stop</label></div>
-                        <div><input type="text" className="stop"placeholder="3 - Ottawa South" value={stop} onChange={(e) => setStop(e.target.value)} required /></div>
+                        <div><input type="text" className="stop"placeholder="3 - Ottawa South              Direction Sunrise Center Station" value={stop} onChange={(e) => setStop(e.target.value)} required /></div>
                     </div>
                     <div style={{color:"transparent"}}><button className="submit" type="submit" onClick={handleUpcomingTransitSearch}>Search</button></div>
                 </div>
