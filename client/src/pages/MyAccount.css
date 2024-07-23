@@ -1,0 +1,45 @@
+.account-container {
+    text-align: center;
+    margin: 20px;
+}
+
+
+.account-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.account-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.account-username {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.account-role {
+    font-size: 18px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.account-button {
+    margin-top: 5%;
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    background: #3C86CA;
+    border: transparent;
+    color: white;
+}
+
+.account-button:hover {
+    background-color: #357ae8;
+}

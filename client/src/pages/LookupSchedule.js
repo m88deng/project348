@@ -17,6 +17,8 @@ export default function LookupSchedule() {
     const [wheelchair, setWheelchair] = useState(false);
     const navigate = useNavigate();
 
+
+    var url = `http://localhost:5290/7/${route}/${direction}`;
     const handleScheduleSearch = async (e) => {
         e.preventDefault();
         // For the sake of example, we'll use a static list of stops
@@ -31,6 +33,38 @@ export default function LookupSchedule() {
                 stops
             }
         });
+        if (wheelchair) {
+            url = `http://localhost:5290/8/${route}/${direction}`;
+        }
+
+        try {
+            const res = await fetch(url, { method: "GET" });
+
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log("Fetched data:", data);
+        } catch (error) {
+            console.error("Error fetching data: ", error);
+        }
+    }
+
+    const handleWheelchairStopSearch = async (e) => {
+        url = 'http://localhost:5290/3';
+        try {
+            const res = await fetch(url, { method: "GET" });
+
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log("Fetched data:", data);
+        } catch (error) {
+            console.error("Error fetching data: ", error);
+        }
     }
 
     return (

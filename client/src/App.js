@@ -6,6 +6,7 @@ import Header from './components/header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LookupSchedule from './pages/LookupSchedule';
 import UpcomingTransit from './pages/UpcomingTransit';
+import MyAccount from './pages/MyAccount'; 
 import RouteStops from './pages/RouteStops'; // Import RouteStops
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/plan-trip-results" element={<PlanTripResult />} />
         <Route path="/lookup-schedule" element={<LookupSchedule />} />
         <Route path="/upcoming-transit" element={<UpcomingTransit />} />
+        <Route path="/my-account" element={<MyAccount />} />
         <Route path="/route-stops" element={<RouteStops />} /> {/* Add RouteStops route */}
       </Routes>
     </BrowserRouter>
