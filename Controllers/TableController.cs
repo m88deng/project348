@@ -575,19 +575,19 @@ namespace testAPI.Controllers
             // );
             // return conn;
 
-            // Melissa connection string
-            var conn = new SqlConnection(
-            new SqlConnectionStringBuilder()
-            {
-                DataSource = "localhost",
-                InitialCatalog = "master",
-                UserID = "sa",
-                Password = "dockerStrongPwd123",
-                Encrypt = true,
-                TrustServerCertificate = true
-            }.ConnectionString
-            );
-            return conn;
+            // // Melissa connection string
+            // var conn = new SqlConnection(
+            // new SqlConnectionStringBuilder()
+            // {
+            //     DataSource = "localhost",
+            //     InitialCatalog = "master",
+            //     UserID = "sa",
+            //     Password = "dockerStrongPwd123",
+            //     Encrypt = true,
+            //     TrustServerCertificate = true
+            // }.ConnectionString
+            // );
+            // return conn;
 
             // Riya connection string
             // var conn = new SqlConnection(
@@ -602,6 +602,20 @@ namespace testAPI.Controllers
             // }.ConnectionString
             // );
             // return conn;
+
+            //Iris connection string
+            var conn = new SqlConnection(
+            new SqlConnectionStringBuilder()
+            {
+                DataSource = "localhost",
+                InitialCatalog = "master",
+                UserID = "sa",
+                Password = "dockerStrongPwd123@",
+                Encrypt = true,
+                TrustServerCertificate = true
+            }.ConnectionString
+            );
+            return conn;
 
         }
     }

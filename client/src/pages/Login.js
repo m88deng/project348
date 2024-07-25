@@ -1,9 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './../styles/Login.css';
+import { 
+    Container, 
+    PlanTripForm, 
+    FormGroup, 
+    Label, 
+    FormControl, 
+    SearchButton 
+} from '../styles/Login.styled.js';
 import { useAuth } from '../contexts/AuthContext';
-
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -43,15 +49,21 @@ export default function Login() {
     }
 
     return (
-        <div className='container'>
-            <form>
-                <div><label>Email</label></div>
-                <div><input type='text' value={email} onChange={(e) => (setEmail(e.target.value))} /></div>
-                <div><label>Password</label></div>
-                <div><input type='password' value={pwd} onChange={(e) => (setPwd(e.target.value))} /></div>
-                <div className='py-3'><p onClick={handleSignup}>Don't have an account? Sign up here!</p></div>
-                <div><button type='submit' onClick={handleLogin}>Login</button></div>
-            </form>
-        </div>
+        <Container>
+            <PlanTripForm>
+                <FormGroup>
+                    <Label>Email</Label>
+                    <FormControl type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Password</Label>
+                    <FormControl type='password' value={pwd} onChange={(e) => setPwd(e.target.value)} />
+                </FormGroup>
+                <div className='py-3'>
+                    <p style={{display:'flex'}} onClick={handleSignup}>Don't have an account? <div style={{marginLeft:'10px', color:'blue',cursor: 'pointer'}}>Sign up here!</div></p>
+                </div>
+                <SearchButton type='submit' onClick={handleLogin}>Login</SearchButton>
+            </PlanTripForm>
+        </Container>
     );
 }
