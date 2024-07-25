@@ -1459,7 +1459,6 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -2363,39 +2362,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "/Users/irischoy/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
-=======
-    "/Users/Gong/.nuget/packages/": {}
->>>>>>> 3d82b32f7fc4f579fae7f2b5460256048bd017b4
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "/Users/irischoy/project348/testAPI.csproj",
       "projectName": "testAPI",
       "projectPath": "/Users/irischoy/project348/testAPI.csproj",
       "packagesPath": "/Users/irischoy/.nuget/packages/",
       "outputPath": "/Users/irischoy/project348/obj/",
-=======
-      "projectUniqueName": "/Users/Gong/Desktop/project348/testAPI.csproj",
-      "projectName": "testAPI",
-      "projectPath": "/Users/Gong/Desktop/project348/testAPI.csproj",
-      "packagesPath": "/Users/Gong/.nuget/packages/",
-      "outputPath": "/Users/Gong/Desktop/project348/obj/",
->>>>>>> 3d82b32f7fc4f579fae7f2b5460256048bd017b4
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "/Users/irischoy/.nuget/NuGet/NuGet.Config"
-=======
-        "/Users/Gong/.nuget/NuGet/NuGet.Config"
->>>>>>> 3d82b32f7fc4f579fae7f2b5460256048bd017b4
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2448,23 +2431,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-<<<<<<< HEAD
-=======
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          }
-        ],
->>>>>>> 3d82b32f7fc4f579fae7f2b5460256048bd017b4
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2476,5 +2442,13 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/irischoy/project348/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

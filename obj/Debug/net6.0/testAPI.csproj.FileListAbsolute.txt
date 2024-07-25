@@ -246,7 +246,6 @@ D:/Codes/repos/project348/obj/Debug/net6.0/ref/testAPI.dll
 >>>>>>> a2d0e425b14008d4e19dbc9ea0fb37b8fe4e7bf1
 D:/Codes/repos/project348/obj/Debug/net6.0/testAPI.sourcelink.json
 D:/Codes/repos/project348/obj/Debug/net6.0/testAPI.csproj.Up2Date
-<<<<<<< HEAD
 /Users/irischoy/project348/bin/Debug/net6.0/appsettings.Development.json
 /Users/irischoy/project348/bin/Debug/net6.0/appsettings.json
 /Users/irischoy/project348/bin/Debug/net6.0/client/package-lock.json
@@ -330,7 +329,6 @@ D:/Codes/repos/project348/obj/Debug/net6.0/testAPI.csproj.Up2Date
 /Users/irischoy/project348/obj/Debug/net6.0/testAPI.pdb
 /Users/irischoy/project348/obj/Debug/net6.0/testAPI.genruntimeconfig.cache
 /Users/irischoy/project348/obj/Debug/net6.0/ref/testAPI.dll
-=======
 /Users/Gong/Desktop/project348/bin/Debug/net6.0/appsettings.Development.json
 /Users/Gong/Desktop/project348/bin/Debug/net6.0/appsettings.json
 /Users/Gong/Desktop/project348/bin/Debug/net6.0/client/package-lock.json

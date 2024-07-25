@@ -590,13 +590,27 @@ namespace testAPI.Controllers
             // return conn;
 
             // Riya connection string
+            // var conn = new SqlConnection(
+            // new SqlConnectionStringBuilder()
+            // {
+            //     DataSource = "localhost",
+            //     InitialCatalog = "master",
+            //     UserID = "sa",
+            //     Password = "sqlStrongPassword",
+            //     Encrypt = true,
+            //     TrustServerCertificate = true
+            // }.ConnectionString
+            // );
+            // return conn;
+
+            // Iris connection string
             var conn = new SqlConnection(
             new SqlConnectionStringBuilder()
             {
                 DataSource = "localhost",
                 InitialCatalog = "master",
                 UserID = "sa",
-                Password = "sqlStrongPassword",
+                Password = "dockerStrongPwd123@",
                 Encrypt = true,
                 TrustServerCertificate = true
             }.ConnectionString
