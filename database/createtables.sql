@@ -58,5 +58,4 @@ CREATE TABLE
     PRIMARY KEY (user_id, route_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (route_id) REFERENCES Routes(route_id),
-    FOREIGN KEY (route_long_name) REFERENCES Routes(route_long_name)
 );
