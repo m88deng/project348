@@ -9,11 +9,19 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = testAPI
 build_property.RootNamespace = testAPI
+<<<<<<< HEAD
 build_property.ProjectDir = /Users/irischoy/project348/
+=======
+build_property.ProjectDir = /Users/Gong/Desktop/project348/
+>>>>>>> 3d82b32f7fc4f579fae7f2b5460256048bd017b4
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<< HEAD
 build_property.MSBuildProjectDirectory = /Users/irischoy/project348
+=======
+build_property.MSBuildProjectDirectory = /Users/Gong/Desktop/project348
+>>>>>>> 3d82b32f7fc4f579fae7f2b5460256048bd017b4
 build_property._RazorSourceGeneratorDebug = 
