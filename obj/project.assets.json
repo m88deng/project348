@@ -2363,19 +2363,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/Gong/.nuget/packages/": {}
+    "/Users/m88/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Gong/Desktop/project348/testAPI.csproj",
+      "projectUniqueName": "/Users/m88/Desktop/M88/Projects/CS348/project348/testAPI.csproj",
       "projectName": "testAPI",
-      "projectPath": "/Users/Gong/Desktop/project348/testAPI.csproj",
-      "packagesPath": "/Users/Gong/.nuget/packages/",
-      "outputPath": "/Users/Gong/Desktop/project348/obj/",
+      "projectPath": "/Users/m88/Desktop/M88/Projects/CS348/project348/testAPI.csproj",
+      "packagesPath": "/Users/m88/.nuget/packages/",
+      "outputPath": "/Users/m88/Desktop/M88/Projects/CS348/project348/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/Gong/.nuget/NuGet/NuGet.Config"
+        "/Users/m88/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2428,20 +2428,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2450,6 +2436,7 @@
             "privateAssets": "all"
           }
         },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/RuntimeIdentifierGraph.json"
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/RuntimeIdentifierGraph.json"
       }
     }

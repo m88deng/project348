@@ -57,5 +57,10 @@ CREATE TABLE
     route_long_name VARCHAR(50),
     PRIMARY KEY (user_id, route_id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
+<<<<<<< HEAD
     FOREIGN KEY (route_id) REFERENCES Routes(route_id),
 );
+=======
+    FOREIGN KEY (route_id) REFERENCES Routes(route_id)
+  );
+>>>>>>> 680c0b91ab18b94d3e68dad48ea1e39a7c91b9e9
