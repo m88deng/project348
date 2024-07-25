@@ -17,7 +17,7 @@ export default function LookupSchedule() {
     const [wheelchair, setWheelchair] = useState(0);
     const [routeNames, setRouteNames] = useState([]);
     const [headsignNames, setHeadsignNames] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [stopsResults, setStopsResults] = useState([]);
     const [scheduleResults, setScheduleResults] = useState([]);
@@ -163,18 +163,7 @@ export default function LookupSchedule() {
     var url = `http://localhost:5290/7/${route}/${encodeSlash(direction)}`;
     const handleScheduleSearch = async (e) => {
         e.preventDefault();
-        // For the sake of example, we'll use a static list of stops
-        // const stops = ["Stop 1", "Stop 2", "Stop 3", "Stop 4"];
-
-        // const today = new Date().toISOString().slice(0, 10);
-        // navigate("/route-stops", {
-        //     state: {
-        //         date: today,
-        //         route,
-        //         direction,
-        //         stops
-        //     }
-        // });
+        
         if (wheelchair) {
             url = `http://localhost:5290/8/${route}/${direction}`;
         }

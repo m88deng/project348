@@ -14,7 +14,7 @@ export default function PlanTrip() {
     const [fromPoint, setFromPoint] = useState('');
     const [toPoint, setToPoint] = useState('');
     const [stopNames, setStopNames] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [planTripResults, setPlanTripResults] = useState([]);
     const [loadingText, setLoadingText] = useState('');

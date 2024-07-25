@@ -9,6 +9,7 @@
       "testAPI/1.0.0": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.2.1",
+          "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
           "Newtonsoft.Json": "13.0.3",
           "Swashbuckle.AspNetCore": "6.5.0"
         },

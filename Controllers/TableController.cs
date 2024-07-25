@@ -22,7 +22,7 @@ namespace testAPI.Controllers
         {
             if (!IsSafeString(user_email) || !IsSafeString(pwd))
             {
-                return StatusCode(111, new { message = "SQL injection detected" });
+                return StatusCode(500, new { message = "SQL injection detected" });
             }
             using var conn = GetConnection();
             var command = " SELECT user_id FROM Users WHERE user_email = '" + user_email + "' AND pwd = '" + pwd + "';";
@@ -464,7 +464,7 @@ namespace testAPI.Controllers
             SqlCommand cmd = new SqlCommand(insertcommand, conn);
             cmd.ExecuteNonQuery();
 
-            return StatusCode(666, new { message = "register successful" });
+            return Content(new_user_id.ToString());
         }
 
         [HttpGet("/getSaved/{user_id:int}")]
@@ -493,10 +493,10 @@ namespace testAPI.Controllers
             }
             catch (System.Exception)
             {
-                return StatusCode(111, new { message = "save failed" });
+                return StatusCode(500, new { message = "save failed" });
             }
 
-            return StatusCode(666, new { message = "save successed" });
+            return StatusCode(200, new { message = "save successed" });
         }
 
 
@@ -513,10 +513,10 @@ namespace testAPI.Controllers
             }
             catch (System.Exception)
             {
-                return StatusCode(111, new { message = "drop failed" });
+                return StatusCode(500, new { message = "drop failed" });
             }
 
-            return StatusCode(666, new { message = "drop successed" });
+            return StatusCode(200, new { message = "drop successed" });
         }
 
 
@@ -576,18 +576,18 @@ namespace testAPI.Controllers
             // return conn;
 
             // Melissa connection string
-            // var conn = new SqlConnection(
-            // new SqlConnectionStringBuilder()
-            // {
-            //     DataSource = "localhost",
-            //     InitialCatalog = "master",
-            //     UserID = "sa",
-            //     Password = "dockerStrongPwd123",
-            //     Encrypt = true,
-            //     TrustServerCertificate = true
-            // }.ConnectionString
-            // );
-            // return conn;
+            var conn = new SqlConnection(
+            new SqlConnectionStringBuilder()
+            {
+                DataSource = "localhost",
+                InitialCatalog = "master",
+                UserID = "sa",
+                Password = "dockerStrongPwd123",
+                Encrypt = true,
+                TrustServerCertificate = true
+            }.ConnectionString
+            );
+            return conn;
 
             // Riya connection string
             // var conn = new SqlConnection(
@@ -602,20 +602,6 @@ namespace testAPI.Controllers
             // }.ConnectionString
             // );
             // return conn;
-
-            // Iris connection string
-            var conn = new SqlConnection(
-            new SqlConnectionStringBuilder()
-            {
-                DataSource = "localhost",
-                InitialCatalog = "master",
-                UserID = "sa",
-                Password = "dockerStrongPwd123@",
-                Encrypt = true,
-                TrustServerCertificate = true
-            }.ConnectionString
-            );
-            return conn;
 
         }
     }

@@ -2357,6 +2357,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.Data.SqlClient >= 5.2.1",
+      "Microsoft.Extensions.ApiDescription.Server >= 6.0.5",
       "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -2410,6 +2411,12 @@
           "Microsoft.Data.SqlClient": {
             "target": "Package",
             "version": "[5.2.1, )"
+          },
+          "Microsoft.Extensions.ApiDescription.Server": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.5, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

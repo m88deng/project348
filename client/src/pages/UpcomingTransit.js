@@ -2,12 +2,12 @@ import React from "react";
 import Select from 'react-select';
 import { useState, useEffect } from "react";
 import { StyledUpcomingTransit } from "../styles/UpcomingTransit.styled";
-import './UpcomingTransit.css';
+import './../styles/UpcomingTransit.css';
 
 export default function UpcomingTransit() {
     const [stop, setStop] = useState('');
     const [stopNames, setStopNames] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [transitResults, setTransitResults] = useState([]);
     const [loadingText, setLoadingText] = useState('');
