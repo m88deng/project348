@@ -16,7 +16,6 @@ export default function MyAccount() {
                     className="account-avatar" 
                 />
                 <h1 className="account-username">Username</h1>
-                <p className="account-role">Passenger</p>
                 <button className="logOut">Log Out</button>
                 <button className="account-button">Check Saved Routes</button>
             </div>

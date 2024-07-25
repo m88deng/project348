@@ -1,5 +1,6 @@
 import './styles/App.css';
-import './styles/bootstrap.min.css'
+//import './styles/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import PlanTrip from './pages/PlanTrip';
 import PlanTripResult from './pages/PlanTripResult';
 import Header from './components/header';
