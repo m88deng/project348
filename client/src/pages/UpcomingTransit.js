@@ -6,7 +6,7 @@ import { LookupScheduleForm, Container, FormGroup, Label, SearchButton, TransitC
 export default function UpcomingTransit() {
     const [stop, setStop] = useState('');
     const [stopNames, setStopNames] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [transitResults, setTransitResults] = useState([]);
     const [loadingText, setLoadingText] = useState('');

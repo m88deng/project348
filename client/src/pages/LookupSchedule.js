@@ -20,7 +20,7 @@ export default function LookupSchedule() {
     const [wheelchair, setWheelchair] = useState(0);
     const [routeNames, setRouteNames] = useState([]);
     const [headsignNames, setHeadsignNames] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [stopsResults, setStopsResults] = useState([]);
     const [scheduleResults, setScheduleResults] = useState([]);
