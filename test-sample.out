@@ -1,20 +1,1642 @@
-| trip_id  | trip_headsign    | arrival_time  |
-| 3535928  | Quinte/Morrison  | 6:12:00       |
+route_id,route_long_name
+27,Morrison
 
-| stop_id  | stop_name                                      | location_type  |
-| 1642     | King / Grand River Hospital - Freeport Campus  | 0              |
-| 1648     | Morrison / Grand River Blvd.                   | 0              |
-| 1651     | Quinte / Morrison                              | 0              |
-| 1701     | Wabanaki / Kevco                               | 0              |
-| 1723     | Old Mill / Pinnacle                            | 0              |
-| 1724     | Pinnacle / Amherst                             | 0              |
-| 1725     | Pinnacle / Doon Valley                         | 0              |
-| 1726     | Doon Valley / Pinnacle                         | 0              |
-| 1728     | Conestoga College Blvd. / Homer Watson         | 0              |
-| 4107     | King / Fairway                                 | 0              |
+trip_headsign
+Fairway Station
+University/King
 
-| route_id  | route_long_name  |
-| 10        | Pioneer          |
+stop_name
+100 Old Carriage Dr.
+100 Savage Dr.
+1001 Bishop St. N.
+111 Savage Dr.
+120 Northfield Dr. E.
+151 Frobisher Dr.
+1541 Fischer-Hallman Rd.
+1548 Fischer-Hallman Rd.
+160 Hespeler Rd.
+163 Thaler Ave.
+167 Hespeler Rd.
+180 Sheldon Dr.
+200 Holiday Inn Dr.
+200 Shirley Ave.
+222 Mcintyre Dr.
+274 Shirley Ave.
+30 Pinebush Rd.
+3227 King St. E.
+330 Pinebush Rd.
+330 The Boardwalk
+336 Eagle St. N.
+355 Pinebush Rd.
+365 Pioneer Dr.
+40 Benjamin Rd.
+400 Bingemans Centre Dr.
+409 Mill St.
+421 Manitou Dr.
+450 Columbia St. W.
+470 Franklin Blvd.
+480 Hespeler Rd.
+499 Hespeler Rd.
+50 Westmount Rd. N.
+500 Conestoga Blvd.
+500 Fairway Rd. S.
+501 Franklin Blvd.
+505 Conestoga Blvd.
+505 Thompson Dr.
+515 Langs Dr.
+520 Thompson Dr.
+540 Bingemans Centre Dr.
+545 Belmont Ave. W.
+55 Pinebush Rd.
+55 Savage Dr.
+551 Parkside Dr.
+560 Parkside Dr.
+560 Snyders Rd. E.
+561 Hespeler Rd.
+564 Belmont Ave. W.
+580 Hespeler Rd.
+585 Kumpf Dr.
+588 Hespeler Rd.
+589 Fairway Rd. S.
+600 King St. N.
+605 Hespeler Rd.
+610 King St. N.
+650 Wabanaki Dr.
+68 Shirley Ave.
+680 Saginaw Pkwy.
+680 Trillium Dr.
+690 Bishop St. N.
+695 Saginaw Pkwy.
+720 Coronation Blvd.
+725 Coronation Blvd.
+728 Arthur St. S.
+75 Centennial Rd.
+805 Wilson Ave.
+808 Wilson Ave.
+809 Wellington St. N.
+820 Trillium Dr.
+90 Vondrau Dr.
+900 Fairway Rd. N.
+915 Wilson Ave.
+990 Bishop St. N.
+Activa / Donnenwerth
+Activa / Grey Fox
+Activa / Henhoeffer
+Activa / Isaiah
+Activa / Periwinkle
+Activa / Reistview
+Activa / Snowdrop
+Activa / Sweet William
+Activa / Wilderness
+Adam / Tannery
+Ainslie / Birch
+Ainslie / Colborne
+Ainslie / Dickson
+Ainslie / Elliott
+Ainslie / Park Hill
+Ainslie / Simcoe
+Ainslie / Veterans
+Ainslie / Walnut
+Ainslie Terminal
+Albert / Greenbrier
+Albert / Longwood
+Albert / Quiet
+Albert / Weber
+Alison / Elgin
+Alison / Hilltop
+Alison / Lauris
+Alison / Radford
+Allen Station
+Alpine / Ottawa
+Argyle / Hamilton
+Argyle / Vine
+Arthur / Brubacher
+Arthur / Church
+Arthur / Earl Martin
+Arthur / First
+Arthur / Gerrat
+Arthur / Howard
+Arthur / Listowel
+Arthur / Oriole
+Arthur / Park
+Arthur / Scotch Line
+Arthur / South Field
+Arthur / South Parkwood
+Arthur / Union
+Arthur / Whipporwill
+Arthur / Wyatt
+Arthur Fach / Coulthard
+Arthur Fach / Garth Massey
+Avenue / Gail (School Special Stop)
+Baintree / Can-Amera
+Baldwin / Guelph
+Baldwin / Henwood
+Baldwin / Horton
+Baldwin / Osgoode
+Baldwin / Silverthorne
+Bathurst / Rankin
+Battler / Old Huron
+Beasley / Homer Watson
+Bechtel / Anvil
+Bechtel / Doon Village
+Bechtel / Sabrina
+Bechtel / Wheatfield
+Beck / Homuth
+Belmont / Claremont
+Belmont / Edgewood
+Belmont / Gage
+Belmont / Glasgow
+Belmont / Highland
+Belmont / Jack
+Belmont / Karn
+Belmont / Metzloff
+Belmont / Path To Marina
+Belmont / Union
+Belmont / Victoria
+Benton / Church
+Benton / Courtland
+Benton / St George
+Beverly / Dundas
+Beverly / Kerr
+Biehn / Carlyle
+Biehn / Maxwell
+Biehn / Old Huron
+Bingemans Centre Dr. / Bingemans
+Bingemans Centre Dr. / Shirley
+Bingemans Centre Dr. / Victoria
+Bishop / Collier Macmillan
+Bishop / Conestoga
+Bishop / Cowansview
+Bishop / Duke
+Bishop / Franklin
+Bishop / Hamilton
+Bishop / Hespeler Rd.
+Bishop / Industrial
+Bishop / King
+Bishop / Mary
+Bishop / Pineview
+Bismark / Westmount Mews
+Black Bridge / Michigan
+Black Walnut / Biehn
+Black Walnut / Black Walnut Pl.
+Black Walnut / Carlyle
+Black Walnut / Pioneer
+Blair / Bismark
+Blair / Clearview
+Blair / Esther
+Blair / Grant
+Blair / James
+Blair / Kenmore
+Blair / Langdon
+Blair / Leslie
+Blair / Old Mill
+Blair / Park Hill
+Blair / Princess
+Blair / Sherwood
+Bleams / Century Hill
+Bleams / Colony
+Bleams / Fallowfield
+Bleams / Homer Watson
+Bleams / Manitou
+Bleams / Otonabee
+Bleams / Path To Marlis
+Bleams / Strasburg
+Bleams / Thistledown
+Bleams / Trillium
+Bleams / Washburn
+Block Line / Country Hill
+Block Line / Fallowfield
+Block Line / Hanover
+Block Line / Kingswood
+Block Line / Laurentian
+Block Line / St Marys High School
+Block Line / Strasburg
+Block Line / Westmount
+Block Line Station
+Bloomingdale / Horning
+Bloomingdale / Nelson
+Bloomingdale / Prince
+Bloomingdale / Stanley
+Borden Station
+Boxwood / Maple Grove
+Boxwood / Vondrau
+Bridge / Bechtel Park
+Bridge / Bloomingdale
+Bridge / Bridle
+Bridge / Chesapeake (North)
+Bridge / Chesapeake (South)
+Bridge / Crimson
+Bridge / Dansbury
+Bridge / Eastbridge
+Bridge / Frobisher
+Bridge / Labrador
+Bridge / Lexington
+Bridge / Northfield
+Bridge / Path To Auburn
+Bridge / Path To Brigantine
+Bridge / Path To Wissler
+Bridge / Schweitzer
+Bridge / Tagge
+Bridge / Tyson
+Bridge / University Ave.
+Bridge / Whitmore
+Bridge / Woolwich
+Bridgeport Rd. / Albert
+Bridgeport Rd. / Bluevale
+Bridgeport Rd. / Devitt
+Bridgeport Rd. / Ellis
+Bridgeport Rd. / Goldbeck
+Bridgeport Rd. / Lancaster
+Bridgeport Rd. / Lang
+Bridgeport Rd. / Leander
+Bridgeport Rd. / Mackie
+Bridgeport Rd. / Margaret
+Bridgeport Rd. / Peppler
+Bridgeport Rd. / Weber
+Burnett / Benn
+Burnett / Buchanan
+Burnett / Country Club
+Burnett / Drumlin
+Burnett / Essex Point
+Burnett / Glenvalley
+Burnett / Saginaw
+Cambridge Centre Station
+Can-Amera / Conestoga
+Can-Amera / Franklin
+Can-Amera / Path To Lena
+Can-Amera Station
+Cedar / Grand
+Cedar / Southgate
+Cedar / St Andrews
+Cedar / Westgate Centre
+Cedarbrae / Glen Forrest
+Cedarbrae / Mount Anne
+Cedarbrae / Path To Heasley Park
+Cedarbrae / Sprucehill
+Centennial / Forwell
+Centennial / Victoria
+Central Station
+Champlain  / Chalmers
+Champlain / Brierdale
+Champlain / Christopher
+Champlain / Dundas
+Champlain / Elgin
+Champlain / Franklin
+Chandler / Bonfield
+Charles / Cameron Heights Collegiate Institute
+Charles / Stirling
+Charles / Water
+Cherry Blossom / Barnes
+Cherry Blossom / Fountain
+Cherry Blossom / Saltsman
+Chesapeake / Brigantine
+Chesapeake / Chesapeake Cres.
+Chesapeake / Pleasant Bay
+Chesapeake / Sandy Cove
+Chesapeake / Seawind
+Chopin / Westmount
+Christopher / Ballantyne
+Christopher / Elliott
+Christopher / Foster
+Christopher / South
+Church / Walker
+Churchill / Barrie
+Churchill / Berkley
+Churchill / Forest
+Churchill / Lansdowne
+Churchill / Westgate
+Clyde / Bluerock
+Clyde / Franklin
+Clyde / Grand River Conservation Authority
+Columbia / Albert
+Columbia / Bennington
+Columbia / Cavendish
+Columbia / Chancery
+Columbia / Erbsville
+Columbia / Fischer-Hallman
+Columbia / Hazel
+Columbia / Holly
+Columbia / King
+Columbia / Ladyslipper
+Columbia / Lester
+Columbia / Lucerne
+Columbia / Marsland
+Columbia / Old Post
+Columbia / Phillip
+Columbia / Platinum
+Columbia / Salzburg
+Columbia / St Moritz
+Columbia / Sundew
+Columbia / U.W. - Columbia Lake Village
+Columbia / U.W. - Optometry
+Columbia / U.W. - Ron Eydt Village
+Columbia / U.W. - Village 1
+Columbia / University Of Waterloo
+Columbia / Weber
+Columbia / Zurich
+Concession / Cameron
+Concession / Dolph
+Concession / Garden
+Concession / Grand Valley
+Concession / Langs
+Concession / Peck
+Concession / Trico
+Conestoga / Bishop
+Conestoga / Conestoga Transit Garage
+Conestoga / Lena
+Conestoga / Sheldon
+Conestoga College Blvd. / Conestoga Residence
+Conestoga College Blvd. / Homer Watson
+Conestoga College Blvd. / Pinnacle
+Conestoga College Cambridge Campus
+Conestoga College Doon
+Conestoga College Doon Campus - Door 3
+Conestoga College Doon Campus - Door 6
+Conestoga College Doon Campus - Recreation Centre
+Conestoga Station
+Conestoga Station (bus)
+Confederation / Lorraine
+Connaught / Fourth
+Connaught / Franklin
+Connaught / Sixth
+Connaught / Woodhaven
+Cooper / Ellis
+Cooper / Hespeler Optimist Park
+Cooper / Lewis
+Cooper / Ontario
+Cooper / Queen
+Coronation / Blue Heron
+Coronation / Cambridge Memorial Hospital
+Coronation / Goldie
+Coronation / Highland
+Coronation / Oliver
+Coronation / Oriole
+Coulthard / Arthur Fach
+Coulthard / Baintree
+Country Club / Morel
+Country Hill / Block Line
+Country Hill / Cedarhill
+Country Hill / Cherry Hill
+Courtland / Benton
+Courtland / Borden
+Courtland / Carwood
+Courtland / Grenville
+Courtland / Hayward
+Courtland / Kent
+Courtland / Madison
+Courtland / Manitou
+Courtland / Overland
+Courtland / Palmer
+Courtland / Peter
+Courtland / Stirling
+Courtland / Sydney
+Courtland / Walton
+Cowan / Path To Bayne
+Cowan / Robson
+Crombie / Grand
+Daniel / Bloomingdale
+Dansbury / Eiwo
+Dansbury / Lee
+Davenport / Conestoga Mall
+Davenport / Foxhunt
+Davenport / Kidsability Centre
+Davenport / Kingscourt
+Davenport / Northfield
+Davenport / Northfield (North Side)
+Davenport / Northfield (South Side)
+Davenport / Old Abbey
+Davenport / Path To Anndale
+Davenport / Path To Redfox
+David Bergey / Activa
+David Bergey / Ottawa
+David Bergey / Peach Blossom
+Delta Station
+Dobbie / Clyde
+Dobbie / Orion
+Dobbie / Savage
+Doon Mills / Apple Ridge
+Doon Mills / Pine Valley
+Doon Mills / Woodsmere
+Doon South / Forest Edge
+Doon South / Robert Ferrie
+Doon South / Thomas Slee
+Doon South / Winding Wood
+Doon South / Windrush
+Doon Valley / Conestoga College Blvd.
+Doon Valley / Orchard Mill
+Doon Valley / Pinnacle
+Doon Village / Anvil
+Doon Village / Farrier
+Doon Village / Millwood
+Driftwood / Highview
+Driftwood / Rolling Meadows
+Driftwood / Westheights
+Dunbar / Conestoga
+Dunbar / Daleview
+Dunbar / Eastdowns
+Dunbar / Grand Valley
+Dunbar / Hespeler Rd.
+Dunbar / Industrial
+Dunbar / International Village
+Dunbar / St George
+Dundas / Beverly
+Dundas / Cambridge St.
+Dundas / Chalmers
+Dundas / Elgin
+Dundas / Franklin
+Dundas / Gore
+Dundas / Hopeton
+Dundas / Jarvis
+Dundas / Main
+Dundas / Monroe
+Dundas / Roxboro
+Dundas / South Cambridge Centre
+Dunvegan / Bairstow
+Eagle / Arlington
+Eagle / Concession
+Eagle / Industrial
+Eagle / King
+Eagle / Laurel
+Eagle / Path To Westminster
+Eagle / Providence
+Eagle / Shettleston
+Eagle / Whitley
+Eagle / William
+Eastbridge / Bluenose Park
+Eastbridge / Bonavista
+Eastbridge / Bridge
+Eastbridge / Cabot
+Eastbridge / Mayflower
+Eastbridge / New Bedford
+Eastbridge / Windjammer
+Eastwood CI
+Eckert / Dixon
+Elgin / Acorn
+Elgin / Avenue
+Elgin / Bushnell
+Elgin / Carter
+Elgin / Champlain
+Elgin / Dundas
+Elgin / Elliott
+Elgin / Ferguson
+Elgin / Franklin
+Elgin / Galt Ave.
+Elgin / Glamis
+Elgin / Glenbrook
+Elgin / Hilltop
+Elgin / Linnwood
+Elgin / Main
+Elgin / Manchester
+Elgin / Marion
+Elgin / Monroe
+Elgin / Munch
+Elgin / Path To Ferguson
+Elgin / South
+Elgin / Steeles
+Elgin / Winter
+Elgin / Woodborough
+Elgin / Woolley
+Ellis / Adler
+Elm Ridge / Hickory Heights
+Elm Ridge / Hillbrook
+Elm Ridge / Mcgarry
+Elm Ridge / Queens
+Elm Ridge / Ramblewood
+Elm Ridge / Silver Aspen
+Elmsdale / Chandler
+Elmsdale / Ottawa
+Erb / Amos
+Erb / Avondale
+Erb / Barrel Yards
+Erb / Beechwood
+Erb / Cardinal
+Erb / Churchill
+Erb / Culpepper
+Erb / Devitt
+Erb / Dietz
+Erb / Ellis
+Erb / Erbsville Ct.
+Erb / Euclid
+Erb / Father David Bauer
+Erb / Fischer-Hallman
+Erb / Gateview
+Erb / Hughes
+Erb / Mcdougall
+Erb / Mulberry
+Erb / Roosevelt
+Erb / Roslin
+Erb / Terrystone
+Erb / Weber
+Erb / Westmount
+Erb / Willow
+Erbsville / Brandenburg
+Erbsville / Chablis
+Erbsville / Columbia
+Erbsville / Columbia Forest
+Erbsville / Cornridge
+Erbsville / Keats Way
+Erbsville / Leighland
+Erbsville / Path To Erbsville Ct.
+Erbsville / Path To Wild Ginger
+Erbsville / Royal Beech
+Erbsville / Westside Marketplace
+Erbsville / White Elm
+Erbsville / Willow Wood
+Erinbrook / Rittenhouse
+Fairview / Bishop
+Fairview / Grand Valley
+Fairway / Briarmeadow
+Fairway / Chicopee Hills
+Fairway / Fairway Cres.
+Fairway / Highway 8
+Fairway / Idle Creek
+Fairway / King
+Fairway / King (East Side)
+Fairway / King (West Side)
+Fairway / Lackner
+Fairway / Manitou
+Fairway / Morgan
+Fairway / Old Chicopee
+Fairway / Pebblecreek
+Fairway / River
+Fairway / Sims Estate
+Fairway / Thaler
+Fairway / Upper Mercer
+Fairway / Wabanaki
+Fairway / Wilson
+Fairway Station
+Fairway Station (bus)
+Farmers Market Rd. / King
+Farmers Market Rd. / St Jacobs Market
+Fifth / Greenfield (Temporary Stop)
+First / Caen
+First / Eckert
+First / Snyder
+Fischer-Hallman / Activa
+Fischer-Hallman / Bleams
+Fischer-Hallman / Columbia
+Fischer-Hallman / Cotton Grass
+Fischer-Hallman / Erb
+Fischer-Hallman / Gatestone
+Fischer-Hallman / Glasgow
+Fischer-Hallman / Highland
+Fischer-Hallman / Keats Way
+Fischer-Hallman / Laurelwood
+Fischer-Hallman / Max Becker
+Fischer-Hallman / Mcgarry
+Fischer-Hallman / Ottawa
+Fischer-Hallman / Path To Bush Clover
+Fischer-Hallman / Path To Laurel Gate
+Fischer-Hallman / Queens
+Fischer-Hallman / Rockwood
+Fischer-Hallman / Rosenberg
+Fischer-Hallman / Stoke
+Fischer-Hallman / Thorndale
+Fischer-Hallman / University Ave.
+Fischer-Hallman / Victoria
+Fischer-Hallman / Westmount
+Fisher Mills / Fearnwood
+Fisher Mills / Scott
+Fleming / Sheldon
+Fleming / Thompson
+Flint / Kingswood
+Forwell / Victoria
+Fountain / Blair
+Fountain / Comdev Soccer Dome
+Fountain / Linden
+Fountain / Marmel
+Fountain / Morningside
+Fountain / Shantz Hill
+Fourth / Connaught
+Fourth / Kingsway
+Franklin / Adam
+Franklin / Athlone
+Franklin / Avenue
+Franklin / Bishop
+Franklin / Bradley
+Franklin / Can-Amera
+Franklin / Clyde
+Franklin / Dalewood
+Franklin / Dreger
+Franklin / Dundas
+Franklin / Edward
+Franklin / Elgin
+Franklin / Glamis
+Franklin / Green Gate
+Franklin / Hilborn
+Franklin / Hilltop
+Franklin / Holiday Inn Dr.
+Franklin / Jamieson
+Franklin / Kenneth
+Franklin / Lindsay
+Franklin / Main
+Franklin / Mclaren
+Franklin / Millcreek
+Franklin / Morning Calm
+Franklin / Ottawa
+Franklin / Path To Elliott
+Franklin / Path To The Greenway
+Franklin / Penrose
+Franklin / Pinebush
+Franklin / Prospect
+Franklin / Robson
+Franklin / Saginaw
+Franklin / Savage
+Franklin / Shamrock
+Franklin / Sheldon
+Franklin / Shuh
+Franklin / Thomas
+Franklin / Timber Creek
+Franklin / Trafalgar
+Franklin / Turnbull
+Franklin / Weber
+Franklin / Winston
+Frederick / Ann
+Frederick / Bruce
+Frederick / Filbert
+Frederick / Frederick Mall
+Frederick / Gordon
+Frederick / Lancaster
+Frederick / Lois
+Frederick / Merner
+Frederick / Otto
+Frederick / Region Of Waterloo Headquarters
+Frederick / River
+Frederick / Samuel
+Frederick / Turner
+Frederick / Victoria
+Frederick / Weber
+Frederick Station
+Frederick Station (Frederick / King)
+Frederick Station (King / Benton)
+Frederick Station (King / Frederick)
+Frobisher / Bridge
+Frobisher / Davenport
+Frobisher / Mcmurray
+Frobisher / Superior
+Gateview / Westvale
+Gateway Park / King
+Gateway Park / Sportsworld
+George / Hobson
+George / James
+Glasgow / Aberdeen
+Glasgow / Belmont
+Glasgow / Dunbar
+Glasgow / Eden
+Glasgow / Westmount
+Glasgow / York
+Glen Forrest / Brookhaven
+Glen Forrest / Teakwood
+Glenmorris / First
+Glenmorris / Second
+Glenmorris / Third
+Glenview / Mcdonald
+Grand / Cedar
+Grand / Fraser
+Grand Ridge / Byton
+Grand Ridge / Cedar
+Grand Ridge / Harwood
+Grand Ridge / Inverness
+Grand Ridge / Mark
+Grand Ridge / Oak Hill
+Grand Ridge / St Andrews
+Grand Ridge / Stirling Macgregor
+Grand Ridge / Wedgewood
+Grand Ridge / West River
+Grand Ridge / White Oak
+Grand River Blvd. / River
+Grand River Hospital - Freeport Campus
+Grand River Hospital Station
+Grand River Hospital Station (lrt)
+Green Valley / Arrowhead
+Green Valley / Mill Park
+Green Valley / Pioneer
+Green Vista / Whittaker
+Greenbrook / Birchcliff
+Greenbrook / Fischer-Hallman
+Greenbrook / Forest Hill
+Greenbrook / Forest Hill Centre
+Greenbrook / Graystone
+Greenbrook / Lakeside
+Greenbrook / Ruskview
+Greenbrook / Stirling
+Greenbrook / Stonybrook
+Greenbrook / Westmount
+Greenfield / Fifth (Temporary Stop)
+Greenfield / Franklin (Temporary Stop)
+Greenfield / Kingsway
+Greenfield / Traynor
+Greenfield / Woodhaven (Temporary Stop)
+Groh / Holiday Inn Dr.
+Guelph / Fisher Mills
+Guelph / Milton
+Guelph / Sheffield
+Guelph / Woodward (Temporary Stop)
+Hagey / Frank Tompa
+Hagey / U.W. - Columbia Ice Field
+Hagey / University Of Waterloo
+Hagey / Wes Graham
+Halifax / Confederation
+Halifax / Natchez
+Hamilton / Montrose
+Hamilton / Union
+Hamilton / Westminster
+Hayward / Courtland
+Hazel / Albert
+Hazel / Austin
+Hazel / Blythwood
+Hazel / Columbia
+Hazel / Hickory
+Hazel / Smallwood
+Hazel / Tamarack
+Hazel / Waterloo Collegiate Institute
+Hazel / Wilfrid Laurier University
+Hazelglen / Chopin
+Hazelglen / Mooregate
+Hazelglen / Victoria
+Hespeler Rd. / Abbotsford
+Hespeler Rd. / Avenue
+Hespeler Rd. / Bishop
+Hespeler Rd. / Dunbar
+Hespeler Rd. / Isherwood
+Hespeler Rd. / Jaffray
+Hespeler Rd. / Langs
+Hespeler Rd. / Munch
+Hespeler Rd. / Sheldon
+Hespeler Rd. / Wilmot
+Highland / Belmont
+Highland / Eastforest
+Highland / Fieldgate
+Highland / Fischer-Hallman
+Highland / Heiman
+Highland / Lawrence
+Highland / Path To Burnaby
+Highland / Path To Charles Best
+Highland / Patricia
+Highland / Queen
+Highland / Queens
+Highland / Ruby
+Highland / Stirling
+Highland / Trussler
+Highland / West
+Highland / Westforest
+Highland / Westmount
+Highpoint / Cornerbrook
+Highpoint / Dogwood
+Highpoint / Northfield
+Highpoint / Rolling Hills
+Highpoint / Toll Gate
+Highpoint / Wintergreen
+Highview / Golden Meadow
+Highview / Havenwood
+Highview / Highview Pl.
+Highview / Sugar Maple
+Hillcrest / Churchill
+Hillcrest / Highland
+Hilltop / Franklin
+Hoffman / Highland
+Hoffman / Kehl
+Hoffman / Meinzinger
+Hoffman / Ottawa
+Holborn / Old Chicopee
+Holborn / Stanley Park Mall
+Holiday Inn Dr. / Franklin
+Holiday Inn Dr. / Heritage College
+Holiday Inn Dr. / Jacob Hespeler Secondary School
+Holiday Inn Dr. / Tri-City Centre
+Hollinger / Bridge
+Hollinger / Howard
+Hollinger / Path To Daniel
+Homer Watson / Bleams
+Homer Watson / Doon South
+Homer Watson / Doon Village
+Homer Watson / Pioneer
+Homuth / Frederick
+Huron / Fischer-Hallman
+Huron / Parkvale
+Huron / Strasburg
+Huron / Templewood
+Huron / Union
+Huron / Woodbine
+Huron Heights SS
+International / Wake Robin
+Inwood / Glasgow
+Inwood / Westwood
+Ira Needles / Erb
+Ira Needles / Highland
+Ira Needles / Highland Marketplace
+Ira Needles / Penelope
+Ira Needles / Thorndale
+Ira Needles / Victoria
+Jamieson / Cooper
+Jamieson / Lardner
+Jamieson / Patton
+Jamieson / Townline
+Keats Way /  Beechwood
+Keats Way / Amos
+Keats Way / Beckwith
+Keats Way / Beechwood
+Keats Way / Brynhurst
+Keats Way / Candlewood
+Keats Way / Erbsville
+Keats Way / Fischer-Hallman
+Keats Way / Keatswood
+Keats Way / Leighland
+Keats Way / Mcdougall
+Keats Way / Midwood
+Keats Way / Path To Mccarron
+Keats Way / Sandford Fleming
+Kent / Cedar
+Kent / Hardcastle
+Kent / Hillsboro
+Kent / Salisbury
+Kent / Sim
+Kerwood / Gees
+Kerwood / Housler
+King / Agnes
+King / Bishop
+King / Blue Heron
+King / Blue Springs
+King / Borden
+King / Bridge
+King / Bridgeport Rd.
+King / Brower
+King / Cameron
+King / Cedar
+King / Central
+King / College
+King / Columbia
+King / Concession
+King / Deer Ridge
+King / Dolph
+King / Eagle
+King / Elgin
+King / Ezra
+King / Fairway
+King / Fountain
+King / Francis
+King / Front
+King / Grand River Hospital - Freeport Campus
+King / Henry
+King / Hickory
+King / High Crest
+King / Highway 85
+King / James
+King / Kingsbury
+King / Kitchener Market
+King / Kitchener-Waterloo Collegiate
+King / Lobsinger
+King / Lowther
+King / Manulife
+King / Martin Grove
+King / Montgomery
+King / Montrose
+King / Morgan
+King / Northfield
+King / Northland
+King / Ontario
+King / Ottawa
+King / Pandora
+King / Path To Bauer
+King / Printery
+King / Queen
+King / River
+King / Rockway Centre
+King / Rockway Gardens
+King / Scott
+King / Stirling
+King / Sydney
+King / Union
+King / University Ave.
+King / University Ave. (South Side)
+King / Water
+King / Waterloo
+King / Weber
+King / Weber (St Jacobs)
+King / Wellington
+King / Westminster
+King / William
+King / Wyman
+King / Young
+King/University
+Kingswood / Lucerne
+Kingswood / Strasburg
+Kinzie / River
+Kinzie / Thaler
+Kitchener City Hall Station
+Kitchener Gurdwara
+Kitchener Market Station
+Kraus / Conestogo
+Kraus / Northfield
+Krug / Becker
+Krug / Cambridge Ave.
+Krug / Eton
+Krug / Lancaster
+Krug / River
+Krug / Samuel
+Krug / Sherwood
+Kumpf / Northfield
+Lackner / Keewatin
+Lackner / Lorraine
+Lackner / Victoria
+Lancaster / Arnold
+Lancaster / Ash
+Lancaster / Bridge
+Lancaster / Bridgeport Rd.
+Lancaster / General
+Lancaster / Guelph
+Lancaster / Hamel
+Lancaster / Highway 85
+Lancaster / Hill
+Lancaster / Lang
+Lancaster / Louisa
+Lancaster / Union
+Langs / Concession
+Langs / Hespeler Rd.
+Langs / Industrial
+Langs / Langs Circle
+Langs / Shannon
+Langs / Trico
+Langs / Valentine
+Langs / Walter
+Laurel / North
+Laurel / Westminster
+Laurelwood / Bearinger
+Laurelwood / Beaver Creek Cres.
+Laurelwood / Beaver Creek Rd.
+Laurelwood / Birchmount
+Laurelwood / Brookmill
+Laurelwood / Erbsville
+Laurelwood / Fischer-Hallman
+Laurelwood / Holly View
+Laurelwood / Laurel Gate
+Laurelwood / Laurel Heights Secondary School
+Laurier-Waterloo Park Station
+Lee / Dansbury
+Lee / Dunvegan
+Lennox Lewis / Activa Sportsplex
+Lennox Lewis / The Family Centre
+Lexington / Bridge
+Lexington / Davenport
+Lexington / Dearborn Blvd
+Lexington / Dearborn Blvd.
+Lexington / Dearborn Pl.
+Lexington / Dunvegan
+Lexington / Lee
+Lincoln / Bluevale
+Lincoln / Ellis
+Lincoln / Marshall
+Lincoln / Mayfield
+Lincoln / University Ave.
+Lincoln / Weber
+Lisbon Pines / Champlain
+Lisbon Pines / Madeira
+Lisbon Pines / Myers
+Lisbon Pines / Myers (Temporary Stop)
+Lisbon Pines / Santa Maria
+Loblaws Distribution Centre
+Lorraine / Birkshire
+Ludolph / Huron
+Ludolph / Olivia
+Ludolph / West Oak
+Mackays No Frills New Hamburg
+Main / Arthur White
+Main / Cathay
+Main / Dundas
+Main / Elgin
+Main / Harris
+Main / Lowrey
+Main / South Cambridge Centre
+Main / Spruce
+Manitou / Bleams
+Manitou / Cayuga
+Manitou / Courtland
+Manitou / Cress
+Manitou / Homer Watson
+Manitou / Sasaga
+Manitou / Wabanaki
+Manitou / Webster
+Maple Bush / Chester
+Maple Bush / Critcher
+Maple Bush / Dundas
+Maple Bush / Ferncliffe
+Maple Bush / Nottinghill
+Maple Grove / Beaverdale
+Maple Grove / Boxwood
+Maple Grove / Cherry Blossom
+Maple Grove / Compass
+Maple Grove / Fountain (East Side Temporary Stop)
+Maple Grove / Fountain (West Side)
+Maple Grove / Saltsman
+Maple Grove / Vondrau
+Margaret / Breithaupt Centre
+Margaret / Centre In The Square
+Margaret / Guelph
+Margaret / Maynard (Temporary Stop)
+Margaret / Victoria
+Margaret / Wellington
+Margaret / Wilhelm
+Max Becker / Commonwealth
+Max Becker / Copper Leaf
+Max Becker / Fischer-Hallman
+Mcdonald / Dorset
+Mcgarry / Forestwood
+Mcgarry / Meadowbrook
+Mcgarry / Pinehurst
+Mcgarry / Royal Orchard
+Mcintyre / Mcbrine
+Mcintyre / Strasburg
+Mcintyre / Trillium
+Mckay / Ballantyne
+Mckay / Glenview
+Mckay / South
+Mcmeeken / Mccormick
+Mcmeeken / Werstine
+Mcmurray / Bathurst
+Mcmurray / Northland
+Melran / Alderson
+Melran / Mccormick
+Melran / River
+Melrose / Krug (Temporary Stop)
+Middleton / Francis
+Mill / Borden
+Mill / Heiman
+Mill Station
+Morgan / Fairway
+Morgan / Greendale
+Morgan / River
+Morgan / Southill
+Morrison / Grand River Blvd.
+Morrison / Grand River Hospital - Freeport Campus
+Morrison / Path To Morrison Park
+Morrison / Quinte
+Myers / Birkinshaw
+Myers / Cheese Factory
+Myers / Christopher
+Myers / Clover
+Myers / Edgemere
+Myers / Elgin
+Myers / Enfield
+Myers / Greenbrier
+Myers / Monsignor Doyle Catholic Secondary School
+Myers / Ridgehill
+Myers / Water
+Myers / Woodland
+Natchez / Halifax
+Natchez / Matthew
+Natchez / Rothsay
+New Bedford / Chesapeake
+New Bedford / Eastbridge
+New Bedford / Starboard
+Northfield / Bridge
+Northfield / Colby
+Northfield / Conestogo
+Northfield / Davenport
+Northfield / King
+Northfield / Northfield Transit Garage
+Northfield / Northgate
+Northfield / Parkside
+Northfield / Skylark
+Northfield / Weber
+Northfield / Weber (East Side)
+Northfield / Weber (West Side)
+Northfield / Wissler
+Northfield Station
+Northfield Station (bus)
+Northlake / Black Oak
+Northlake / Green Meadow
+Northlake / Highpoint
+Northlake / Pine Island
+Northlake / Skylark
+Northland / Bathurst
+Northland / Rupert
+Old Carriage / Homer Watson
+Old Carriage / Pioneer Park Plaza
+Old Chicopee / Ottawa
+Old Country / Century Hill
+Old Country / Country Hill
+Old Country / Strasburg
+Old Huron / Battler
+Old Huron / Maxwell
+Old Mill / Mill Park
+Old Mill / Pinnacle
+Old Mill / Roos
+Old Zeller / Eden Oak
+Old Zeller / Path To Pebblecreek Ct.
+Old Zeller / Zeller
+Oldfield / Batterswood
+Oldfield / Brierdale
+Oldfield / Casey
+Oldfield / Drumoak
+Oldfield / Edenbridge
+Oldfield / Jadestone
+Oldfield / Lackner
+Oldfield / Ottawa
+Oldfield / Springmount
+Ottawa / Alpine
+Ottawa / Courtland
+Ottawa / Crosby (Temporary Stop)
+Ottawa / Elmsdale
+Ottawa / Fischer-Hallman
+Ottawa / Fischer-Hallman (Temporary Stop)
+Ottawa / Franklin
+Ottawa / Heritage
+Ottawa / Hoffman
+Ottawa / Howland
+Ottawa / Imperial
+Ottawa / International
+Ottawa / Kehl
+Ottawa / Lackner
+Ottawa / Mcgee
+Ottawa / Midland
+Ottawa / Nottingham
+Ottawa / Old Chicopee
+Ottawa / Path To Chandler
+Ottawa / Path To Wake Robin
+Ottawa / Path To Watercress
+Ottawa / Pinedale
+Ottawa / River
+Ottawa / Strasburg
+Ottawa / Strasburg (Temporary Stop)
+Ottawa / Weber
+Ottawa / Westmount
+Ottawa / Williamsburg
+Park / Green
+Park / Union
+Park / Wood
+Park Hill / Grand
+Parkside / Bearinger
+Parkside / Cedarbrae
+Parkside / Glenelm
+Parkside / Northfield
+Parkside / Waterloo Corporate Campus - North
+Parkside / Waterloo Corporate Campus - South
+Parkvale / Featherstone
+Parkvale / Huron
+Parkvale / Huron Natural Area
+Parkvale / Parkvale Park
+Parkvale / Woodbine
+Peel / Bleams
+Peel / Boullee
+Phillip / Columbia
+Pinebush / Balmoral
+Pinebush / Conestoga
+Pinebush / Fleming
+Pinebush / Franklin
+Pinebush / High Ridge
+Pinebush / Hollywood
+Pinebush / Struck
+Pinebush / Thompson
+Pinebush / Tyler
+Pinebush / Wayne
+Pinebush Station
+Pinebush Station (East Side)
+Pinebush Station (West Side)
+Pinnacle / Amherst
+Pinnacle / Doon Valley
+Pinnacle / Old Mill
+Pioneer / Bechtel
+Pioneer / Doon Village
+Pioneer / Homer Watson
+Pioneer / Pioneer Park Plaza
+Poplar / Dawn
+Poplar / Scott
+Portsmouth / Springfield
+Portsmouth / Westvale
+Preston Pkwy. / Fountain
+Preston Pkwy. / Hillview
+Preston Pkwy. / Linden
+Preston Pkwy. / Parkview
+Preston Pkwy. / Shantz Hill
+Preston Pkwy. / Woods
+Queen / Adam
+Queen / Courtland
+Queen / Guelph
+Queen / Harvey
+Queen / Homewood
+Queen / Hungerford
+Queen / Kitchener Central Library
+Queen / Panabaker
+Queen / Rooshill
+Queen / Schneider
+Queen / Shepherd
+Queen / Winston
+Queen / Woodside
+Queen Station
+Queen Station (Benton / Charles)
+Queen Station (Charles / Benton)
+Queens / Belmont
+Queens / Blueridge
+Queens / Bonfair
+Queens / Cecile
+Queens / Eagen
+Queens / Fischer-Hallman
+Queens / Hahn
+Queens / Highland
+Queens / Highland Hills Mall
+Queens / Lakeside Park Trail
+Queens / Silverspring
+Queens / Spadina
+Queens / St Marys Hospital
+Queens / Warren
+Queens / Westmount
+Quinte / Morrison
+Randall / Conrad
+Randall / Kumpf
+Randall / Weber
+Research & Technology Station
+Ring Rd. / U.W. - B. C. Matthews Hall
+Ring Rd. / U.W. - Environment 3
+Ring Rd. / U.W. - Quantum Nano Centre
+Ring Rd. / U.W. - South Campus Hall
+Ring Rd. / U.W. - University Club
+Rittenhouse / Block Line
+Rittenhouse / Brookfield
+Rittenhouse / Erinbrook
+Rittenhouse / Goundry
+Rittenhouse / Mccabe
+Rittenhouse / Path To Erinbrook Park
+Rittenhouse / Path To Rittenhouse Park
+Rittenhouse / Tuerr
+River / Bradley
+River / Conway
+River / Gibson
+River / Hickson
+River / Kinzie
+River / Lorraine
+River / Manchester
+River / Old Chicopee
+River / Ottawa
+River / Path To Breckenridge
+River / Path To Secord
+River / Rennie
+River / Stanley Park Mall
+Robert Ferrie / Blair Creek
+Robert Ferrie / Doon South
+Robert Ferrie / Forest Creek
+Robert Ferrie / Tilts Trail
+Rose / Lowther
+Rose / Preston High School
+Rupert / Bathurst
+Saginaw / Burnett
+Saginaw / Chamberlin
+Saginaw / Cowan
+Saginaw / Fairgreen
+Saginaw / Glenvalley
+Saginaw / Granite Hill
+Saginaw / Haddaway
+Saginaw / Light
+Saginaw / St Benedict Catholic Secondary School
+Saginaw / Stonecairn
+Salisbury / Hillcrest
+Salisbury / Murray
+Salisbury / Southgate
+Samuelson / Moscrip (Temporary Stop)
+Sawmill / Arthur
+Sawmill / Parkside
+Schweitzer / Daniel
+Schweitzer / Nelson
+Scott / Fisher Mills
+Scott / Milton
+Scott / Nickolas
+Seabrook / Fischer-Hallman
+Shantz Hill / Preston Pkwy.
+Sheldon / Balmoral
+Sheldon / Conestoga
+Sheldon / Corydon
+Sheldon / Franklin
+Sheldon / Thompson
+Sheldon / Wolseley
+Shelley / Courtland
+Shirley / Bingemans Centre Dr.
+Shirley / Cedarview
+Shirley / Crestview
+Shirley / Hesh
+Shirley / Riverbend
+Shirley / Riverview
+Smartcentres Cambridge - North
+Smartcentres Cambridge - South
+Snyder / Church
+Snyder / Second
+Snyder / South
+Snyder / Woolwich Memorial Centre
+Snyders / Brubacher
+Snyders / Coachmans
+Snyders / Forler
+Snyders / Foundry
+Snyders / Notre Dame
+Southwood / Cedar
+Southwood / St Andrews
+Spadina / Highland (Temporary Stop)
+Sportsworld Station
+St Andrews / Churchill
+St Andrews / Grand
+St Andrews / Stanley
+St. Mary's High School
+Stanley / Schueller
+Stanley / Schweitzer
+Stanley / Tagge
+Stanley Park
+Stirling / Courtland
+Stirling / Highland
+Stirling / Homer Watson
+Stirling / Kaufman Park
+Stirling / Lorne
+Stirling / Mausser
+Stirling / Mill
+Strasburg / Barwood
+Strasburg / Battler
+Strasburg / Blackhorne
+Strasburg / Bleams
+Strasburg / Block Line
+Strasburg / Forest Glen Plaza
+Strasburg / Huron
+Strasburg / Huron Heights Secondary School
+Strasburg / Kingswood
+Strasburg / Mcintyre
+Strasburg / Old Country
+Strasburg / Ottawa
+Strasburg / Selkirk
+Strasburg / Shoemaker
+Strasburg / Strasburg Transit Garage
+Strasburg / Trillium
+Sunrise Centre
+Sunrise Centre Station
+Sunset / Bismark
+Sunset / Saxony
+Tannery / Queen
+Thaler / Kinzie
+The Boardwalk / Medical Centre
+The Boardwalk Station
+Thomas Slee / Frontier
+Thomas Slee / Path To Cranbrook
+Thomas Slee / Path To Watermill
+Thomas Slee / Robert Ferrie
+Thomas Slee / Terrington
+Thompson / Lingard
+Tillsley / Westmount
+Toll Gate / Dogwood
+Toll Gate / Glen Forrest
+Toll Gate / Highpoint
+Townline / Cambridge Gurudwara
+Townline / Concession 1 Puslinch
+Toyota Cambridge Gate 1
+Toyota Cambridge Gate 2
+Traynor / Balfour
+Traynor / Belwood
+Traynor / Connaught
+Traynor / Vanier
+Trillium / Adam Ferrie
+Trillium / Beasley
+Trillium / Huron Natural Area
+Trillium / Mcbrine
+Trillium / Shoemaker
+Trillium / Steckle
+Trillium / Strasburg
+Trillium / Washburn
+Tu Lane / Gateway Park
+Union / Devitt
+Union / Ellis
+Union / Herbert
+Union / Lucan
+Union / Margaret
+Union / Mary
+Union / Park
+Union / Weber
+University Ave. / Auburn
+University Ave. / Baker
+University Ave. / Bridge
+University Ave. / Conestoga College - Waterloo
+University Ave. / Countrystone
+University Ave. / Countrystone Park
+University Ave. / Dale
+University Ave. / Fischer-Hallman
+University Ave. / Hemlock
+University Ave. / King
+University Ave. / Lexington
+University Ave. / Lincoln
+University Ave. / New Bedford
+University Ave. / Northfield Technology Park
+University Ave. / Pastern
+University Ave. / Path To Countrystone Pl.
+University Ave. / Phillip
+University Ave. / Portsmouth
+University Ave. / R.I.M. Park
+University Ave. / Regina
+University Ave. / Resurrection C. S. S.
+University Ave. / Ring Rd.
+University Ave. / Sunview
+University Ave. / University Of Waterloo
+University Ave. / Weber
+University Ave. / Westmount
+University Ave. / Westvale
+University Ave. / Wilfrid Laurier University
+University Of Waterloo Station
+Vanier / Shelley
+Vanier / Siebert
+Vanier / Vanier Park
+Victoria / Belmont
+Victoria / Bingemans Centre Dr.
+Victoria / Bramblewood
+Victoria / Bramm
+Victoria / Duke
+Victoria / Duke (Temporary Stop)
+Victoria / Eastforest
+Victoria / Edna
+Victoria / Fenwick
+Victoria / Fischer-Hallman
+Victoria / Forfar
+Victoria / Frederick
+Victoria / Henry
+Victoria / Highgate
+Victoria / Iron Horse Trail
+Victoria / Joseph
+Victoria / Kitchener Rail Station
+Victoria / Lancaster
+Victoria / Lawrence
+Victoria / Margaret
+Victoria / Michael
+Victoria / Monte Carlo
+Victoria / Natchez
+Victoria / Oprington
+Victoria / Park
+Victoria / Path To Rothsay
+Victoria / Path To Winding Meadow
+Victoria / Patricia
+Victoria / Paulander
+Victoria / River
+Victoria / Stoke
+Victoria / West
+Victoria / Westforest
+Victoria / Westmount
+Victoria Park Station
+Vondrau / Boxwood
+Wabanaki / Kevco
+Wabanaki / Wilson
+Water / Ainslie
+Water / Cambridge To Paris Trail
+Water / Churchill Park
+Water / Dayton
+Water / Galt Collegiate Institute
+Waterloo Public Square Station
+Waterloo St. / Christner
+Waterloo St. / Forrest
+Waterloo St. / Huron
+Waterloo St. / Victoria
+Waterloo St. / Wilmot Family Resource Centre
+Waterloo-Oxford District Secondary School
+Weber / Albert
+Weber / Allen
+Weber / Arlington
+Weber / Borden
+Weber / Bristol
+Weber / Broadview
+Weber / Cameron
+Weber / Cedar
+Weber / Dellroy
+Weber / East
+Weber / Eastwood Collegiate Institute
+Weber / Erb
+Weber / Euler
+Weber / Fairview
+Weber / Fergus
+Weber / Franklin
+Weber / Frederick (Temporary Stop)
+Weber / Golden Eagle
+Weber / Guelph
+Weber / Highway 8
+Weber / Jackson
+Weber / Kinzie
+Weber / Kitchener Rail Station (Temporary Stop)
+Weber / Lincoln
+Weber / Mackay
+Weber / Madison
+Weber / Marshall
+Weber / Noecker
+Weber / Ottawa
+Weber / Parkside
+Weber / Queen
+Weber / Raitar
+Weber / Randall
+Weber / Roger
+Weber / Ross
+Weber / Royal
+Weber / Scott
+Weber / Sheldon
+Weber / Stirling
+Weber / Swallow
+Weber / Union
+Weber / Wellington
+Weber / Wilfred
+Weber / Wilhelm
+Weber / Young (Temporary Stop)
+Wellington / Ahrens
+Wellington / Dickson
+Wellington / Lancaster
+Wellington / Main
+Wellington / Major
+Wellington / Margaret
+Wellington / Patrick
+Wellington / Spring Valley
+Wellington / St Leger
+Wellington / Weber
+Wellington / Weber (Temporary Stop)
+Wesley / Faith
+Wesley / Fitzgerald
+Wesley / Maple Bush
+West River / Culham
+Westheights / Driftwood
+Westminster / Duke
+Westminster / King
+Westminster / Lawrence
+Westminster / Margaret
+Westmount / Alexandra
+Westmount / Block Line
+Westmount / Brybeck
+Westmount / Chopin
+Westmount / Dietz
+Westmount / Erb
+Westmount / Father David Bauer
+Westmount / Fischer-Hallman
+Westmount / Forest Hill
+Westmount / Glasgow
+Westmount / Highland
+Westmount / John
+Westmount / Karn
+Westmount / Laurentian
+Westmount / Lourdes
+Westmount / Ottawa (North Side)
+Westmount / Ottawa (South Side)
+Westmount / Overlea
+Westmount / Path To Williamsburg
+Westmount / Queens
+Westmount / Stonybrook
+Westmount / Union
+Westmount / University Ave.
+Westmount / Victoria
+Westmount / Village
+Westmount / Westcourt
+Westmount / Westwood
+Westmount / William
+Westmount / Williamsburg
+Westvale / Bridgewater
+Westvale / Cardiff
+Westvale / Edenvalley
+Westvale / Heather Hill
+Westvale / Thorndale
+Westwood / Fernwood
+Westwood / Gallarno
+Westwood / Glasgow
+Westwood / Inwood
+Westwood / Knell
+Westwood / Knell (Temporary Stop)
+Westwood / Westwood Cres.
+Wilderness / Activa
+Wilderness / Grey Fox
+Wilderness / Mountain Mint
+Wilderness / Pine Martin
+William / Caroline
+Willis Way Station
+Wilson / Balfour
+Wilson / Fairway
+Wilson / Goodrich
+Wilson / Traynor
+Wilson / Webster
+Winston / Cooper
+Winston / Darren
+Winston / Gunn
+Winston / Handorf
+Winston / Path To Erindale
+Winston / Westbury
+Woodbine / Huron
+Woodbine / Maitland
+Woodbine / Parkvale
+Woodbine / Sophia
+Woodside / Cedar
+Woodside / Victoria
+Zeller / Bridgemill
+Zeller / Fairway
+Zeller / Janet
+Zeller / Lackner
+Zeller / Pebblecreek
+Zeller / Susan
+Zeller / Watervale
+Zeller / Wild Meadow
 
-| route_id  | route_long_name  |
-| 27        | Morrison         |
+route_id,route_long_name,trip_headsign,arrival_time
+202,iXpress University,The Boardwalk Station,10:30:00
+
+arrival_time
+11:33:00
+12:03:00
+12:33:00
+
+route_id,trip_headsign,stop_id,stop_name,arrival_time,stop_sequence
+12,University/King,3909,Westmount / Highland,11:56:00,30
+12,University/King,3910,Westmount / Victoria,11:58:00,31
+12,University/King,3911,Westmount / Brybeck,11:59:00,32
+12,University/King,3912,Westmount / Westwood,12:00:00,33
+12,University/King,3913,Westmount / Glasgow,12:01:00,34
+12,University/King,3914,Westmount / Union,12:02:00,35
+12,University/King,2772,Westmount / John,12:03:00,36
+12,University/King,2773,Westmount / William,12:03:00,37

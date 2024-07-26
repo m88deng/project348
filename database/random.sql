@@ -267,7 +267,7 @@ RouteTrips AS (
     SELECT DISTINCT tt.route_id, tt.trip_headsign, st.arrival_time
     FROM StopTimes st
     JOIN TempTrips tt ON tt.trip_id = st.trip_id
-    WHERE st.stop_id = ‘2772’
+    WHERE st.stop_id = 2772
 )
 SELECT arrival_time
 FROM RouteTrips
