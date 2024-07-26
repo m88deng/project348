@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import userAvatar from './a423d8ae26b21fe5f71cf89e09cf538b.png';
-import Select from 'react-select';
 import {
     Container,
     AccountContent,
