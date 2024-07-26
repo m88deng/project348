@@ -4,13 +4,14 @@
 WITH StopIds AS (
     SELECT stop_id
     FROM Stops
-    WHERE stop_name = 'Conestoga Station'
+    WHERE stop_name = 'King / Grand River Hospital - Freeport Campus'
 )
 SELECT DISTINCT r.route_id, r.route_long_name
 FROM Routes r
 JOIN Trips t ON r.route_id = t.route_id
 JOIN StopTimes st ON st.trip_id = t.trip_id
 WHERE st.stop_id IN (SELECT stop_id FROM StopIds);
+
 
 -- Feature 2 : Get directions of a route
 -- input: route_id
@@ -52,7 +53,7 @@ RouteTrips AS (
     JOIN TempTrips tt ON tt.trip_id = st.trip_id
     JOIN TempRoutes tr ON tr.route_id = tt.route_id
     WHERE st.stop_id IN (SELECT stop_id FROM StopIds)
-        AND st.arrival_time > CONVERT(TIME, '16:37:32')
+        AND st.arrival_time > CONVERT(TIME, '09:00:00')
 )
 SELECT route_id, route_long_name, trip_headsign, arrival_time
 FROM RouteTrips
