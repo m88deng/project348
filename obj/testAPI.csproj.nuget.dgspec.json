@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\repos\\project348\\testAPI.csproj": {}
+    "/Users/m88/Desktop/M88/Projects/CS348/project348/testAPI.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\repos\\project348\\testAPI.csproj": {
+    "/Users/m88/Desktop/M88/Projects/CS348/project348/testAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\repos\\project348\\testAPI.csproj",
+        "projectUniqueName": "/Users/m88/Desktop/M88/Projects/CS348/project348/testAPI.csproj",
         "projectName": "testAPI",
-        "projectPath": "D:\\Codes\\repos\\project348\\testAPI.csproj",
-        "packagesPath": "C:\\Users\\Percival\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\repos\\project348\\obj\\",
+        "projectPath": "/Users/m88/Desktop/M88/Projects/CS348/project348/testAPI.csproj",
+        "packagesPath": "/Users/m88/.nuget/packages/",
+        "outputPath": "/Users/m88/Desktop/M88/Projects/CS348/project348/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/m88/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
