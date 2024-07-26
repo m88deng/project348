@@ -45,7 +45,7 @@
 .logOut{
     border:transparent;
     background-color: transparent;
-    color: #0056b3;
+    color: blue;
     text-decoration: underline;
 }
 .banner {
@@ -65,4 +65,19 @@
     font-size: 16px;
     font-weight: 700;
     font-family: Lato;
+}
+Select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.row pt-4{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-direction: column;
+    align-items: center;
 }
