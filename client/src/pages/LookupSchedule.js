@@ -223,8 +223,8 @@ export default function LookupSchedule() {
                     <div>Loading{loadingText}</div>
                 ) : (stopsResults.map((s, index) => (
                     <TransitRow key={s.stop_sequence} index={index}>
-                        <TransitCell className="col-3">{s.stop_name}</TransitCell>
-                        <TransitCell className="col-9 d-flex flex-row">
+                        <TransitCell className="col">{s.stop_name}</TransitCell>
+                        <TransitCell className="col d-flex flex-row">
                             {scheduleResults[s.stop_sequence] ? (
                                 scheduleResults[s.stop_sequence].map((item, index) => (
                                     <div key={index} className="px-2">{item.arrival_time}</div>

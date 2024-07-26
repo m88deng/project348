@@ -11,7 +11,6 @@ import {
     LogOut,
     CustomSelect,
     Pt4,
-    saveContainer,
     SaveButton,
     SaveTripRow,
     RemoveButton
@@ -139,6 +138,7 @@ export default function MyAccount() {
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
+            console.log("removed route " + routeId);
             handleSearchSavedRoutes();
         } catch (error) {
             console.error("Error deleting saved route: ", error);
@@ -153,10 +153,11 @@ export default function MyAccount() {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
             const resText = await res.text();
+            var data;
             if (resText) {
-                const data = JSON.parse(resText);
-                setSavedRoutes(data);
+                data = JSON.parse(resText);
             }
+            setSavedRoutes(data);
         } catch (error) {
             console.error("Error fetching data: ", error);
         } finally {
@@ -172,7 +173,7 @@ export default function MyAccount() {
                     alt="User Avatar"
                 />
                 <AccountUsername>{auth.email}</AccountUsername>
-                <LogOut style={{marginBottom: '20px'}} onClick={handleLogout}>Log Out</LogOut>
+                <LogOut style={{ marginBottom: '20px' }} onClick={handleLogout}>Log Out</LogOut>
             </AccountContent>
             <Pt4>
                 <CustomSelect
@@ -182,24 +183,26 @@ export default function MyAccount() {
                     onChange={handleRouteSelection}
                 />
 
-                    <SaveButton onClick={handleAddSavedRoutes}>Add to saved routes</SaveButton>
+                <SaveButton onClick={handleAddSavedRoutes}>Add to saved routes</SaveButton>
 
             </Pt4>
-            <saveContainer>
-    {loading ? (
-        <div>Loading{loadingText}</div>
-    ) : (
-        <div>
-            <p>My Saved Routes</p>
-            {savedRoutes.map((s) => (
-                <SaveTripRow key={`${s.route_id}-${s.route_long_name}`} className="row">
-                    {s.route_id} - {s.route_long_name}
-                    <RemoveButton onClick={() => handleRemoveSavedRoutes(s.route_id)}>Remove</RemoveButton>
-                </SaveTripRow>
-            ))}
-        </div>
-    )}
-</saveContainer>
+            <div>
+                {loading ? (
+                    <div>Loading{loadingText}</div>
+                ) : (
+                    <div>
+                        <p>My Saved Routes</p>
+                        {savedRoutes && (
+                            savedRoutes.map((s) => (
+                                <SaveTripRow key={`${s.route_id}-${s.route_long_name}`} className="row">
+                                    {s.route_id} - {s.route_long_name}
+                                    <RemoveButton onClick={() => handleRemoveSavedRoutes(s.route_id)}>Remove</RemoveButton>
+                                </SaveTripRow>
+                            ))
+                        )}
+                    </div>
+                )}
+            </div>
         </Container>
     );
 }

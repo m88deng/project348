@@ -67,7 +67,7 @@ export const TransitRow = styled.div`
     align-items: center;
     padding: 10px;
     border-bottom: 2px solid #ddd; 
-    width: 100%;
+    width: 100vw;
 
     &:nth-child(odd) {
         background-color: #ffffff;

@@ -6,9 +6,6 @@ export const Container = styled.div`
     padding: 20px;
 `;
 
-export const StyledSaveRoute = styled.div`
-`;
-
 export const LookupScheduleForm = styled.form`
     display: flex;
     flex-direction: column;
@@ -59,8 +56,8 @@ export const SearchButton = styled.button`
 
 export const TransitContainer = styled.section`
     width: 100%;
-    height: 1000px;
-    overflow: auto; 
+    height: auto;
+    overflow-x: auto; 
     border: 2px solid #ddd; 
     border-collapse: collapse;
     margin-top: 20px;
@@ -72,7 +69,7 @@ export const TransitRow = styled.div`
     align-items: center;
     padding: 10px;
     border-bottom: 2px solid #ddd; 
-    width: 100%
+    width: 100%;
 
     &:nth-child(odd) {
         background-color: #ffffff; 
@@ -86,7 +83,8 @@ export const TransitRow = styled.div`
 export const TransitCell = styled.div`
     flex: 1;
     text-align: left;
-    min-width: 30px; 
+    min-width: 30px;
+    width : 100%;
     padding: 5px;
     border-right: 1px solid #ddd; 
 
