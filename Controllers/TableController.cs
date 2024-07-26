@@ -562,18 +562,18 @@ namespace testAPI.Controllers
             //setup connection to the database
 
             //Percy connection string
-            // var conn = new SqlConnection(
-            // new SqlConnectionStringBuilder()
-            // {
-            //     DataSource = "MIKU39",
-            //     InitialCatalog = "cs348",
-            //     UserID = "root",
-            //     Password = "123456",
-            //     Encrypt = true,
-            //     TrustServerCertificate = true
-            // }.ConnectionString
-            // );
-            // return conn;
+            var conn = new SqlConnection(
+            new SqlConnectionStringBuilder()
+            {
+                DataSource = "MIKU39",
+                InitialCatalog = "cs348",
+                UserID = "root",
+                Password = "123456",
+                Encrypt = true,
+                TrustServerCertificate = true
+            }.ConnectionString
+            );
+            return conn;
 
             // // Melissa connection string
             // var conn = new SqlConnection(
@@ -604,18 +604,18 @@ namespace testAPI.Controllers
             // return conn;
 
             //Iris connection string
-            var conn = new SqlConnection(
-            new SqlConnectionStringBuilder()
-            {
-                DataSource = "localhost",
-                InitialCatalog = "master",
-                UserID = "sa",
-                Password = "dockerStrongPwd123@",
-                Encrypt = true,
-                TrustServerCertificate = true
-            }.ConnectionString
-            );
-            return conn;
+            // var conn = new SqlConnection(
+            // new SqlConnectionStringBuilder()
+            // {
+            //     DataSource = "localhost",
+            //     InitialCatalog = "master",
+            //     UserID = "sa",
+            //     Password = "dockerStrongPwd123@",
+            //     Encrypt = true,
+            //     TrustServerCertificate = true
+            // }.ConnectionString
+            // );
+            // return conn;
 
         }
     }
