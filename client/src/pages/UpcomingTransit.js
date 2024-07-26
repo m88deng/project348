@@ -1,8 +1,7 @@
 import React from "react";
 import Select from 'react-select';
 import { useState, useEffect } from "react";
-import { StyledUpcomingTransit } from "../styles/UpcomingTransit.styled";
-import './../styles/UpcomingTransit.css';
+import { LookupScheduleForm, Container, FormGroup, Label, SearchButton, TransitContainer, TransitRow } from "../styles/UpcomingTransit.styled";
 
 export default function UpcomingTransit() {
     const [stop, setStop] = useState('');
@@ -37,7 +36,6 @@ export default function UpcomingTransit() {
         fetchNames();
     }, []);
 
-    //loading
     useEffect(() => {
         let interval;
         if (loading) {
@@ -108,22 +106,27 @@ export default function UpcomingTransit() {
     }
 
     return (
-        <StyledUpcomingTransit className="container">
-            <form>
-                <div><label>Current Stop</label></div>
-                <Select options={stopNames} placeholder={"Select a Stop"} onChange={handleChange} />
-                <div><button type="submit" onClick={handleUpcomingTransitSearch}>Search</button></div>
-            </form>
-            <section className="container">
-                {loading ? (
-                    <div>Loading{loadingText}</div>
-                ) : (transitResults.map((t) => (
-                    <div key={t.route_id} className="row">
-                        <div className="py-2" >{`${t.route_id} ${t.route_long_name} - ${t.trip_headsign} ${t.arrival_time}`}</div>
-                    </div>
-                ))
-                )}
-            </section>
-        </StyledUpcomingTransit>
+        <>
+            <Container>
+                <LookupScheduleForm onSubmit={handleUpcomingTransitSearch}>
+                    <FormGroup>
+                        <Label htmlFor="stop">Current Stop</Label>
+                        <Select id="stop" options={stopNames} placeholder={"Select a Stop"} onChange={handleChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <SearchButton type="submit">Search</SearchButton>
+                    </FormGroup>
+                </LookupScheduleForm>
+                <TransitContainer>
+                    {loading ? (
+                        <div>Loading{loadingText}</div>
+                    ) : (transitResults.map((t) => (
+                        <TransitRow key={t.route_id}>
+                            <div className="py-2">{`${t.route_id} ${t.route_long_name} - ${t.trip_headsign} ${t.arrival_time}`}</div>
+                        </TransitRow>
+                    )))}
+                </TransitContainer>
+            </Container>
+        </>
     );
 }

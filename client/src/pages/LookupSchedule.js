@@ -1,15 +1,18 @@
+import React from 'react';
 import { useState, useEffect } from "react";
 import {
-    Container,
-    LookupScheduleForm,
-    FormGroup,
-    Label,
-    CheckboxLabel,
-    Checkbox,
-    SearchButton
-} from "../styles/LookupSchedule.styled";
+    Container, 
+    LookupScheduleForm, 
+    FormGroup, 
+    Label, 
+    CheckboxLabel, 
+    Checkbox, 
+    SearchButton, 
+    TransitContainer, 
+    TransitRow, 
+    TransitCell 
+} from '../styles/LookupSchedule.styled.js';
 import Select from 'react-select';
-
 
 export default function LookupSchedule() {
     const [route, setRoute] = useState('');
@@ -123,7 +126,6 @@ export default function LookupSchedule() {
         };
         if (stopsResults.length > 0) {
             fetchDataForStops();
-
         }
     }, [stopsResults]);
 
@@ -150,6 +152,7 @@ export default function LookupSchedule() {
             }
         };
     }, [loading]);
+
     if (error) return <pre>{error.message}</pre>;
 
     const handleRouteChange = selectedOption => {
@@ -163,7 +166,6 @@ export default function LookupSchedule() {
     var url = `http://localhost:5290/7/${route}/${encodeSlash(direction)}`;
     const handleScheduleSearch = async (e) => {
         e.preventDefault();
-        
         if (wheelchair) {
             url = `http://localhost:5290/8/${route}/${direction}`;
         }
@@ -189,22 +191,6 @@ export default function LookupSchedule() {
         }
     }
 
-    // const handleWheelchairStopSearch = async (e) => {
-    //     url = 'http://localhost:5290/3';
-    //     try {
-    //         const res = await fetch(url, { method: "GET" });
-
-    //         if (!res.ok) {
-    //             throw new Error(`HTTP error! status: ${res.status}`);
-    //         }
-
-    //         const data = await res.json();
-    //         console.log("Fetched data:", data);
-    //     } catch (error) {
-    //         console.error("Error fetching data: ", error);
-    //     }
-    // }
-
     return (
         <>
             <Container>
@@ -228,31 +214,28 @@ export default function LookupSchedule() {
                         </CheckboxLabel>
                     </FormGroup>
                     <FormGroup>
-                        <SearchButton type="submit" onClick={handleScheduleSearch} >Lookup</SearchButton>
+                        <SearchButton type="submit" onClick={handleScheduleSearch}>Lookup</SearchButton>
                     </FormGroup>
                 </LookupScheduleForm>
             </Container>
-            <section>
+            <TransitContainer>
                 {loading ? (
                     <div>Loading{loadingText}</div>
-                ) : (stopsResults.map((s) => (
-                    <div key={s.stop_sequence} className="container">
-                        <div className="row">
-                            <div className="col-3"> {s.stop_name}</div>
-                            <div className="col-9 d-flex flex-row">
-                                {scheduleResults[s.stop_sequence] ? (
-                                    scheduleResults[s.stop_sequence].map((item, index) => (
-                                        <div key={index} className="px-2" >{item.arrival_time}</div>
-                                    ))
-                                ) : (
-                                    <p>No scheduled arrival time at stop #{s.stop_id}</p>
-                                )}
-                            </div>
-                        </div>
-                    </div>
+                ) : (stopsResults.map((s, index) => (
+                    <TransitRow key={s.stop_sequence} index={index}>
+                        <TransitCell className="col-3">{s.stop_name}</TransitCell>
+                        <TransitCell className="col-9 d-flex flex-row">
+                            {scheduleResults[s.stop_sequence] ? (
+                                scheduleResults[s.stop_sequence].map((item, index) => (
+                                    <div key={index} className="px-2">{item.arrival_time}</div>
+                                ))
+                            ) : (
+                                <p>No scheduled arrival time at stop #{s.stop_id}</p>
+                            )}
+                        </TransitCell>
+                    </TransitRow>
                 )))}
-            </section >
+            </TransitContainer>
         </>
     );
 }
-

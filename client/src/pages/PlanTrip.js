@@ -5,7 +5,9 @@ import {
     FormGroup,
     Label,
     PlanTripForm,
-    SearchButton
+    SearchButton,
+    PlantripContainer,
+    PlantripRow
 } from "../styles/PlanTrip.styled";
 import Select from 'react-select';
 
@@ -227,17 +229,16 @@ export default function PlanTrip() {
                     </FormGroup>
                 </PlanTripForm>
             </Container>
-            <section>
+            <PlantripContainer>
                 {loading ? (
                     <div>Loading{loadingText}</div>
-                ) : (
-                    planTripResults.map((t) => (
-                        <div key={`${t.stop_id}-${t.stop_sequence}`} className="row">
+                ) : (planTripResults.map((t) => (
+                        <PlantripRow key={`${t.stop_id}-${t.stop_sequence}`} className="row">
                             <div className="py-2">{`${t.route_id} - ${t.trip_headsign} Stop: ${t.stop_name} Arrival Time: ${t.arrival_time}`}</div>
-                        </div>
+                        </PlantripRow>
                     ))
                 )}
-            </section>
+            </PlantripContainer>
         </>
     );
 }
