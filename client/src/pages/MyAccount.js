@@ -181,27 +181,27 @@ export default function MyAccount() {
                     placeholder={"Select"}
                     onChange={handleRouteSelection}
                 />
-
                 <SaveButton onClick={handleAddSavedRoutes}>Add to saved routes</SaveButton>
-
             </Pt4>
-            <div>
+            <section>
                 {loading ? (
                     <div>Loading{loadingText}</div>
                 ) : (
-                    <div>
-                        <p>My Saved Routes</p>
-                        {savedRoutes && (
+                    <div className='SavedRoutesDiv'>
+                        <h5 className='pb-3'>My Saved Routes</h5>
+                        {savedRoutes && savedRoutes.length > 0 ? (
                             savedRoutes.map((s) => (
                                 <SaveTripRow key={`${s.route_id}-${s.route_long_name}`} className="row">
                                     {s.route_id} - {s.route_long_name}
                                     <RemoveButton onClick={() => handleRemoveSavedRoutes(s.route_id)}>Remove</RemoveButton>
                                 </SaveTripRow>
                             ))
+                        ) : (
+                            <div>You have no saved routes.</div>
                         )}
                     </div>
                 )}
-            </div>
+            </section>
         </Container>
     );
 }

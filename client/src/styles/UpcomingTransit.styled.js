@@ -56,29 +56,28 @@ export const SearchButton = styled.button`
 
 export const TransitContainer = styled.section`
     width: 100%;
-    max-width: 1000px;
-    border: 2px solid #ddd; 
+    height: auto;
+    overflow-x: auto; 
+    border-top: 0px solid #ddd; 
     border-collapse: collapse;
-`;
+    margin: 0 auto;
+    padding: 20px 5% 60px;
 
-export const TransitRow = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid #ddd; 
-    width: 100vw;
-
-    &:nth-child(odd) {
-        background-color: #ffffff;
+    .loadingDiv {
+        width: 100%;
+        text-align: center;
     }
+    
+    .TransitRow{
+        width: 100vw;
 
-    &:nth-child(even) {
-        background-color: #f0f8ff; 
+        &:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        &:nth-child(even) {
+            background-color: #f0f8ff; 
+        }
     }
 `;
 
-export const TransitCell = styled.div`
-    flex: 1;
-    text-align: left;
-`;

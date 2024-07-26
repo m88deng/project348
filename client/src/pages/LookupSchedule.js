@@ -1,18 +1,24 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import {
-    Container, 
-    LookupScheduleForm, 
-    FormGroup, 
-    Label, 
-    CheckboxLabel, 
-    Checkbox, 
-    SearchButton, 
-    TransitContainer, 
-    TransitRow, 
-    TransitCell 
+    Container,
+    LookupScheduleForm,
+    FormGroup,
+    Label,
+    CheckboxLabel,
+    Checkbox,
+    SearchButton,
+    TransitContainer
 } from '../styles/LookupSchedule.styled.js';
 import Select from 'react-select';
+
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 export default function LookupSchedule() {
     const [route, setRoute] = useState('');
@@ -25,6 +31,8 @@ export default function LookupSchedule() {
     const [stopsResults, setStopsResults] = useState([]);
     const [scheduleResults, setScheduleResults] = useState([]);
     const [loadingText, setLoadingText] = useState('');
+    const [maxLength, setMaxLength] = useState(0);
+    const [hasInput, setHasInput] = useState(false);
 
     const getCurrentDate = () => {
         const date = new Date();
@@ -129,6 +137,16 @@ export default function LookupSchedule() {
         }
     }, [stopsResults]);
 
+
+    useEffect(() => {
+        // Compute the length of the longest array in scheduleResults
+        const lengths = Object.values(scheduleResults).map(arr => arr.length);
+        const maxL = Math.max(...lengths, 0); // Ensure at least 0 if no arrays
+        setMaxLength(maxL);
+        console.log(maxL);
+    }, [scheduleResults]);
+
+    //loading
     useEffect(() => {
         let interval;
         if (loading) {
@@ -166,6 +184,7 @@ export default function LookupSchedule() {
     var url = `http://localhost:5290/7/${route}/${encodeSlash(direction)}`;
     const handleScheduleSearch = async (e) => {
         e.preventDefault();
+        setHasInput(true);
         if (wheelchair) {
             url = `http://localhost:5290/8/${route}/${direction}`;
         }
@@ -218,24 +237,52 @@ export default function LookupSchedule() {
                     </FormGroup>
                 </LookupScheduleForm>
             </Container>
+
+
             <TransitContainer>
-                {loading ? (
-                    <div>Loading{loadingText}</div>
-                ) : (stopsResults.map((s, index) => (
-                    <TransitRow key={s.stop_sequence} index={index}>
-                        <TransitCell className="col">{s.stop_name}</TransitCell>
-                        <TransitCell className="col d-flex flex-row">
-                            {scheduleResults[s.stop_sequence] ? (
-                                scheduleResults[s.stop_sequence].map((item, index) => (
-                                    <div key={index} className="px-2">{item.arrival_time}</div>
-                                ))
-                            ) : (
-                                <p>No scheduled arrival time at stop #{s.stop_id}</p>
-                            )}
-                        </TransitCell>
-                    </TransitRow>
-                )))}
-            </TransitContainer>
+                {hasInput ?
+                    loading ? (
+                        <div className='loadingDiv'>Loading{loadingText}</div>
+                    ) : (<TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 650 }} aria-label="Schedule Table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell sx={{ minWidth: 300 }}>Stop Name</TableCell>
+                                    <TableCell sx={{ flex: 1 }} align="left" colSpan={45}>Arrival time</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {stopsResults.map((s, index) => (
+                                    <TableRow key={s.stop_sequence} index={index} className='TransitRow'
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell component="th" scope="row">{s.stop_name}</TableCell>
+
+                                        {scheduleResults[s.stop_sequence] ? (
+                                            scheduleResults[s.stop_sequence].map((item, index) => {
+                                                const isLastItem = index === scheduleResults[s.stop_sequence].length - 1;
+                                                const cellsToAdd = maxLength - scheduleResults[s.stop_sequence].length;
+                                                return (
+                                                    <React.Fragment key={index}>
+                                                        <TableCell align="left">{item.arrival_time}</TableCell>
+                                                        {isLastItem && cellsToAdd > 0 ? (
+                                                            Array.from({ length: cellsToAdd }, (_, i) => (
+                                                                <TableCell key={`empty-${i}`} align="left"> </TableCell>
+                                                            ))
+                                                        ) : null}
+                                                    </React.Fragment>
+                                                );
+                                            })
+                                        ) : (
+                                            <TableCell align='left' colSpan={maxLength}>No scheduled arrival time at stop #{s.stop_id}</TableCell>
+                                        )}
+
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>) : null}
+            </TransitContainer >
         </>
     );
 }

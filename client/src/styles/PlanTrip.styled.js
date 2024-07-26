@@ -61,26 +61,27 @@ export const SearchButton = styled.button`
 `;
 export const PlantripContainer = styled.section`
     width: 100%;
-    max-width:1000px;
-    border: 2px solid #ddd; 
+    max-width:auto;
+    border-top: 0px solid #ddd; 
     border-collapse: collapse;
     overflow: auto; 
     margin: 0 auto;
-    padding: 20px;
-`;
-export const PlantripRow = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid #ddd; 
-    width: 100%;
+    padding: 20px 5% 60px;
 
-    &:nth-child(odd) {
+    .PlantripRow {
+        width: auto;
+
+        &:nth-child(odd) {
         background-color: #ffffff;
+        }
+
+        &:nth-child(even) {
+        background-color: #f0f8ff; 
+        }
     }
 
-    &:nth-child(even) {
-        background-color: #f0f8ff; 
+    .loadingDiv {
+        width: 100%;
+        text-align: center;
     }
 `;

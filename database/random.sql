@@ -33,7 +33,7 @@ ORDER BY stop_name;
 WITH StopIds AS (
     SELECT stop_id
     FROM Stops
-    WHERE stop_name = 'University Ave. / Phillip'
+    WHERE stop_name = 'University / Phillip'
 ), TempRoutes AS (
     SELECT r.route_id, r.route_long_name
     FROM Routes r
@@ -53,12 +53,13 @@ RouteTrips AS (
     JOIN TempTrips tt ON tt.trip_id = st.trip_id
     JOIN TempRoutes tr ON tr.route_id = tt.route_id
     WHERE st.stop_id IN (SELECT stop_id FROM StopIds)
-        AND st.arrival_time > CONVERT(TIME, '09:00:00')
+        AND st.arrival_time > CONVERT(TIME, '10:00:00')
 )
 SELECT route_id, route_long_name, trip_headsign, arrival_time
 FROM RouteTrips
 WHERE rn = 1
 ORDER BY route_id, arrival_time;
+
 
 --Feature 5:
 WITH FirstTrip AS (
@@ -260,15 +261,16 @@ WITH TempTrips AS (
     WHERE cd.service_date = '20240701'
         AND cd.exception_type = 1
         AND t.route_id = 12
-        AND t.trip_headsign = 'Fairway Station'
+        AND t.trip_headsign = 'University/King'
 ),
 RouteTrips AS ( 
     SELECT DISTINCT tt.route_id, tt.trip_headsign, st.arrival_time
     FROM StopTimes st
     JOIN TempTrips tt ON tt.trip_id = st.trip_id
-    WHERE st.stop_id = '2675'
+    WHERE st.stop_id = ‘2772’
 )
 SELECT arrival_time
 FROM RouteTrips
-WHERE arrival_time > CONVERT(TIME, '03:00:00')
+WHERE arrival_time > CONVERT(TIME, '10:00:00')
 ORDER BY arrival_time;
+

@@ -1,7 +1,22 @@
 import React from "react";
 import Select from 'react-select';
 import { useState, useEffect } from "react";
-import { LookupScheduleForm, Container, FormGroup, Label, SearchButton, TransitContainer, TransitRow } from "../styles/UpcomingTransit.styled";
+import {
+    LookupScheduleForm,
+    Container,
+    FormGroup,
+    Label,
+    SearchButton,
+    TransitContainer
+} from "../styles/UpcomingTransit.styled";
+
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 export default function UpcomingTransit() {
     const [stop, setStop] = useState('');
@@ -10,6 +25,7 @@ export default function UpcomingTransit() {
     const [error, setError] = useState(null);
     const [transitResults, setTransitResults] = useState([]);
     const [loadingText, setLoadingText] = useState('');
+    const [hasInput, setHasInput] = useState(false);
 
     useEffect(() => {
         const fetchNames = async () => {
@@ -79,6 +95,7 @@ export default function UpcomingTransit() {
 
     const handleUpcomingTransitSearch = async (e) => {
         e.preventDefault();
+        setHasInput(true);
         setLoading(true);
         console.log(stop, getCurrentDate(), getCurrentTime());
         const url = `http://localhost:5290/4/${encodeSlash(stop)}/${getCurrentDate()}/${getCurrentTime()}`;
@@ -117,16 +134,38 @@ export default function UpcomingTransit() {
                         <SearchButton type="submit">Search</SearchButton>
                     </FormGroup>
                 </LookupScheduleForm>
-                <TransitContainer>
-                    {loading ? (
-                        <div>Loading{loadingText}</div>
-                    ) : (transitResults.map((t) => (
-                        <TransitRow key={t.route_id}>
-                            <div className="py-2">{`${t.route_id} ${t.route_long_name} - ${t.trip_headsign} ${t.arrival_time}`}</div>
-                        </TransitRow>
-                    )))}
-                </TransitContainer>
+
             </Container>
+            <TransitContainer>
+                {hasInput ? (
+                    loading ? (
+                        <div className="loadingDiv">Loading{loadingText}</div>
+                    ) : (
+                        <TableContainer component={Paper}>
+                            <Table sx={{ minWidth: 650 }} aria-label="Upcoming Transit Table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell sx={{ minWidth: 200 }}>Route</TableCell>
+                                        <TableCell align="left">Route Direction</TableCell>
+                                        <TableCell align="left">Arrival Time</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {transitResults.map((t) => (
+                                        <TableRow 
+                                            key={t.route_id} className="TransitRow"
+                                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        >
+                                            <TableCell component="th" scope="row">{`${t.route_id} - ${t.route_long_name}`}</TableCell>
+                                            <TableCell align="left">{t.trip_headsign}</TableCell>
+                                            <TableCell align="left">{t.arrival_time}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    )) : null}
+            </TransitContainer>
         </>
     );
 }

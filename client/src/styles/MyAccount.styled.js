@@ -7,6 +7,13 @@ export const Container = styled.div`
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
+    margin-bottom: 60px;
+
+    .SavedRoutesDiv{
+        width: 100%;
+        margin: 0;
+        padding-top: 50px;
+    }
 `;
 
 export const AccountContent = styled.div`
@@ -24,7 +31,7 @@ export const AccountAvatar = styled.img`
 `;
 
 export const AccountUsername = styled.h1`
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
 `;
@@ -38,11 +45,9 @@ export const LogOut = styled.button`
 
 export const CustomSelect = styled(Select)`
     width: 100%;
-    // padding: 10px;
     font-size: 16px;
-    margin-bottom:10px;
-    // border: 1px solid #ccc;
-    // border-radius: 5px;
+    margin-top:10px;
+    margin-bottom: 20px;
 `;
 
 export const Pt4 = styled.div`
@@ -90,7 +95,7 @@ export const SaveTripRow = styled.div`
     align-items: center;
     padding: 10px;
     border-bottom: 2px solid #ddd;
-    width: 100%;
+    width: 105%;
     justify-content: space-between; 
 
     &:nth-child(odd) {

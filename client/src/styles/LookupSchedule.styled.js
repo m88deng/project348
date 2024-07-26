@@ -58,37 +58,25 @@ export const TransitContainer = styled.section`
     width: 100%;
     height: auto;
     overflow-x: auto; 
-    border: 2px solid #ddd; 
+    border-top: 0px solid #ddd; 
     border-collapse: collapse;
     margin-top: 20px;
-`;
+    padding-bottom: 60px;
 
-export const TransitRow = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid #ddd; 
-    width: 100%;
-
-    &:nth-child(odd) {
-        background-color: #ffffff; 
+    .loadingDiv {
+        width: 100%;
+        text-align: center;
     }
+    
+    .TransitRow{
+        width: auto;
 
-    &:nth-child(even) {
-        background-color: #f0f8ff; 
-    }
-`;
-
-export const TransitCell = styled.div`
-    flex: 1;
-    text-align: left;
-    min-width: 30px;
-    width : 100%;
-    padding: 5px;
-    border-right: 1px solid #ddd; 
-
-    &:last-child {
-        border-right: none;
+        &:nth-child(odd) {
+            background-color: #ffffff; 
+        }   
+    
+        &:nth-child(even) {
+            background-color: #f0f8ff; 
+        } 
     }
 `;
