@@ -89,8 +89,9 @@ export const SaveTripRow = styled.div`
     flex-direction: row;
     align-items: center;
     padding: 10px;
-    border-bottom: 2px solid #ddd; 
+    border-bottom: 2px solid #ddd;
     width: 100%;
+    justify-content: space-between; 
 
     &:nth-child(odd) {
         background-color: #ffffff; 
@@ -98,6 +99,20 @@ export const SaveTripRow = styled.div`
 
     &:nth-child(even) {
         background-color: #f0f8ff; 
+    }
+`;
+
+export const RemoveButton = styled.button`
+    background-color: #ff4d4d; 
+    color: #ffffff;
+    border: none;
+    max-width: 100px;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: #ff1a1a; 
     }
 `;
 

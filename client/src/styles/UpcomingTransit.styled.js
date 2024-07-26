@@ -1,24 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1000px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 20px;
 `;
 
 export const LookupScheduleForm = styled.form`
-    max-width: 500px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
 `;
 
 export const FormGroup = styled.div`
-    width: 100%;
     margin-bottom: 20px;
 `;
 

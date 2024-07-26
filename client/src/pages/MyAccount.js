@@ -8,13 +8,13 @@ import {
     AccountContent,
     AccountAvatar,
     AccountUsername,
-    AccountButton,
     LogOut,
     CustomSelect,
     Pt4,
-    Col3,
+    saveContainer,
     SaveButton,
-    SaveTripRow
+    SaveTripRow,
+    RemoveButton
 } from './../styles/MyAccount.styled.js';
 
 export default function MyAccount() {
@@ -185,21 +185,21 @@ export default function MyAccount() {
                     <SaveButton onClick={handleAddSavedRoutes}>Add to saved routes</SaveButton>
 
             </Pt4>
-            <section>
-                {loading ? (
-                    <div>Loading{loadingText}</div>
-                ) : (
-                    <div>
-                        <p>My Saved Routes</p>
-                        {savedRoutes.map((s) => (
-                            <SaveTripRow key={`${s.route_id}-${s.route_long_name}`} className="row">
-                                <div>{s.route_id} - {s.route_long_name}</div>
-                                <button className='remove' onClick={() => handleRemoveSavedRoutes(s.route_id)}>Remove</button>
-                            </SaveTripRow>
-                        ))}
-                    </div>
-                )}
-            </section>
+            <saveContainer>
+    {loading ? (
+        <div>Loading{loadingText}</div>
+    ) : (
+        <div>
+            <p>My Saved Routes</p>
+            {savedRoutes.map((s) => (
+                <SaveTripRow key={`${s.route_id}-${s.route_long_name}`} className="row">
+                    {s.route_id} - {s.route_long_name}
+                    <RemoveButton onClick={() => handleRemoveSavedRoutes(s.route_id)}>Remove</RemoveButton>
+                </SaveTripRow>
+            ))}
+        </div>
+    )}
+</saveContainer>
         </Container>
     );
 }

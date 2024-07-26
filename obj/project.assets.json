@@ -2363,23 +2363,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/irischoy/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/Users/Gong/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/irischoy/project348/testAPI.csproj",
+      "projectUniqueName": "/Users/Gong/Desktop/project348/testAPI.csproj",
       "projectName": "testAPI",
-      "projectPath": "/Users/irischoy/project348/testAPI.csproj",
-      "packagesPath": "/Users/irischoy/.nuget/packages/",
-      "outputPath": "/Users/irischoy/project348/obj/",
+      "projectPath": "/Users/Gong/Desktop/project348/testAPI.csproj",
+      "packagesPath": "/Users/Gong/.nuget/packages/",
+      "outputPath": "/Users/Gong/Desktop/project348/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/irischoy/.nuget/NuGet/NuGet.Config"
+        "/Users/Gong/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2438,6 +2434,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-arm64",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
