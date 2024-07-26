@@ -1459,6 +1459,7 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -2363,16 +2364,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Percival\\.nuget\\packages\\": {}
-=======
-    "/Users/Gong/.nuget/packages/": {}
->>>>>>> 5001efc9afb41c17de4d68aa8d2f051906ab3528
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "D:\\Codes\\repos\\project348\\testAPI.csproj",
       "projectName": "testAPI",
       "projectPath": "D:\\Codes\\repos\\project348\\testAPI.csproj",
@@ -2382,16 +2378,6 @@
       "configFilePaths": [
         "C:\\Users\\Percival\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-=======
-      "projectUniqueName": "/Users/Gong/Desktop/project348/testAPI.csproj",
-      "projectName": "testAPI",
-      "projectPath": "/Users/Gong/Desktop/project348/testAPI.csproj",
-      "packagesPath": "/Users/Gong/.nuget/packages/",
-      "outputPath": "/Users/Gong/Desktop/project348/obj/",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "/Users/Gong/.nuget/NuGet/NuGet.Config"
->>>>>>> 5001efc9afb41c17de4d68aa8d2f051906ab3528
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2457,23 +2443,16 @@
             "version": "[6.0.31, 6.0.31]"
           },
           {
-<<<<<<< HEAD
             "name": "Microsoft.NETCore.App.Host.win-x64",
-=======
-            "name": "Microsoft.NETCore.App.Host.osx-arm64",
->>>>>>> 5001efc9afb41c17de4d68aa8d2f051906ab3528
             "version": "[6.0.31, 6.0.31]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
             "version": "[6.0.31, 6.0.31]"
-<<<<<<< HEAD
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[6.0.31, 6.0.31]"
-=======
->>>>>>> 5001efc9afb41c17de4d68aa8d2f051906ab3528
           }
         ],
         "frameworkReferences": {
@@ -2487,5 +2466,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Codes\\repos\\project348\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

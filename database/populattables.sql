@@ -29,3 +29,9 @@ with(
 format='csv',firstrow=2
 )
 
+bulk insert dbo.Users
+from 'D:\Codes\repos\project348\database\users.csv'
+with(
+format='csv',firstrow=2
+)
+

@@ -589,7 +589,6 @@ namespace testAPI.Controllers
             // );
             // return conn;
 
-<<<<<<< HEAD
             // Riya connection string
             // var conn = new SqlConnection(
             // new SqlConnectionStringBuilder()
@@ -617,21 +616,6 @@ namespace testAPI.Controllers
             // }.ConnectionString
             // );
             // return conn;
-=======
-            //Riya connection string
-            var conn = new SqlConnection(
-            new SqlConnectionStringBuilder()
-            {
-                DataSource = "localhost",
-                InitialCatalog = "master",
-                UserID = "sa",
-                Password = "sqlStrongPassword",
-                Encrypt = true,
-                TrustServerCertificate = true
-            }.ConnectionString
-            );
-            return conn;
->>>>>>> 5001efc9afb41c17de4d68aa8d2f051906ab3528
 
             //Iris connection string
             // var conn = new SqlConnection(
