@@ -228,7 +228,7 @@ export default function PlanTrip() {
                         <SearchButton type="submit" onClick={handleRouteSearch}>Search</SearchButton>
                     </FormGroup>
                 </PlanTripForm>
-            </Container>
+                </Container>
             <PlantripContainer>
                 {loading ? (
                     <div>Loading{loadingText}</div>
@@ -239,6 +239,7 @@ export default function PlanTrip() {
                     ))
                 )}
             </PlantripContainer>
+            
         </>
     );
 }
