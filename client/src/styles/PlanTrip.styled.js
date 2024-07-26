@@ -89,3 +89,18 @@ export const PlantripRow = styled.div`
         background-color: #f0f8ff; 
     }
 `;
+
+export const remove = styled.div`
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #0056b3;
+    }
+`;
