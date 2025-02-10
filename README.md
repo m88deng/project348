@@ -1,6 +1,7 @@
 # GRT Schedule Application
 
 The GRT Schedule Application interfaces with a SQL Server deployed locally, with data visualization and management facilitated through SQL Server Management Studio (SSMS). This guide provides an overview of the application's setup, functionality, and usage.
+https://docs.google.com/document/d/1YLzvpp_1gnoKm4L1ihELy7x9BDWS8ZpEHP51xSu5D3U/edit?usp=sharing
 
 ## Database Setup
 
